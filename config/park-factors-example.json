@@ -1,0 +1,58 @@
+{
+  "_comment": "Example park factors for VOS v2. Map team IDs or names to park keys.",
+  "parks": {
+    "Gap_Power_Park": {
+      "name": "Gap Power Park (Example)",
+      "raw_factors": {
+        "avg_overall": 1.05,
+        "doubles": 1.2,
+        "triples": 1.1,
+        "hr_overall": 0.85,
+        "hr_rhb": 0.84,
+        "hr_lhb": 0.86
+      },
+      "tool_adjustments": {
+        "batting": {
+          "Pow": 0.891,
+          "Gap": 1.186,
+          "Eye": 1.016,
+          "Ks": 0.989
+        },
+        "defense": {
+          "OFR": 1.08,
+          "IFR": 1.02,
+          "OFE": 1.0,
+          "OFA": 1.0,
+          "IFE": 1.0,
+          "IFA": 1.0,
+          "TDP": 1.0,
+          "CArm": 1.0,
+          "CBlk": 1.0,
+          "CFrm": 1.0
+        },
+        "baserunning": {
+          "Speed": 1.05,
+          "Run": 1.08,
+          "StealAbi": 1.0,
+          "StlRt": 1.0
+        },
+        "pitcher_ability": {
+          "Stuff": 1.0,
+          "Movement": 1.05,
+          "Control": 1.02,
+          "HR_Avoid": 0.95
+        }
+      }
+    }
+  },
+  "team_to_park_mapping": {
+    "157": "Gap_Power_Park",
+    "38": "Gap_Power_Park"
+  },
+  "application_rules": {
+    "apply_to_prospects": true,
+    "apply_to_major_leaguers": true,
+    "use_handedness_splits": false,
+    "adjustment_strength": 0.5
+  }
+}

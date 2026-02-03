@@ -1,0 +1,189 @@
+{
+    "_comment": "Park factors for Las Vegas Knights - VOS Evaluation",
+    "_comment_2": "This file contains park adjustments for evaluating players specifically for the LVK organization",
+    "_comment_3": "Each team should have its own park factors file (e.g., park-factors-{team-code}.json)",
+    
+    "team_info": {
+      "team_name": "Las Vegas Knights",
+      "team_code": "LVK",
+      "park_name": "Las Vegas Knights Ballpark"
+    },
+    
+    "raw_park_factors": {
+      "_comment": "Raw park factors from OOTP - 1.0 = league average",
+      "avg_overall": 1.054,
+      "avg_rhb": 1.057,
+      "avg_lhb": 1.049,
+      "doubles": 1.217,
+      "triples": 1.257,
+      "hr_overall": 0.819,
+      "hr_rhb": 0.808,
+      "hr_lhb": 0.839
+    },
+    
+    "park_profile": {
+      "_comment": "Human-readable summary of park characteristics",
+      "type": "gap_power_park",
+      "description": "Spacious dimensions that suppress home runs but reward doubles and triples. Classic gap power park.",
+      "key_characteristics": [
+        "Significant HR suppression (-19% overall)",
+        "Major doubles boost (+22%)",
+        "Major triples boost (+26%)",
+        "Slight batting average boost (+5%)"
+      ]
+    },
+    
+    "tool_adjustments": {
+      "_comment": "Multipliers applied to tool ratings. 1.0 = no change, >1.0 = more valuable, <1.0 = less valuable",
+      "_comment_2": "These are calculated from raw park factors using conversion formulas",
+      
+      "batting": {
+        "Pow": 0.891,
+        "_calculation_Pow": "1.0 + ((0.819 - 1.0) × 0.6) = 0.891 | Power worth 10.9% less",
+        
+        "Gap": 1.186,
+        "_calculation_Gap": "1.0 + ((0.217 × 0.5) + (0.257 × 0.3)) = 1.186 | Gap worth 18.6% more",
+        
+        "Eye": 1.016,
+        "_calculation_Eye": "1.0 + ((1.054 - 1.0) × 0.3) = 1.016 | Eye worth 1.6% more",
+        
+        "Ks": 0.989,
+        "_calculation_Ks": "1.0 + ((1.054 - 1.0) × -0.2) = 0.989 | Avoiding Ks worth 1.1% less"
+      },
+      
+      "defense": {
+        "_comment": "Spacious park increases value of range, especially in outfield",
+        
+        "OFR": 1.08,
+        "_rationale_OFR": "High 2B/3B rates indicate large outfield dimensions - range is critical",
+        
+        "IFR": 1.02,
+        "_rationale_IFR": "More balls in play (higher avg) means slightly more value to IF range",
+        
+        "OFE": 1.0,
+        "OFA": 1.0,
+        "IFE": 1.0,
+        "IFA": 1.0,
+        "TDP": 1.0,
+        "CArm": 1.0,
+        "CBlk": 1.0,
+        "CFrm": 1.0
+      },
+      
+      "baserunning": {
+        "_comment": "High doubles/triples rates reward speed and baserunning aggression",
+        
+        "Speed": 1.05,
+        "_rationale_Speed": "More XBH opportunities mean speed is more valuable",
+        
+        "Run": 1.08,
+        "_rationale_Run": "High triples rate rewards smart baserunning decisions",
+        
+        "StealAbi": 1.0,
+        "StlRt": 1.0
+      },
+      
+      "pitcher_ability": {
+        "_comment": "Park characteristics affect which pitcher skills are most valuable",
+        
+        "Stuff": 1.0,
+        
+        "Movement": 1.05,
+        "_rationale_Movement": "Movement helps prevent gap power damage in spacious park",
+        
+        "Control": 1.02,
+        "_rationale_Control": "Limiting baserunners is slightly more important in big park",
+        
+        "HR_Avoid": 0.95,
+        "_rationale_HR_Avoid": "Park already suppresses HRs - HR/FB specialists get less differential value"
+      }
+    },
+    
+    "handedness_splits": {
+      "_comment": "Optional handedness-specific adjustments - only used if use_handedness_splits is true",
+      "_comment_2": "Your park has minimal splits (RHB 0.808 vs LHB 0.839) so these are optional",
+      
+      "enabled": false,
+      "_rationale": "Splits are minimal (<4% difference) - not worth the added complexity",
+      
+      "RHB": {
+        "Pow": 0.885,
+        "_calculation": "1.0 + ((0.808 - 1.0) × 0.6) = 0.885"
+      },
+      
+      "LHB": {
+        "Pow": 0.897,
+        "_calculation": "1.0 + ((0.839 - 1.0) × 0.6) = 0.897"
+      }
+    },
+    
+    "application_rules": {
+      "_comment": "Rules for when and how aggressively to apply these park factors",
+      
+      "apply_to_prospects": true,
+      "_comment_prospects": "Apply to all players in Las Vegas Knights organization, including minors",
+      
+      "apply_to_major_leaguers": true,
+      "_comment_major_leaguers": "Apply to players at ML level with this team",
+      
+      "use_handedness_splits": false,
+      "_comment_handedness": "Disabled by default - minimal difference between RHB/LHB",
+      
+      "adjustment_strength": 0.5,
+      "_comment_strength": "Use 50% strength as conservative starting point. 1.0 = full strength, 0.5 = half strength",
+      "_comment_strength_2": "At 0.5 strength: Gap becomes 1.093 (9.3% boost) instead of 1.186 (18.6% boost)"
+    },
+    
+    "validation_examples": {
+      "_comment": "Test cases to verify park factors are working correctly",
+      
+      "power_hitter_vs_gap_hitter": {
+        "description": "Compare 80 Pow / 45 Gap player vs 45 Pow / 80 Gap player",
+        
+        "player_a_power_hitter": {
+          "tools": { "Gap": 45, "Pow": 80, "Eye": 50, "Ks": 55 },
+          "without_park": "~57.5 batting score",
+          "with_park_half_strength": "~54.3 batting score (-3.2)",
+          "impact": "Power devalued in HR-suppressing park"
+        },
+        
+        "player_b_gap_hitter": {
+          "tools": { "Gap": 80, "Pow": 45, "Eye": 50, "Ks": 55 },
+          "without_park": "~56.0 batting score",
+          "with_park_half_strength": "~61.4 batting score (+5.4)",
+          "impact": "Gap power highly valued in doubles/triples park"
+        },
+        
+        "result": "Gap hitter wins by 7.1 points with park factors (was losing by 1.5 without)"
+      },
+      
+      "center_fielder_evaluation": {
+        "description": "CF with elite range gets boosted",
+        
+        "elite_range_cf": {
+          "OFR": 75,
+          "without_park": "Defense score based on 75 OFR",
+          "with_park_half_strength": "Defense score based on 75 × 1.04 = 78 effective OFR",
+          "impact": "+3 points to range rating = more defensive value"
+        }
+      },
+      
+      "baserunner_evaluation": {
+        "description": "Smart baserunners get rewarded",
+        
+        "high_baserunning": {
+          "Run": 70,
+          "without_park": "Baserunning contribution from 70 Run",
+          "with_park_half_strength": "Baserunning contribution from 70 × 1.04 = 72.8 effective Run",
+          "impact": "Smart baserunners take extra bases in big park"
+        }
+      }
+    },
+    
+    "usage_notes": {
+      "command_line_example": "python vos_v2.py --league lvk --park-factors park-factors-lvk.json",
+      "creating_files_for_other_teams": "Copy this file and adjust raw_park_factors and team_info sections",
+      "tuning_adjustment_strength": "Start at 0.5, increase to 0.7-1.0 if you want more aggressive park effects",
+      "when_to_enable_handedness_splits": "Only if RHB/LHB HR factors differ by >10% (yours differ by 3.8%)"
+    }
+  }
