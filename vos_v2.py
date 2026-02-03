@@ -39,6 +39,9 @@ PITCHER_ABILITY_CSV_TO_CONFIG = {
 PITCHER_ABILITY_COL_ALTERNATIVES: Dict[str, List[str]] = {
     "Control": ["Ctrl", "Ctrl_R", "Ctrl_L"],
 }
+# Current → potential column names for potential VOS (batting and pitcher ability only; defense/baserunning have no Pot* in CSV)
+HITTER_BATTING_CURRENT_TO_POTENTIAL = {"Gap": "PotGap", "Pow": "PotPow", "Eye": "PotEye", "Ks": "PotKs"}
+PITCHER_ABILITY_CURRENT_TO_POTENTIAL = {"Stf": "PotStf", "Mov": "PotMov", "HRA": "PotHRA", "Ctrl": "PotCtrl"}
 POT_PITCH_COLUMN_TO_TYPE = {
     "PotFst": "Fastball",
     "PotSnk": "Sinker",
@@ -432,13 +435,15 @@ def hitter_batting_score(
     weights: Dict[str, float],
     park_config: Optional[Dict[str, Any]] = None,
     park_rules: Optional[Dict[str, Any]] = None,
+    use_potential: bool = False,
 ) -> Optional[float]:
-    """Weighted average of Gap, Pow, Eye, Ks; optionally adjusted by park factors before weighting."""
+    """Weighted average of Gap, Pow, Eye, Ks (or Pot* when use_potential); optionally park-adjusted."""
     tool_dict: Dict[str, float] = {}
     for tool, w in weights.items():
         if tool.startswith("_"):
             continue
-        v = resolve_float(row, tool)
+        col = (HITTER_BATTING_CURRENT_TO_POTENTIAL.get(tool) or tool) if use_potential else tool
+        v = resolve_float(row, col)
         if v is not None:
             tool_dict[tool] = v
     if park_config and park_rules:
@@ -512,11 +517,11 @@ def hitter_position_scores(
     cfg: Dict[str, Any],
     park_config: Optional[Dict[str, Any]] = None,
     park_rules: Optional[Dict[str, Any]] = None,
+    use_potential: bool = False,
 ) -> Tuple[float, float, float, Dict[str, Optional[float]], str, float]:
     """
     Batting, defense, baserunning; per-position scores (composite for viable, bat-only for DH); ideal position; ideal value.
-    Optionally applies park factor adjustments to tool scores before weighting.
-    Returns (bat, defense_avg, base, pos_scores_dict, ideal_pos, ideal_value).
+    use_potential=True uses PotGap/PotPow/PotEye/PotKs for batting only (defense/baserunning have no Pot* in CSV).
     """
     h = cfg.get("hitters", {})
     tool_cats = h.get("tool_categories", {})
@@ -526,7 +531,7 @@ def hitter_position_scores(
     pos_cat_weights = h.get("position_category_weights", {})
     standards = h.get("positional_standards", {})
 
-    bat = hitter_batting_score(row, bat_weights, park_config, park_rules) or 0.0
+    bat = hitter_batting_score(row, bat_weights, park_config, park_rules, use_potential) or 0.0
     base = hitter_baserunning_score(row, base_weights, park_config, park_rules) or 0.0
 
     pos_scores: Dict[str, Optional[float]] = {}
@@ -578,11 +583,16 @@ def pitcher_ability_score(
     role_weights: Dict[str, float],
     park_config: Optional[Dict[str, Any]] = None,
     park_rules: Optional[Dict[str, Any]] = None,
+    use_potential: bool = False,
 ) -> Optional[float]:
-    """Ability = weighted sum of Stuff, Movement, Control, HR_Avoid; optionally park-adjusted."""
+    """Ability = weighted sum of Stuff, Movement, Control, HR_Avoid (or Pot* when use_potential); optionally park-adjusted."""
     tool_dict: Dict[str, float] = {}
     for csv_col, config_key in PITCHER_ABILITY_CSV_TO_CONFIG.items():
-        alts = PITCHER_ABILITY_COL_ALTERNATIVES.get(config_key, [csv_col])
+        if use_potential:
+            pot_col = PITCHER_ABILITY_CURRENT_TO_POTENTIAL.get(csv_col, csv_col)
+            alts = [pot_col] if pot_col else PITCHER_ABILITY_COL_ALTERNATIVES.get(config_key, [csv_col])
+        else:
+            alts = PITCHER_ABILITY_COL_ALTERNATIVES.get(config_key, [csv_col])
         v = resolve_float(row, *alts)
         if v is not None:
             tool_dict[config_key] = v
@@ -658,14 +668,15 @@ def pitcher_combined_score(
     cfg: Dict[str, Any],
     park_config: Optional[Dict[str, Any]] = None,
     park_rules: Optional[Dict[str, Any]] = None,
+    use_potential: bool = False,
 ) -> Tuple[float, float, float]:
-    """Ability score, arsenal score (with diversity), and combined (ability*w + arsenal*w). Stamina penalty applied for SP. Optionally park-adjusted ability."""
+    """Ability score, arsenal score (with diversity), and combined. use_potential uses Pot* for ability; arsenal already uses Pot* pitches."""
     pit = cfg.get("pitchers", {})
     ability_weights = pit.get("ability_weights", {}).get(role, {})
     role_balance = pit.get("role_balance", {}).get(role, {})
     stamina_cfg = pit.get("stamina_requirements", {}).get("SP", {})
 
-    ability = pitcher_ability_score(row, ability_weights, park_config, park_rules) or 0.0
+    ability = pitcher_ability_score(row, ability_weights, park_config, park_rules, use_potential) or 0.0
     arsenal_raw, div_adj = pitcher_arsenal_score(row, role, cfg)
     arsenal = arsenal_raw + div_adj  # raw is on scale; div_adj is small bonus/penalty
 
@@ -779,29 +790,37 @@ def age_adjustment(
     return 0.0
 
 
+def _personality_bucket_from_cell(value: str) -> Optional[str]:
+    """Map personality cell to config bucket: U=unknown (no modifier), H=high, N=normal, L=low."""
+    if not value or not isinstance(value, str):
+        return None
+    v = value.strip().upper()
+    if v == "H":
+        return "high"
+    if v == "N":
+        return "normal"
+    if v == "L":
+        return "low"
+    # U (unknown) or any other value: no modifier
+    return None
+
+
 def personality_adjustment(row: Dict[str, str], cfg: Dict[str, Any]) -> float:
-    """Sum of trait modifiers (high/medium/low from config thresholds)."""
+    """Sum of trait modifiers from personality cells. Cells use U (unknown), H (high), N (normal), L (low).
+    U or missing/other = no modifier. Only H/N/L apply the corresponding trait_modifiers."""
     impact = (cfg.get("adjustments") or {}).get("personality_impact") or {}
     if not isinstance(impact, dict):
         return 0.0
-    thresholds = impact.get("trait_thresholds") or {}
-    high = int(thresholds.get("high", 60))
-    med = int(thresholds.get("medium", 45))
     mods = impact.get("trait_modifiers") or {}
     total = 0.0
     for csv_col, config_trait in PERSONALITY_CSV_TO_CONFIG.items():
         trait_mods = mods.get(config_trait) if isinstance(mods, dict) else {}
         if not isinstance(trait_mods, dict):
             continue
-        v = resolve_float(row, csv_col)
-        if v is None:
-            bucket = "low"
-        elif v >= high:
-            bucket = "high"
-        elif v >= med:
-            bucket = "medium"
-        else:
-            bucket = "low"
+        raw = row.get(csv_col, "").strip() if csv_col in row else ""
+        bucket = _personality_bucket_from_cell(raw)
+        if bucket is None:
+            continue
         m = trait_mods.get(bucket, 0.0)
         if isinstance(m, (int, float)):
             total += float(m)
@@ -838,8 +857,14 @@ def build_hitter_row(
     park_rules = (park_factors.get("application_rules", {}) or {}) if park_factors else None
     try:
         bat, def_avg, base, pos_scores, ideal_pos, ideal_value = hitter_position_scores(
-            row, cfg, park_config, park_rules
+            row, cfg, park_config, park_rules, use_potential=False
         )
+        _, _, _, _, _, ideal_value_pot = hitter_position_scores(
+            row, cfg, park_config, park_rules, use_potential=True
+        )
+        h = cfg.get("hitters", {})
+        bat_weights = (h.get("tool_categories") or {}).get("batting") or {}
+        bat_pot = hitter_batting_score(row, bat_weights, park_config, park_rules, use_potential=True) or 0.0
     except Exception as e:
         logger.debug("Hitter score error for %s: %s", row.get("ID"), e)
         return None
@@ -854,6 +879,9 @@ def build_hitter_row(
     raw_total = ideal_value + dev_adj + age_adj + pers_adj
     center, scale, floor, ceiling = _normalization_params(cfg)
     vos = normalize_to_20_80(raw_total, center, scale, floor, ceiling)
+    # Potential VOS: base from potential ratings only; no development adj (already potential); age/personality apply
+    raw_total_pot = ideal_value_pot + 0.0 + age_adj + pers_adj
+    vos_potential = normalize_to_20_80(raw_total_pot, center, scale, floor, ceiling)
     out: Dict[str, Any] = {
         "ID": row.get("ID", ""),
         "Name": row.get("Name", ""),
@@ -863,7 +891,9 @@ def build_hitter_row(
         "Org": get_team_display(org_id, teams),
         "League_Level": league_label,
         "VOS_Score": round(vos, 2),
+        "VOS_Potential": round(vos_potential, 2),
         "Batting_Score": round(bat, 2),
+        "Batting_Potential": round(bat_pot, 2),
         "Defense_Score": round(def_avg, 2),
         "Baserunning_Score": round(base, 2),
         "Pitching_Ability_Score": "",
@@ -900,7 +930,10 @@ def build_pitcher_row(
     park_rules = (park_factors.get("application_rules", {}) or {}) if park_factors else None
     try:
         ability, arsenal, combined = pitcher_combined_score(
-            row, role, cfg, park_config, park_rules
+            row, role, cfg, park_config, park_rules, use_potential=False
+        )
+        _, _, combined_pot = pitcher_combined_score(
+            row, role, cfg, park_config, park_rules, use_potential=True
         )
     except Exception as e:
         logger.debug("Pitcher score error for %s: %s", row.get("ID"), e)
@@ -916,6 +949,9 @@ def build_pitcher_row(
     raw_total = combined + dev_adj + age_adj + pers_adj
     center, scale, floor, ceiling = _normalization_params(cfg)
     vos = normalize_to_20_80(raw_total, center, scale, floor, ceiling)
+    # Potential VOS: ability from PotStf/PotMov/PotHRA/PotCtrl; arsenal already uses Pot* pitches; no dev adj
+    raw_total_pot = combined_pot + 0.0 + age_adj + pers_adj
+    vos_potential = normalize_to_20_80(raw_total_pot, center, scale, floor, ceiling)
     out: Dict[str, Any] = {
         "ID": row.get("ID", ""),
         "Name": row.get("Name", ""),
@@ -925,7 +961,9 @@ def build_pitcher_row(
         "Org": get_team_display(org_id, teams),
         "League_Level": league_label,
         "VOS_Score": round(vos, 2),
+        "VOS_Potential": round(vos_potential, 2),
         "Batting_Score": "",
+        "Batting_Potential": "",
         "Defense_Score": "",
         "Baserunning_Score": "",
         "Pitching_Ability_Score": round(ability, 2),
@@ -960,7 +998,7 @@ def write_output_csv(rows: List[Dict[str, Any]], path: Path) -> None:
         return
     cols = [
         "ID", "Name", "Pos", "Age", "Team", "Org", "League_Level",
-        "VOS_Score", "Batting_Score", "Defense_Score", "Baserunning_Score",
+        "VOS_Score", "VOS_Potential", "Batting_Score", "Batting_Potential", "Defense_Score", "Baserunning_Score",
         "Pitching_Ability_Score", "Pitching_Arsenal_Score",
         "Development_Adj", "Age_Adj", "Personality_Adj",
         "Park_Name", "Park_Applied",

@@ -348,38 +348,32 @@
     },
     
     "personality_impact": {
-      "_comment": "Intelligence and work ethic matter most for development",
-      
-      "trait_thresholds": {
-        "high": 60,
-        "medium": 45
-      },
-      
+      "_comment": "Personality cells in CSV are U (unknown), H (high), N (normal), L (low). U = no modifier.",
       "trait_modifiers": {
         "Intelligence": {
           "high": 1.5,
-          "medium": 0.0,
+          "normal": 0.0,
           "low": -1.0
         },
         "Work_Ethic": {
           "high": 2.0,
-          "medium": 0.0,
+          "normal": 0.0,
           "low": -2.0
         },
         "Greed": {
           "_comment": "Greed is slightly negative when high (harder to sign/extend)",
           "high": -1.0,
-          "medium": 0.0,
+          "normal": 0.0,
           "low": 0.5
         },
         "Loyalty": {
           "high": 0.5,
-          "medium": 0.0,
+          "normal": 0.0,
           "low": -0.5
         },
         "Leadership": {
           "high": 1.0,
-          "medium": 0.0,
+          "normal": 0.0,
           "low": -0.5
         }
       }
