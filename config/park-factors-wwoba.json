@@ -1,0 +1,141 @@
+{
+  "_comment": "Park factors for WWOBA League - VOS Evaluation",
+  "_comment_2": "This file contains park adjustments for evaluating players in the WWOBA organization",
+  "_comment_3": "Each team should have its own park factors file (e.g., park-factors-{team-code}.json)",
+  "team_info": {
+    "team_name": "WWOBA",
+    "team_code": "WWOBA",
+    "park_name": "WWOBA Park"
+  },
+  "raw_park_factors": {
+    "_comment": "Raw park factors from OOTP - 1.0 = league average",
+    "avg_overall": 1.021,
+    "avg_rhb": 1.000,
+    "avg_lhb": 1.060,
+    "doubles": 1.090,
+    "triples": 1.670,
+    "hr_overall": 0.991,
+    "hr_rhb": 0.980,
+    "hr_lhb": 1.010
+  },
+  "park_profile": {
+    "_comment": "Human-readable summary of park characteristics",
+    "type": "gap_power_park",
+    "description": "Spacious dimensions that suppress home runs but heavily reward doubles and triples. LHB get a batting average boost (+6%). Classic gap power park.",
+    "key_characteristics": [
+      "Major triples boost (+67%)",
+      "Doubles boost (+9%)",
+      "Slight batting average boost (+2.1% overall, +6% LHB)",
+      "Home runs nearly neutral (-1% overall)",
+      "Minimal RHB vs LHB HR split (~3%)"
+    ]
+  },
+  "tool_adjustments": {
+    "_comment": "Multipliers applied to tool ratings. 1.0 = no change, >1.0 = more valuable, <1.0 = less valuable",
+    "_comment_2": "These are calculated from raw park factors using conversion formulas",
+    "batting": {
+      "Pow": 0.995,
+      "_calculation_Pow": "1.0 + ((0.991 - 1.0) × 0.6) = 0.995 | Power worth 0.5% less",
+      "Gap": 1.246,
+      "_calculation_Gap": "1.0 + ((1.090 - 1.0) × 0.5) + ((1.670 - 1.0) × 0.3) = 1.246 | Gap worth 24.6% more",
+      "Eye": 1.006,
+      "_calculation_Eye": "1.0 + ((1.021 - 1.0) × 0.3) = 1.006 | Eye worth 0.6% more",
+      "Ks": 0.996,
+      "_calculation_Ks": "1.0 + ((1.021 - 1.0) × -0.2) = 0.996 | Avoiding Ks worth 0.4% less"
+    },
+    "defense": {
+      "_comment": "Spacious park increases value of range, especially in outfield",
+      "OFR": 1.08,
+      "_rationale_OFR": "High 2B/3B rates indicate large outfield dimensions - range is critical",
+      "IFR": 1.02,
+      "_rationale_IFR": "More balls in play (higher avg) means slightly more value to IF range",
+      "OFE": 1,
+      "OFA": 1,
+      "IFE": 1,
+      "IFA": 1,
+      "TDP": 1,
+      "CArm": 1,
+      "CBlk": 1,
+      "CFrm": 1
+    },
+    "baserunning": {
+      "_comment": "High doubles/triples rates reward speed and baserunning aggression",
+      "Speed": 1.05,
+      "_rationale_Speed": "More XBH opportunities mean speed is more valuable",
+      "Run": 1.08,
+      "_rationale_Run": "High triples rate rewards smart baserunning decisions",
+      "StealAbi": 1,
+      "StlRt": 1
+    },
+    "pitcher_ability": {
+      "_comment": "Park characteristics affect which pitcher skills are most valuable",
+      "Stuff": 1,
+      "Movement": 1.05,
+      "_rationale_Movement": "Movement helps prevent gap power damage in spacious park",
+      "Control": 1.02,
+      "_rationale_Control": "Limiting baserunners is slightly more important in big park",
+      "HR_Avoid": 0.95,
+      "_rationale_HR_Avoid": "Park already suppresses HRs - HR/FB specialists get less differential value"
+    }
+  },
+  "handedness_splits": {
+    "_comment": "Optional handedness-specific adjustments - only used if use_handedness_splits is true",
+    "_comment_2": "RHB HR 0.980 vs LHB HR 1.010 - minimal difference (~3%)",
+    "enabled": false,
+    "_rationale": "Splits are minimal - not worth the added complexity",
+    "RHB": {
+      "Pow": 0.988,
+      "_calculation": "1.0 + ((0.980 - 1.0) × 0.6) = 0.988"
+    },
+    "LHB": {
+      "Pow": 1.006,
+      "_calculation": "1.0 + ((1.010 - 1.0) × 0.6) = 1.006"
+    }
+  },
+  "application_rules": {
+    "_comment": "Rules for when and how aggressively to apply these park factors",
+    "apply_to_prospects": true,
+    "_comment_prospects": "Apply to all players in WWOBA organization, including minors",
+    "apply_to_major_leaguers": true,
+    "_comment_major_leaguers": "Apply to players at ML level with this team",
+    "use_handedness_splits": false,
+    "_comment_handedness": "Disabled by default - minimal difference between RHB/LHB",
+    "adjustment_strength": 0.5,
+    "_comment_strength": "Use 50% strength as conservative starting point. 1.0 = full strength, 0.5 = half strength",
+    "_comment_strength_2": "At 0.5 strength: Gap becomes 1.123 (12.3% boost) instead of 1.246 (24.6% boost)"
+  },
+  "validation_examples": {
+    "_comment": "Test cases to verify park factors are working correctly",
+    "power_hitter_vs_gap_hitter": {
+      "description": "Compare 80 Pow / 45 Gap player vs 45 Pow / 80 Gap player",
+      "player_a_power_hitter": {
+        "tools": {"Gap": 45, "Pow": 80, "Eye": 50, "Ks": 55},
+        "without_park": "~57.5 batting score",
+        "with_park_half_strength": "~56.8 batting score (-0.7)",
+        "impact": "Power slightly devalued in HR-neutral park"
+      },
+      "player_b_gap_hitter": {
+        "tools": {"Gap": 80, "Pow": 45, "Eye": 50, "Ks": 55},
+        "without_park": "~56.0 batting score",
+        "with_park_half_strength": "~61.0 batting score (+5.0)",
+        "impact": "Gap power highly valued in doubles/triples park"
+      },
+      "result": "Gap hitter gains significantly from park factors in this environment"
+    },
+    "center_fielder_evaluation": {
+      "description": "CF with elite range gets boosted",
+      "elite_range_cf": {
+        "OFR": 75,
+        "without_park": "Defense score based on 75 OFR",
+        "with_park_half_strength": "Defense score based on 75 × 1.04 = 78 effective OFR",
+        "impact": "+3 points to range rating = more defensive value"
+      }
+    }
+  },
+  "usage_notes": {
+    "command_line_example": "python vos_v2.py --league wwoba --park-factors park-factors-wwoba.json",
+    "creating_files_for_other_teams": "Copy this file and adjust raw_park_factors and team_info sections",
+    "tuning_adjustment_strength": "Start at 0.5, increase to 0.7-1.0 if you want more aggressive park effects",
+    "when_to_enable_handedness_splits": "Only if RHB/LHB HR factors differ by >10% (yours differ by ~3%)"
+  }
+}
