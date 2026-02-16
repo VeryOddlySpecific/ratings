@@ -1,0 +1,54 @@
+================================================================================
+DRAFT POOL ANALYSIS SUMMARY
+================================================================================
+
+OVERVIEW
+--------------------------------------------------------------------------------
+Total Players: 535
+Mean VOS Potential: 42.50
+Median VOS Potential: 41.18
+
+POSITION DISTRIBUTION
+--------------------------------------------------------------------------------
+1B: 16 (3.0%)
+2B: 34 (6.4%)
+3B: 30 (5.6%)
+C: 44 (8.2%)
+CF: 23 (4.3%)
+DH: 49 (9.2%)
+LF: 22 (4.1%)
+RF: 46 (8.6%)
+SP: 265 (49.5%)
+SS: 6 (1.1%)
+
+STRONGEST POSITIONS (by average VOS Potential)
+--------------------------------------------------------------------------------
+1. SS: 60.21 (n=6)
+2. CF: 54.79 (n=23)
+3. 3B: 50.70 (n=30)
+4. 2B: 48.80 (n=34)
+5. C: 47.86 (n=44)
+
+WEAKEST POSITIONS (by average VOS Potential)
+--------------------------------------------------------------------------------
+1. SP: 36.65 (n=265)
+2. DH: 44.69 (n=49)
+3. 1B: 45.83 (n=16)
+4. LF: 45.84 (n=22)
+5. RF: 47.50 (n=46)
+
+PROSPECT TIER BREAKDOWN (fixed VOS benchmarks)
+--------------------------------------------------------------------------------
+Elite: 4 (0.7%)
+Plus: 54 (10.1%)
+Average: 73 (13.6%)
+Org Depth: 404 (75.5%)
+
+KEY METRICS FOR REFERENCE (tier benchmarks)
+--------------------------------------------------------------------------------
+Elite: VOS Potential >= 62 (Truly exceptional prospects)
+Plus: VOS Potential 54-61 (Quality starters, above average)
+Average: VOS Potential 48-53 (Solid contributors, league average)
+Org Depth: VOS Potential < 48 (Below average, organizational depth)
+Average Draft Pool Quality (VOS Potential): 42.50
+Median Draft Pool Quality (VOS Potential): 41.18
