@@ -86,6 +86,24 @@ Column names can vary (e.g. `Steal` vs `StealAbi`); the script uses built-in alt
 
 ---
 
+## Organizational Depth Analysis
+
+After running VOS, you can analyze organizational depth with **org_depth_analysis.py**. It reads the evaluation summary CSV and identifies weak spots, stockpiles, and strategic opportunities (draft/acquisition targets, trade candidates).
+
+```bash
+python org_depth_analysis.py --league sky
+python org_depth_analysis.py evaluation_summary_sky.csv -o "Atlanta Braves" --csv --html
+```
+
+- **Position strength scores** — Per-position depth, quality, and talent
+- **Weak spots** — Positions needing draft/acquisition focus
+- **Stockpiles** — Excess depth to consider for trades
+- **Outputs** — Text report (default), plus optional CSV and HTML
+
+For full options and workflow, see **[README_ORG_DEPTH_ANALYSIS.md](README_ORG_DEPTH_ANALYSIS.md)**.
+
+---
+
 ## Park factors (optional)
 
 With `--park-factors path/to/file.json` you can:
@@ -102,8 +120,10 @@ Park multipliers adjust **raw tool values** before weighting. See `config/park-f
 ```
 ratings/
 ├── vos_v2.py              # Main evaluation script
+├── org_depth_analysis.py  # Organizational depth analysis (consumes VOS output)
 ├── README.md              # This file (GitHub front page)
 ├── README_VOS_V2.md       # Detailed usage, options, and architecture
+├── README_ORG_DEPTH_ANALYSIS.md  # Org depth tool usage and options
 ├── config/
 │   ├── weights_v2.json    # Weights and normalization config
 │   ├── id_maps.json       # League level ID mapping
@@ -119,4 +139,5 @@ ratings/
 
 ## More detail
 
-For full option descriptions, park factor formats, validation behavior, and architecture, see **[README_VOS_V2.md](README_VOS_V2.md)**.
+- **VOS v2:** Full option descriptions, park factor formats, validation, and architecture — **[README_VOS_V2.md](README_VOS_V2.md)**
+- **Org depth analysis:** Options, metrics, workflow — **[README_ORG_DEPTH_ANALYSIS.md](README_ORG_DEPTH_ANALYSIS.md)**
