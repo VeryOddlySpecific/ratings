@@ -1,0 +1,75 @@
+================================================================================
+ORGANIZATIONAL DEPTH ANALYSIS: San Francisco Giants
+================================================================================
+
+(VOS v2 20-80 scale; Ideal_Value used for position analysis. 50 = average, 54-56 = good, 62+ = elite.)
+
+POSITIONAL STRENGTH SCORES
+------------------------------------------------------------
+Pos     Count  Quality  Avg Val  Top3 Avg Strength
+1B          2        0     29.0      29.0      7.4
+2B         15        1     40.7      49.4     29.8
+3B         18        1     43.0      51.4     33.9
+C          14        2     45.3      53.8     27.0
+SS          3        3     60.1      60.1     18.3
+CF         22        6     50.6      61.4     47.6
+LF         15        0     31.7      37.9     26.2
+RF         13        0     35.9      45.6     24.8
+SP        135        1     34.3      54.8     49.5
+DH         16        2     38.0      56.1     45.1
+
+DEPTH BY LEVEL (Top 5 Positions by Count)
+------------------------------------------------------------
+  SP: R(49), A(33), Unassigned(25), ML(13), AA(9), AAA(6)
+  CF: R(9), A(5), ML(4), AAA(2), Unassigned(2)
+  3B: R(6), A(5), Unassigned(3), AA(2), ML(2)
+  DH: ML(5), A(4), AA(2), AAA(2), R(2), Unassigned(1)
+  2B: Unassigned(5), R(5), AA(2), A(2), ML(1)
+
+POSITION GROUP SUMMARY
+------------------------------------------------------------
+  Infield: 52 players, 7 quality, avg value 43.4, avg strength 23.3
+  Outfield: 50 players, 6 quality, avg value 41.1, avg strength 32.9
+  Pitching: 135 players, 1 quality, avg value 34.3, avg strength 49.5
+
+WEAK SPOTS
+------------------------------------------------------------
+  - SP: quality 1 < 50% of expected; strength score 50 < 50
+  - CF: quality 6 < 50% of expected; strength score 48 < 50
+  - 2B: quality 1 < 50% of expected; top 3 avg (49.4) below threshold (52.0); strength score 30 < 50
+  - RF: quality 0 < 50% of expected; top 3 avg (45.6) below threshold (54.0); strength score 25 < 50
+  - 3B: quality 1 < 50% of expected; top 3 avg (51.4) below threshold (53.0); strength score 34 < 50
+  - DH: quality 2 < 50% of expected; strength score 45 < 50
+  - SS: depth 3 < 70% of expected (15); quality 3 < 50% of expected; strength score 18 < 50
+  - C: quality 2 < 50% of expected; strength score 27 < 50
+  - 1B: depth 2 < 70% of expected (15); quality 0 < 50% of expected; top 3 avg (29.0) below threshold (54.0); strength score 7 < 50
+  - LF: quality 0 < 50% of expected; top 3 avg (37.9) below threshold (54.0); strength score 26 < 50
+
+STOCKPILES
+------------------------------------------------------------
+  - SP: position depth 135 > 150% of expected (40)
+  - DH: position depth 16 > 150% of expected (10)
+
+SKILL SET DISTRIBUTION
+------------------------------------------------------------
+  Archetype analysis requires additional classification data.
+
+STRATEGIC RECOMMENDATIONS
+------------------------------------------------------------
+  Address weak spots:
+    - SP: quality 1 < 50% of expected; strength score 50 < 50
+    - CF: quality 6 < 50% of expected; strength score 48 < 50
+    - 2B: quality 1 < 50% of expected; top 3 avg (49.4) below threshold (52.0); strength score 30 < 50
+    - RF: quality 0 < 50% of expected; top 3 avg (45.6) below threshold (54.0); strength score 25 < 50
+    - 3B: quality 1 < 50% of expected; top 3 avg (51.4) below threshold (53.0); strength score 34 < 50
+    - DH: quality 2 < 50% of expected; strength score 45 < 50
+    - SS: depth 3 < 70% of expected (15); quality 3 < 50% of expected; strength score 18 < 50
+    - C: quality 2 < 50% of expected; strength score 27 < 50
+    - 1B: depth 2 < 70% of expected (15); quality 0 < 50% of expected; top 3 avg (29.0) below threshold (54.0); strength score 7 < 50
+    - LF: quality 0 < 50% of expected; top 3 avg (37.9) below threshold (54.0); strength score 26 < 50
+  
+  Leverage stockpiles:
+    - SP: position depth 135 > 150% of expected (40)
+    - DH: position depth 16 > 150% of expected (10)
+  
+  Consider trades: Infield is weaker (23) than Pitching (50).

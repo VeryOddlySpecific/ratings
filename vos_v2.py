@@ -466,6 +466,11 @@ def hitter_defense_score(
     park_rules: Optional[Dict[str, Any]] = None,
 ) -> Optional[float]:
     """Defense score for one position; None if standards not met. Optionally park-adjusted."""
+    # 3B: no left-handed throwers (throw angle to first makes L unsuitable)
+    if pos == "3B":
+        throws = (row.get("Throws") or "").strip().upper()
+        if throws and throws[:1] == "L":
+            return None
     for attr, minimum in (standards or {}).items():
         if attr.startswith("_"):
             continue

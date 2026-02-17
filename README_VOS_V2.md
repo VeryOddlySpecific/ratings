@@ -81,3 +81,47 @@ The script logs the **VOS_Score** range after writing. All scores are clamped to
 - **Output** — Single CSV with one row per player (pitchers evaluated as SP), including Park_Name and Park_Applied when park factors are used.
 
 No hardcoded values; weights, thresholds, and modifiers come from `weights_v2.json` (and park multipliers from park-factors.json when provided).
+
+---
+
+## Organizational Depth Analysis
+
+`org_depth_analysis.py` analyzes organizational depth across positions, league levels, and skill sets. It reads VOS v2 `evaluation_summary_*.csv` output and identifies weak spots, stockpiles, and strategic opportunities.
+
+### Usage
+
+```bash
+# Basic usage with specific file
+python org_depth_analysis.py evaluation_summary_sky_20260203_200615.csv
+
+# Auto-detect latest file for league
+python org_depth_analysis.py --league sky
+
+# Filter to specific organization
+python org_depth_analysis.py evaluation_summary_sky.csv -o "Atlanta Braves"
+
+# Export all formats
+python org_depth_analysis.py --league sky -o "Atlanta Braves" --csv --player-details --html
+```
+
+### Options
+
+| Option | Description |
+|--------|-------------|
+| `evaluation_file` | Path to evaluation_summary CSV (or use `--league`) |
+| `--league` | Auto-detect latest `evaluation_summary_{league}_*.csv` |
+| `-o/--org` | Filter to specific organization (exact match on `Org` column) |
+| `--output` | Custom output path (default: `org_depth_analysis_{abbrev}.txt`) |
+| `--csv` | Export position and skillset CSV reports |
+| `--player-details` | Export player details CSV grouped by position |
+| `--html` | Export interactive HTML report with sortable tables |
+| `--no-level-breakdown` | Hide level breakdown in text report |
+
+### Output
+
+- **Text report** — Positional strength scores, depth by level, weak spots, stockpiles, recommendations
+- **Positions CSV** — Position-by-position metrics with level breakdowns
+- **Player details CSV** — All players grouped by ideal position, sorted by Ideal_Value
+- **HTML report** — Collapsible sections, sortable player tables per position
+
+Uses `Ideal_Position` and `Ideal_Value` from VOS v2. Supports both VOS v2 and legacy column naming via built-in mappings.
