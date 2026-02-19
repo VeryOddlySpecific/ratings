@@ -125,3 +125,51 @@ python org_depth_analysis.py --league sky -o "Atlanta Braves" --csv --player-det
 - **HTML report** — Collapsible sections, sortable player tables per position
 
 Uses `Ideal_Position` and `Ideal_Value` from VOS v2. Supports both VOS v2 and legacy column naming via built-in mappings.
+
+---
+
+## Draft Grades
+
+`draft_grades.py` compares actual draft results (from the league API) to your VOS draft pool projections. It awards a **VOS Stamp** when a player was projected in the top 100 and was drafted at or after that projection (a “steal”), then grades each team A–F by how many stamps they received.
+
+### Usage
+
+```bash
+# Grade using draft pool in directory (looks for 05_draft_pool.md or draft_pool.md)
+python draft_grades.py 2038_wwoba_draft
+
+# Use a different league API
+python draft_grades.py 2038_wwoba_draft --api-url "https://other-league.statsplus.net/wwoba/api/draft/"
+
+# Write outputs to a different folder
+python draft_grades.py 2038_wwoba_draft --output-dir ./grades_out
+```
+
+### Options
+
+| Option | Description |
+|--------|-------------|
+| `directory` | **Required.** Directory containing draft analysis output (e.g. `05_draft_pool.md`). |
+| `--api-url` | Draft status API URL (default: `https://atl-01.statsplus.net/wwoba/api/draft/`). |
+| `--output-dir` | Where to write CSVs (default: same as `directory`). |
+| `--raw-name` | Filename for raw comparison CSV (default: `draft_grades_raw.csv`). |
+| `--summary-name` | Filename for team summary CSV (default: `draft_grades_summary.csv`). |
+
+### Output
+
+- **draft_grades_raw.csv** — One row per drafted player: Player Name, Team, Overall Pick, Projection Rank, Delta, Stamp Type (Top 100 / Later / blank), Points, VOS Stamp (Y/N).
+- **draft_grades_summary.csv** — One row per team: Team, Top 100 Stamps, Later Stamps, Total Points, Rank, Grade. Sorted by rank. Grades are percentile-based (relative to league).
+
+### Points and grading
+
+- **Top 100** (projection rank 1–100), drafted at or after projection: **3 points** per stamp.
+- **Later** (projection rank 101+), drafted at or after projection: **1 point** per stamp.
+- Team **total points** = sum of all stamp points.
+- **Grades** are assigned by **percentile rank** (relative to all teams in that draft), not fixed point thresholds:
+  - **A** — Top 10%
+  - **B** — Next 20%
+  - **C** — Next 40%
+  - **D** — Next 20%
+  - **F** — Bottom 10%
+
+  This adapts to the draft class: in a strong year you need more points for an A; in a weak year, fewer points can still earn top grades. Tied teams receive the same rank (best rank in the group).

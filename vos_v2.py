@@ -987,9 +987,9 @@ def build_pitcher_row(
 
 
 def is_pitcher(row: Dict[str, str]) -> bool:
-    """True if primary position is pitcher (SP/RP)."""
+    """True if primary position is pitcher (SP/RP/CL/P)."""
     pos = (row.get("Pos") or "").strip().upper()
-    return pos in ("SP", "RP", "P")
+    return pos in ("SP", "RP", "CL", "P")
 
 
 # -----------------------------------------------------------------------------
@@ -1055,8 +1055,10 @@ def main() -> int:
     rows: List[Dict[str, Any]] = []
     for row in players:
         if is_pitcher(row):
+            pos = (row.get("Pos") or "").strip().upper()
+            role = "RP" if pos in ("RP", "CL") else "SP"
             out_row = build_pitcher_row(
-                row, cfg, league_lookup, teams, role="SP", park_factors=park_factors
+                row, cfg, league_lookup, teams, role=role, park_factors=park_factors
             )
         else:
             out_row = build_hitter_row(

@@ -1,0 +1,44 @@
+================================================================================
+PROSPECT TIER BREAKDOWN
+================================================================================
+
+Fixed VOS Potential Benchmarks (calibrated for VOS v2):
+- Elite: VOS Potential >= 62 (Truly exceptional prospects)
+- Plus: VOS Potential 54-61 (Quality starters, above average)
+- Average: VOS Potential 48-53 (Solid contributors, league average)
+- Org Depth: VOS Potential < 48 (Below average, organizational depth)
+
+TIER SUMMARY
+--------------------------------------------------------------------------------
+Tier             Count      Percentage  Mean       Median     Range
+Elite                77       7.5%       64.73      64.49   62.00-68.61
+Plus                196      19.0%       57.86      57.78   54.06-61.95
+Average             172      16.7%       51.01      51.14   48.11-53.91
+Org Depth           584      56.8%       41.02      40.93   31.63-47.99
+
+DETAILED BREAKDOWN
+--------------------------------------------------------------------------------
+
+ELITE TIER (VOS Potential >= 62)
+Total: 77 players (7.5% of pool)
+Average VOS Potential: 64.73
+Median VOS Potential: 64.49
+Range: 62.00 - 68.61
+
+PLUS TIER (VOS Potential 54-61)
+Total: 196 players (19.0% of pool)
+Average VOS Potential: 57.86
+Median VOS Potential: 57.78
+Range: 54.06 - 61.95
+
+AVERAGE TIER (VOS Potential 48-53)
+Total: 172 players (16.7% of pool)
+Average VOS Potential: 51.01
+Median VOS Potential: 51.14
+Range: 48.11 - 53.91
+
+ORG DEPTH TIER (VOS Potential < 48)
+Total: 584 players (56.8% of pool)
+Average VOS Potential: 41.02
+Median VOS Potential: 40.93
+Range: 31.63 - 47.99
