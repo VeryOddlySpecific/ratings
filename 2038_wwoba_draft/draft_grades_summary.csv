@@ -1,31 +1,31 @@
-Team,Top 100 Stamps,Later Stamps,Total Points,Grade
-Arizona Diamondbacks,4,0,12,A
-Chicago Cubs,3,0,9,B
-Detroit Tigers,3,0,9,B
-Washington Nationals,3,0,9,B
-Seattle Mariners,2,1,7,C
-Kansas City Royals,2,0,6,C
-Milwaukee Brewers,2,0,6,C
-San Diego Padres,2,0,6,C
-Texas Rangers,2,0,6,C
-Cincinnati Reds,1,1,4,D
-Atlanta Braves,1,0,3,D
-Boston Red Sox,1,0,3,D
-Chicago White Sox,1,0,3,D
-Cleveland Guardians,1,0,3,D
-Colorado Rockies,1,0,3,D
-Houston Astros,1,0,3,D
-Los Angeles Angels,1,0,3,D
-Los Angeles Dodgers,1,0,3,D
-New York Mets,1,0,3,D
-Oakland Athletics,1,0,3,D
-Pittsburgh Pirates,1,0,3,D
-San Francisco Giants,1,0,3,D
-St. Louis Cardinals,1,0,3,D
-Tampa Bay Rays,1,0,3,D
-Toronto Blue Jays,1,0,3,D
-Baltimore Orioles,0,0,0,F
-Miami Marlins,0,0,0,F
-Minnesota Twins,0,0,0,F
-New York Yankees,0,0,0,F
-Philadelphia Phillies,0,0,0,F
+Team,Top 100 Stamps,Later Stamps,Total Points,Rank,Grade
+Arizona Diamondbacks,10,1,55.9,1,A
+Detroit Tigers,4,4,31.2,2,A
+Toronto Blue Jays,3,4,27.0,3,A
+Chicago Cubs,3,4,25.7,4,B
+Washington Nationals,3,3,24.7,5,B
+Pittsburgh Pirates,2,5,21.8,6,B
+Baltimore Orioles,2,3,19.2,7,B
+Kansas City Royals,2,3,16.8,8,B
+Houston Astros,2,2,15.8,9,B
+San Diego Padres,2,2,15.7,10,C
+Tampa Bay Rays,3,0,15.6,11,C
+Los Angeles Dodgers,2,2,15.6,12,C
+Boston Red Sox,2,2,15.5,13,C
+St. Louis Cardinals,1,4,15.1,14,C
+Cincinnati Reds,2,2,14.8,15,C
+Miami Marlins,2,1,13.4,16,C
+Philadelphia Phillies,0,4,13.4,17,C
+Chicago White Sox,1,3,12.9,18,C
+New York Yankees,0,4,12.2,19,C
+Oakland Athletics,2,1,12.1,20,C
+New York Mets,1,2,11.8,21,C
+Seattle Mariners,2,1,11.7,22,D
+Milwaukee Brewers,2,1,11.7,23,D
+Texas Rangers,2,1,10.7,24,D
+San Francisco Giants,1,2,10.3,25,D
+Cleveland Guardians,1,2,10.1,26,D
+Colorado Rockies,2,0,9.5,27,D
+Atlanta Braves,1,2,8.8,28,F
+Los Angeles Angels,1,1,7.3,29,F
+Minnesota Twins,0,1,2.7,30,F

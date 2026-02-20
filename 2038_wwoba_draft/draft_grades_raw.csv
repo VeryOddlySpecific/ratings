@@ -1,137 +1,354 @@
 Player Name,Team,Overall Pick,Projection Rank,Delta,Stamp Type,Points,VOS Stamp
-Chris Schmelzer,Pittsburgh Pirates,1,7,-6,,0,N
-Jonathan Booth,Washington Nationals,2,3,-1,,0,N
-Josh Hamilton,Cincinnati Reds,3,4,-1,,0,N
-Skylar Meadows,Milwaukee Brewers,4,32,-28,,0,N
-Chris Lindsey,Atlanta Braves,5,5,0,Top 100,3,Y
-Mike Bettenhausen,Boston Red Sox,6,10,-4,,0,N
-Steve Burlingham,Seattle Mariners,7,29,-22,,0,N
-Randy LaMontagne,Arizona Diamondbacks,8,1,7,Top 100,3,Y
-David Tejada,Chicago White Sox,9,51,-42,,0,N
-Tito Manguina,Minnesota Twins,10,197,-187,,0,N
-Steve Huslig,San Francisco Giants,11,8,3,Top 100,3,Y
-Juan Hiles,Colorado Rockies,12,2,10,Top 100,3,Y
-Tony Glynn,Los Angeles Dodgers,13,75,-62,,0,N
-Bobby Henderson,Tampa Bay Rays,14,27,-13,,0,N
-Tim Beinborn,Houston Astros,15,18,-3,,0,N
-Steve Perry,Cleveland Guardians,16,52,-36,,0,N
-Jeff Peterson,Kansas City Royals,17,16,1,Top 100,3,Y
-Sam Lowell,Baltimore Orioles,18,56,-38,,0,N
-Jaheim Asante,Philadelphia Phillies,19,23,-4,,0,N
-Jeremy Zuccato,New York Mets,20,98,-78,,0,N
-GianCarlo Weaver,Los Angeles Angels,21,95,-74,,0,N
-Ethan Panariello,New York Yankees,22,24,-2,,0,N
-Jorge Savoy,Chicago Cubs,23,116,-93,,0,N
-Dalvinson Rice,San Diego Padres,24,30,-6,,0,N
-Dan Congdon,Texas Rangers,25,13,12,Top 100,3,Y
-Joel Fortenberry,Toronto Blue Jays,26,54,-28,,0,N
-Chris Harrison,Detroit Tigers,27,15,12,Top 100,3,Y
-Kaleb Fugate,Miami Marlins,28,63,-35,,0,N
-Zach Breeding,St. Louis Cardinals,29,26,3,Top 100,3,Y
-Mike Degand,Oakland Athletics,30,108,-78,,0,N
-Savion Smiling,Cincinnati Reds,31,47,-16,,0,N
-David Balderrama,Houston Astros,32,65,-33,,0,N
-Chris Schmidt,St. Louis Cardinals,33,130,-97,,0,N
-Vince Walton,Milwaukee Brewers,34,39,-5,,0,N
-Damani Menyweather,Seattle Mariners,35,17,18,Top 100,3,Y
-Ronnie Narcisse,Arizona Diamondbacks,36,14,22,Top 100,3,Y
-Powell Noftall,Atlanta Braves,37,398,-361,,0,N
-Ismael Barrios,Pittsburgh Pirates,38,50,-12,,0,N
-Zion Hyacinthe,Boston Red Sox,39,92,-53,,0,N
-Eric Dillard,Washington Nationals,40,57,-17,,0,N
-Brad Marriott,Chicago White Sox,41,118,-77,,0,N
-Mike Pecina,Minnesota Twins,42,109,-67,,0,N
-Kevin Carrier,San Francisco Giants,43,76,-33,,0,N
-Denim Bonaparte,Cincinnati Reds,44,321,-277,,0,N
-Nate Horton,Colorado Rockies,45,242,-197,,0,N
-Jorge Guerrero,Los Angeles Dodgers,46,173,-127,,0,N
-Esteban Ramos,Tampa Bay Rays,47,107,-60,,0,N
-Jimmy Ratliff,Houston Astros,48,100,-52,,0,N
-Jackson Shearing,Cleveland Guardians,49,21,28,Top 100,3,Y
-Kevin Kennedy,Kansas City Royals,50,6,44,Top 100,3,Y
-Dan Boren,Baltimore Orioles,51,122,-71,,0,N
-Jim LaDuke,Philadelphia Phillies,52,74,-22,,0,N
-Vince Lawhead,New York Mets,53,89,-36,,0,N
-Jonathan Harold,Los Angeles Angels,54,11,43,Top 100,3,Y
-Jeff Hutchings,New York Yankees,55,70,-15,,0,N
-Eric Alles,Chicago Cubs,56,9,47,Top 100,3,Y
-Ken Templeton,San Diego Padres,57,20,37,Top 100,3,Y
-Chris Gross,Texas Rangers,58,35,23,Top 100,3,Y
-Edgar Miranda,Toronto Blue Jays,59,44,15,Top 100,3,Y
-Kevin Tomlinson,Detroit Tigers,60,73,-13,,0,N
-Dawson Fairn,Miami Marlins,61,68,-7,,0,N
-Yanael Ayers,St. Louis Cardinals,62,132,-70,,0,N
-Bobby Rogers,Oakland Athletics,63,34,29,Top 100,3,Y
-Josh Muller,Tampa Bay Rays,64,31,33,Top 100,3,Y
-Eric Davis,New York Mets,65,79,-14,,0,N
-Briruc El Sayed,Chicago Cubs,66,22,44,Top 100,3,Y
-Chad Nelson,Miami Marlins,67,104,-37,,0,N
-Josh Brown,Milwaukee Brewers,68,28,40,Top 100,3,Y
-Chris Baker,Seattle Mariners,69,41,28,Top 100,3,Y
-Jon Foltz,Atlanta Braves,70,78,-8,,0,N
-Mike Aylsworth,Pittsburgh Pirates,71,202,-131,,0,N
-Shawn Reeves,Boston Red Sox,72,120,-48,,0,N
-Rob Henry,Washington Nationals,73,19,54,Top 100,3,Y
-Chris Hartman,Minnesota Twins,74,294,-220,,0,N
-Geoff Levie,San Francisco Giants,75,372,-297,,0,N
-Jim McCline,Cincinnati Reds,76,67,9,Top 100,3,Y
-Juan Rosa,Colorado Rockies,77,85,-8,,0,N
-Josh Sandbothe,Tampa Bay Rays,78,252,-174,,0,N
-Raynald Chardon,New York Mets,79,36,43,Top 100,3,Y
-Bob Larsen,Cleveland Guardians,80,166,-86,,0,N
-Joey Carter,Kansas City Royals,81,227,-146,,0,N
-Daniel Almendarez,Baltimore Orioles,82,123,-41,,0,N
-Greg Winman,Philadelphia Phillies,83,508,-425,,0,N
-Stephon Stallion,New York Mets,84,157,-73,,0,N
-Denym Schmitt,New York Yankees,85,129,-44,,0,N
-Mike Donald,Chicago Cubs,86,60,26,Top 100,3,Y
-Pat Franz,San Diego Padres,87,59,28,Top 100,3,Y
-Ron O'Dell,Texas Rangers,88,114,-26,,0,N
-Joel Blass,Toronto Blue Jays,89,90,-1,,0,N
-Branden Woodruff,Detroit Tigers,90,58,32,Top 100,3,Y
-Rory Schlusser,Miami Marlins,91,297,-206,,0,N
-0142 Yost,St. Louis Cardinals,92,255,-163,,0,N
-Mike Melton,Oakland Athletics,93,99,-6,,0,N
-Tim Eagan,Milwaukee Brewers,94,91,3,Top 100,3,Y
-Alfredo Perales,Seattle Mariners,95,131,-36,,0,N
-Chris Alvarado,Arizona Diamondbacks,96,45,51,Top 100,3,Y
-Walton Linttell,Atlanta Braves,97,113,-16,,0,N
-Dane Barrett,Pittsburgh Pirates,98,127,-29,,0,N
-Sam Marotta,Boston Red Sox,99,80,19,Top 100,3,Y
-Dave Brunner,Washington Nationals,100,25,75,Top 100,3,Y
-Davon Adomako,Chicago White Sox,101,152,-51,,0,N
-Chris Zastrow,Minnesota Twins,102,514,-412,,0,N
-Andy Austin,San Francisco Giants,103,121,-18,,0,N
-Ben DiPadova,Cincinnati Reds,104,106,-2,,0,N
-Mike Adkins,Colorado Rockies,105,238,-133,,0,N
-Andy Faris,Los Angeles Dodgers,106,82,24,Top 100,3,Y
-Chris Moffett,Tampa Bay Rays,107,137,-30,,0,N
-Dave Waite,Houston Astros,108,69,39,Top 100,3,Y
-Josh Morris,Cleveland Guardians,109,145,-36,,0,N
-Chris Simpson,Kansas City Royals,110,275,-165,,0,N
-Doug Canoy,Baltimore Orioles,111,232,-121,,0,N
-Ricky Kimrey,Philadelphia Phillies,112,205,-93,,0,N
-Jim Schrader,New York Mets,113,360,-247,,0,N
-Jeremy Belmont,New York Yankees,114,412,-298,,0,N
-Mike Flood,Chicago Cubs,115,245,-130,,0,N
-Eric Doherty,San Diego Padres,116,211,-95,,0,N
-Caleb Mull,Texas Rangers,117,183,-66,,0,N
-Eloy Adame,Toronto Blue Jays,118,185,-67,,0,N
-Holgar Jaspersen,Detroit Tigers,119,55,64,Top 100,3,Y
-Vince Green,Miami Marlins,120,168,-48,,0,N
-Josue Gabriel Jolly,St. Louis Cardinals,121,348,-227,,0,N
-Ben Pizzo,Oakland Athletics,122,385,-263,,0,N
-Arturo Zavala,Milwaukee Brewers,123,317,-194,,0,N
-Steve Braden,Seattle Mariners,124,102,22,Later,1,Y
-Jimmy Holley,Arizona Diamondbacks,125,46,79,Top 100,3,Y
-Savion Swait,Atlanta Braves,126,293,-167,,0,N
-Ron Peluso,Pittsburgh Pirates,127,71,56,Top 100,3,Y
-Nate Powers,Boston Red Sox,128,241,-113,,0,N
-Danny Leger,Washington Nationals,129,38,91,Top 100,3,Y
-Ronnie Burke,Chicago White Sox,130,49,81,Top 100,3,Y
-Mj Deutsch,Minnesota Twins,131,437,-306,,0,N
-Elwood Horswill,San Francisco Giants,132,190,-58,,0,N
-Phil Vice,Cincinnati Reds,133,101,32,Later,1,Y
-Phil Horn,Colorado Rockies,134,40,94,Top 100,3,Y
-Slothing Tiemann,Los Angeles Dodgers,135,225,-90,,0,N
-C.J. Henley,Tampa Bay Rays,136,322,-186,,0,N
+Chris Schmelzer,Pittsburgh Pirates,1,7,-6,,0.0,N
+Jonathan Booth,Washington Nationals,2,3,-1,,0.0,N
+Josh Hamilton,Cincinnati Reds,3,4,-1,,0.0,N
+Skylar Meadows,Milwaukee Brewers,4,32,-28,,0.0,N
+Chris Lindsey,Atlanta Braves,5,5,0,Top 100,3.0,Y
+Mike Bettenhausen,Boston Red Sox,6,10,-4,,0.0,N
+Steve Burlingham,Seattle Mariners,7,29,-22,,0.0,N
+Randy LaMontagne,Arizona Diamondbacks,8,1,7,Top 100,4.039720770839918,Y
+David Tejada,Chicago White Sox,9,51,-42,,0.0,N
+Tito Manguina,Minnesota Twins,10,197,-187,,0.0,N
+Steve Huslig,San Francisco Giants,11,8,3,Top 100,3.6931471805599454,Y
+Juan Hiles,Colorado Rockies,12,2,10,Top 100,4.198947636399185,Y
+Tony Glynn,Los Angeles Dodgers,13,75,-62,,0.0,N
+Bobby Henderson,Tampa Bay Rays,14,27,-13,,0.0,N
+Tim Beinborn,Houston Astros,15,18,-3,,0.0,N
+Steve Perry,Cleveland Guardians,16,52,-36,,0.0,N
+Jeff Peterson,Kansas City Royals,17,16,1,Top 100,3.3465735902799727,Y
+Sam Lowell,Baltimore Orioles,18,56,-38,,0.0,N
+Jaheim Asante,Philadelphia Phillies,19,23,-4,,0.0,N
+Jeremy Zuccato,New York Mets,20,98,-78,,0.0,N
+GianCarlo Weaver,Los Angeles Angels,21,95,-74,,0.0,N
+Ethan Panariello,New York Yankees,22,24,-2,,0.0,N
+Jorge Savoy,Chicago Cubs,23,116,-93,,0.0,N
+Dalvinson Rice,San Diego Padres,24,30,-6,,0.0,N
+Dan Congdon,Texas Rangers,25,13,12,Top 100,4.282474678730768,Y
+Joel Fortenberry,Toronto Blue Jays,26,54,-28,,0.0,N
+Chris Harrison,Detroit Tigers,27,15,12,Top 100,4.282474678730768,Y
+Kaleb Fugate,Miami Marlins,28,63,-35,,0.0,N
+Zach Breeding,St. Louis Cardinals,29,26,3,Top 100,3.6931471805599454,Y
+Mike Degand,Oakland Athletics,30,108,-78,,0.0,N
+Savion Smiling,Cincinnati Reds,31,47,-16,,0.0,N
+David Balderrama,Houston Astros,32,65,-33,,0.0,N
+Chris Schmidt,St. Louis Cardinals,33,130,-97,,0.0,N
+Vince Walton,Milwaukee Brewers,34,39,-5,,0.0,N
+Damani Menyweather,Seattle Mariners,35,17,18,Top 100,4.47221948958322,Y
+Ronnie Narcisse,Arizona Diamondbacks,36,14,22,Top 100,4.567747107964575,Y
+Powell Noftall,Atlanta Braves,37,398,-361,,0.0,N
+Ismael Barrios,Pittsburgh Pirates,38,50,-12,,0.0,N
+Zion Hyacinthe,Boston Red Sox,39,92,-53,,0.0,N
+Eric Dillard,Washington Nationals,40,57,-17,,0.0,N
+Brad Marriott,Chicago White Sox,41,118,-77,,0.0,N
+Mike Pecina,Minnesota Twins,42,109,-67,,0.0,N
+Kevin Carrier,San Francisco Giants,43,76,-33,,0.0,N
+Denim Bonaparte,Cincinnati Reds,44,321,-277,,0.0,N
+Nate Horton,Colorado Rockies,45,242,-197,,0.0,N
+Jorge Guerrero,Los Angeles Dodgers,46,173,-127,,0.0,N
+Esteban Ramos,Tampa Bay Rays,47,107,-60,,0.0,N
+Jimmy Ratliff,Houston Astros,48,100,-52,,0.0,N
+Jackson Shearing,Cleveland Guardians,49,21,28,Top 100,4.683647914993237,Y
+Kevin Kennedy,Kansas City Royals,50,6,44,Top 100,4.90333124488516,Y
+Dan Boren,Baltimore Orioles,51,122,-71,,0.0,N
+Jim LaDuke,Philadelphia Phillies,52,74,-22,,0.0,N
+Vince Lawhead,New York Mets,53,89,-36,,0.0,N
+Jonathan Harold,Los Angeles Angels,54,11,43,Top 100,4.892094816959131,Y
+Jeff Hutchings,New York Yankees,55,70,-15,,0.0,N
+Eric Alles,Chicago Cubs,56,9,47,Top 100,4.935600505453945,Y
+Ken Templeton,San Diego Padres,57,20,37,Top 100,4.818793079863193,Y
+Chris Gross,Texas Rangers,58,35,23,Top 100,4.589026915173973,Y
+Edgar Miranda,Toronto Blue Jays,59,44,15,Top 100,4.386294361119891,Y
+Kevin Tomlinson,Detroit Tigers,60,73,-13,,0.0,N
+Dawson Fairn,Miami Marlins,61,68,-7,,0.0,N
+Yanael Ayers,St. Louis Cardinals,62,132,-70,,0.0,N
+Bobby Rogers,Oakland Athletics,63,34,29,Top 100,4.700598690831078,Y
+Josh Muller,Tampa Bay Rays,64,31,33,Top 100,4.763180262308081,Y
+Eric Davis,New York Mets,65,79,-14,,0.0,N
+Briruc El Sayed,Chicago Cubs,66,22,44,Top 100,4.90333124488516,Y
+Chad Nelson,Miami Marlins,67,104,-37,,0.0,N
+Josh Brown,Milwaukee Brewers,68,28,40,Top 100,4.856786033352154,Y
+Chris Baker,Seattle Mariners,69,41,28,Top 100,4.683647914993237,Y
+Jon Foltz,Atlanta Braves,70,78,-8,,0.0,N
+Mike Aylsworth,Pittsburgh Pirates,71,202,-131,,0.0,N
+Shawn Reeves,Boston Red Sox,72,120,-48,,0.0,N
+Rob Henry,Washington Nationals,73,19,54,Top 100,5.003666592616236,Y
+Chris Hartman,Minnesota Twins,74,294,-220,,0.0,N
+Geoff Levie,San Francisco Giants,75,372,-297,,0.0,N
+Jim McCline,Cincinnati Reds,76,67,9,Top 100,4.151292546497023,Y
+Juan Rosa,Colorado Rockies,77,85,-8,,0.0,N
+Josh Sandbothe,Tampa Bay Rays,78,252,-174,,0.0,N
+Raynald Chardon,New York Mets,79,36,43,Top 100,4.892094816959131,Y
+Bob Larsen,Cleveland Guardians,80,166,-86,,0.0,N
+Joey Carter,Kansas City Royals,81,227,-146,,0.0,N
+Daniel Almendarez,Baltimore Orioles,82,123,-41,,0.0,N
+Greg Winman,Philadelphia Phillies,83,508,-425,,0.0,N
+Stephon Stallion,New York Mets,84,157,-73,,0.0,N
+Denym Schmitt,New York Yankees,85,129,-44,,0.0,N
+Mike Donald,Chicago Cubs,86,60,26,Top 100,4.647918433002165,Y
+Pat Franz,San Diego Padres,87,59,28,Top 100,4.683647914993237,Y
+Ron O'Dell,Texas Rangers,88,114,-26,,0.0,N
+Joel Blass,Toronto Blue Jays,89,90,-1,,0.0,N
+Branden Woodruff,Detroit Tigers,90,58,32,Top 100,4.74825378073324,Y
+Rory Schlusser,Miami Marlins,91,297,-206,,0.0,N
+0142 Yost,St. Louis Cardinals,92,255,-163,,0.0,N
+Mike Melton,Oakland Athletics,93,99,-6,,0.0,N
+Tim Eagan,Milwaukee Brewers,94,91,3,Top 100,3.6931471805599454,Y
+Alfredo Perales,Seattle Mariners,95,131,-36,,0.0,N
+Chris Alvarado,Arizona Diamondbacks,96,45,51,Top 100,4.9756218592907135,Y
+Walton Linttell,Atlanta Braves,97,113,-16,,0.0,N
+Dane Barrett,Pittsburgh Pirates,98,127,-29,,0.0,N
+Sam Marotta,Boston Red Sox,99,80,19,Top 100,4.497866136776995,Y
+Dave Brunner,Washington Nationals,100,25,75,Top 100,5.1653666701431655,Y
+Davon Adomako,Chicago White Sox,101,152,-51,,0.0,N
+Chris Zastrow,Minnesota Twins,102,514,-412,,0.0,N
+Andy Austin,San Francisco Giants,103,121,-18,,0.0,N
+Ben DiPadova,Cincinnati Reds,104,106,-2,,0.0,N
+Mike Adkins,Colorado Rockies,105,238,-133,,0.0,N
+Andy Faris,Los Angeles Dodgers,106,82,24,Top 100,4.6094379124341005,Y
+Chris Moffett,Tampa Bay Rays,107,137,-30,,0.0,N
+Dave Waite,Houston Astros,108,69,39,Top 100,4.844439727056968,Y
+Josh Morris,Cleveland Guardians,109,145,-36,,0.0,N
+Chris Simpson,Kansas City Royals,110,275,-165,,0.0,N
+Doug Canoy,Baltimore Orioles,111,232,-121,,0.0,N
+Ricky Kimrey,Philadelphia Phillies,112,205,-93,,0.0,N
+Jim Schrader,New York Mets,113,360,-247,,0.0,N
+Jeremy Belmont,New York Yankees,114,412,-298,,0.0,N
+Mike Flood,Chicago Cubs,115,245,-130,,0.0,N
+Eric Doherty,San Diego Padres,116,211,-95,,0.0,N
+Caleb Mull,Texas Rangers,117,183,-66,,0.0,N
+Eloy Adame,Toronto Blue Jays,118,185,-67,,0.0,N
+Holgar Jaspersen,Detroit Tigers,119,55,64,Top 100,5.087193634947818,Y
+Vince Green,Miami Marlins,120,168,-48,,0.0,N
+Josue Gabriel Jolly,St. Louis Cardinals,121,348,-227,,0.0,N
+Ben Pizzo,Oakland Athletics,122,385,-263,,0.0,N
+Arturo Zavala,Milwaukee Brewers,123,317,-194,,0.0,N
+Steve Braden,Seattle Mariners,124,102,22,Later,2.567747107964575,Y
+Jimmy Holley,Arizona Diamondbacks,125,46,79,Top 100,5.191013317336941,Y
+Savion Swait,Atlanta Braves,126,293,-167,,0.0,N
+Ron Peluso,Pittsburgh Pirates,127,71,56,Top 100,5.021525633917275,Y
+Nate Powers,Boston Red Sox,128,241,-113,,0.0,N
+Danny Leger,Washington Nationals,129,38,91,Top 100,5.26089428852452,Y
+Ronnie Burke,Chicago White Sox,130,49,81,Top 100,5.203359623632126,Y
+Mj Deutsch,Minnesota Twins,131,437,-306,,0.0,N
+Elwood Horswill,San Francisco Giants,132,190,-58,,0.0,N
+Phil Vice,Cincinnati Reds,133,101,32,Later,2.74825378073324,Y
+Phil Horn,Colorado Rockies,134,40,94,Top 100,5.276938445800271,Y
+Slothing Tiemann,Los Angeles Dodgers,135,225,-90,,0.0,N
+C.J. Henley,Tampa Bay Rays,136,322,-186,,0.0,N
+Steve Sutton,Houston Astros,137,94,43,Top 100,4.892094816959131,Y
+Jesus Jaquez,Cleveland Guardians,138,125,13,Later,2.3195286648076294,Y
+Juan Aquino,Kansas City Royals,139,156,-17,,0.0,N
+Steve Guerrero,Baltimore Orioles,140,133,7,Later,2.039720770839918,Y
+Ron Mercado,Philadelphia Phillies,141,163,-22,,0.0,N
+Nate Wright,New York Mets,142,313,-171,,0.0,N
+Nate Morningstar,Los Angeles Angels,143,559,-416,,0.0,N
+Danny Walker,New York Yankees,144,364,-220,,0.0,N
+Marc Mondt,Chicago Cubs,145,430,-285,,0.0,N
+Josh Lauterwasser,San Diego Padres,146,159,-13,,0.0,N
+Bobby Yankow,Texas Rangers,147,353,-206,,0.0,N
+Flint Shilvock,Toronto Blue Jays,148,48,100,Top 100,5.307560258420629,Y
+Leckster Stricklin,Detroit Tigers,149,135,14,Later,2.3540251005511053,Y
+Jonathan DiMartino,Miami Marlins,150,72,78,Top 100,5.184723926233511,Y
+Mike Palmer,St. Louis Cardinals,151,103,48,Later,2.9459101490553135,Y
+Josh Mueller,Oakland Athletics,152,43,109,Top 100,5.350240182896208,Y
+Joe Anderson,Milwaukee Brewers,153,154,-1,,0.0,N
+Jeremy Walters,Seattle Mariners,154,299,-145,,0.0,N
+Dave Anderson,Arizona Diamondbacks,155,33,122,Top 100,5.406092177686208,Y
+Brad Dunn,Atlanta Braves,156,182,-26,,0.0,N
+Mike Jordan,Pittsburgh Pirates,157,87,70,Top 100,5.131339938520657,Y
+Tommie Nemeth,Boston Red Sox,158,42,116,Top 100,5.381086967398878,Y
+Eric Findley,Washington Nationals,159,112,47,Later,2.9356005054539454,Y
+Josh Westwood,Chicago White Sox,160,204,-44,,0.0,N
+Jaquan Voltaire,Minnesota Twins,161,489,-328,,0.0,N
+Brad Light,San Francisco Giants,162,447,-285,,0.0,N
+Joe Schmucker,Cincinnati Reds,163,86,77,Top 100,5.178354413344795,Y
+Steve Diamond,Colorado Rockies,164,215,-51,,0.0,N
+Luis Almonte,Los Angeles Dodgers,165,148,17,Later,2.4451858789480823,Y
+Sam O'Donnell,Tampa Bay Rays,166,62,104,Top 100,5.326980175078761,Y
+Tony Lovelace,Houston Astros,167,371,-204,,0.0,N
+Josh Stanley,Cleveland Guardians,168,219,-51,,0.0,N
+Zach Regan,Kansas City Royals,169,336,-167,,0.0,N
+Sergio Cervantes,Baltimore Orioles,170,77,93,Top 100,5.2716473911350015,Y
+Randy Carpenter,Philadelphia Phillies,171,203,-32,,0.0,N
+Josh King,New York Mets,172,524,-352,,0.0,N
+Chris Mazzone,Los Angeles Angels,173,369,-196,,0.0,N
+Ian Booth,New York Yankees,174,155,19,Later,2.497866136776995,Y
+Athos McGee,Chicago Cubs,175,311,-136,,0.0,N
+Chris Caraballo,San Diego Padres,176,177,-1,,0.0,N
+Kymani Polite,Texas Rangers,177,229,-52,,0.0,N
+Steve Moore,Toronto Blue Jays,178,469,-291,,0.0,N
+Jon Schmitt,Detroit Tigers,179,653,-474,,0.0,N
+Fidel Cabrera,Miami Marlins,180,262,-82,,0.0,N
+Steve Bitner,St. Louis Cardinals,181,143,38,Later,2.831780823064823,Y
+Sean Wortman,Oakland Athletics,182,264,-82,,0.0,N
+Ron Solomon,Milwaukee Brewers,183,117,66,Later,3.102346309695483,Y
+Steve Ferguson,Seattle Mariners,184,350,-166,,0.0,N
+Cody Ewin,Arizona Diamondbacks,185,37,148,Top 100,5.501973152972729,Y
+Ian Kemp,Atlanta Braves,186,471,-285,,0.0,N
+Mike Daly,Pittsburgh Pirates,187,187,0,Later,1.0,Y
+Dylan Bowen,Boston Red Sox,188,721,-533,,0.0,N
+Ron Rounsifer,Washington Nationals,189,346,-157,,0.0,N
+Ricky Coulter,Chicago White Sox,190,449,-259,,0.0,N
+Josh McLaren,Minnesota Twins,191,298,-107,,0.0,N
+Jon Olson,San Francisco Giants,192,224,-32,,0.0,N
+Payton Blashill,Cincinnati Reds,193,165,28,Later,2.6836479149932373,Y
+Billy Bassani,Colorado Rockies,194,375,-181,,0.0,N
+Mike Newkirk,Los Angeles Dodgers,195,83,112,Top 100,5.36369390935617,Y
+Tim Horsley,Tampa Bay Rays,196,304,-108,,0.0,N
+Luis Villa,Houston Astros,197,172,25,Later,2.629048269010741,Y
+Jim Harter,Cleveland Guardians,198,257,-59,,0.0,N
+Kevin Dach,Kansas City Royals,199,191,8,Later,2.09861228866811,Y
+Eric Shive,Baltimore Orioles,200,12,188,Top 100,5.620873507529821,Y
+Reagan Park,Philadelphia Phillies,201,110,91,Later,3.2608942885245202,Y
+Nelson Flores,New York Mets,202,450,-248,,0.0,N
+S A Fredell,Los Angeles Angels,203,494,-291,,0.0,N
+Chris Monson,New York Yankees,204,343,-139,,0.0,N
+Bubba Novak,Chicago Cubs,205,158,47,Later,2.9356005054539454,Y
+Jim Garza,San Diego Padres,206,141,65,Later,3.0948273710132126,Y
+Jared Machell,Texas Rangers,207,358,-151,,0.0,N
+Jonathan Campbell,Toronto Blue Jays,208,181,27,Later,2.666102255087602,Y
+Pat Schroeder,Detroit Tigers,209,261,-52,,0.0,N
+Milt Rookard,Miami Marlins,210,184,26,Later,2.6479184330021646,Y
+David Covarrubias,St. Louis Cardinals,211,144,67,Later,3.1097538525880535,Y
+Art Hoover,Oakland Athletics,212,596,-384,,0.0,N
+Nelson de la Paz,Milwaukee Brewers,213,517,-304,,0.0,N
+Zaire Carthan,Seattle Mariners,214,347,-133,,0.0,N
+Eddie Miller,Arizona Diamondbacks,215,53,162,Top 100,5.546875100403382,Y
+Julio Amalla,Atlanta Braves,216,150,66,Later,3.102346309695483,Y
+Johnny Haley,Pittsburgh Pirates,217,207,10,Later,2.1989476363991853,Y
+Julio Rivera,Boston Red Sox,218,186,32,Later,2.74825378073324,Y
+Joe London,Washington Nationals,219,342,-123,,0.0,N
+Billy Satterwhite,Chicago White Sox,220,474,-254,,0.0,N
+Luis Licea,Minnesota Twins,221,194,27,Later,2.666102255087602,Y
+Rob Weikel,San Francisco Giants,222,397,-175,,0.0,N
+Joe Rendleman,Cincinnati Reds,223,512,-289,,0.0,N
+Ron DeMoss,Colorado Rockies,224,394,-170,,0.0,N
+Rogelio Meza,Los Angeles Dodgers,225,335,-110,,0.0,N
+Brendan Vischer,Tampa Bay Rays,226,328,-102,,0.0,N
+Greg Bendersky,Houston Astros,227,334,-107,,0.0,N
+Josh Franks,Cleveland Guardians,228,498,-270,,0.0,N
+Wilford Hoffe,Kansas City Royals,229,239,-10,,0.0,N
+Luigi Danilo Kennard,Baltimore Orioles,230,164,66,Later,3.102346309695483,Y
+Phil Grigg,Philadelphia Phillies,231,310,-79,,0.0,N
+Shamar Etienne,New York Mets,232,115,117,Later,3.3853423122328326,Y
+Chad Daniels,Los Angeles Angels,233,217,16,Later,2.416606672028108,Y
+Jaquan Vaughns,New York Yankees,234,128,106,Later,3.336414417230953,Y
+Johnny Sanderson,Chicago Cubs,235,228,7,Later,2.039720770839918,Y
+Jeff Wilson,San Diego Padres,236,170,66,Later,3.102346309695483,Y
+Zenon Vulaj,Texas Rangers,237,356,-119,,0.0,N
+Andy Keel,Toronto Blue Jays,238,175,63,Later,3.0794415416798357,Y
+Chris Zacherl,Detroit Tigers,239,208,31,Later,2.7328679513998635,Y
+Glen Kuebler,Miami Marlins,240,81,159,Top 100,5.537586907616913,Y
+Josh Ajax,St. Louis Cardinals,241,413,-172,,0.0,N
+Amari Wilbon,Oakland Athletics,242,538,-296,,0.0,N
+Jamie Drake,Milwaukee Brewers,243,374,-131,,0.0,N
+Sergio Contreras,Seattle Mariners,244,379,-135,,0.0,N
+Josh Justice,Arizona Diamondbacks,245,66,179,Top 100,5.596478425445105,Y
+Tim Griffin,Atlanta Braves,246,376,-130,,0.0,N
+Kevin Streeter,Pittsburgh Pirates,247,233,14,Later,2.3540251005511053,Y
+Steve Anderson,Boston Red Sox,248,332,-84,,0.0,N
+Kevin Campos,Washington Nationals,249,292,-43,,0.0,N
+Danny Curry,Chicago White Sox,250,246,4,Later,1.8047189562170503,Y
+Ben Stroupe,Minnesota Twins,251,476,-225,,0.0,N
+Sean Christopherson,San Francisco Giants,252,288,-36,,0.0,N
+Steve Scarano,Cincinnati Reds,253,377,-124,,0.0,N
+Gregorio Cabrera,Colorado Rockies,254,280,-26,,0.0,N
+Kody Taylor,Los Angeles Dodgers,255,368,-113,,0.0,N
+Eric Willard,Tampa Bay Rays,256,96,160,Top 100,5.540702182492232,Y
+Greg Dodson,Houston Astros,257,384,-127,,0.0,N
+Luis Trevizo,Cleveland Guardians,258,195,63,Later,3.0794415416798357,Y
+Bert Granda,Kansas City Royals,259,206,53,Later,2.9944920232821373,Y
+Mike Schutter,Baltimore Orioles,260,271,-11,,0.0,N
+Gio Vaulx,Philadelphia Phillies,261,124,137,Later,3.4636268425786025,Y
+Oro Centeno,New York Mets,262,686,-424,,0.0,N
+Jim Collins,Los Angeles Angels,263,560,-297,,0.0,N
+Jake Hartgrove,New York Yankees,264,446,-182,,0.0,N
+C.J. Baxter,Chicago Cubs,265,162,103,Later,3.3221954495706862,Y
+Daniel Samudio,San Diego Padres,266,312,-46,,0.0,N
+Josh Kenyon,Texas Rangers,267,562,-295,,0.0,N
+Winton Noftall,Toronto Blue Jays,268,189,79,Later,3.1910133173369406,Y
+Alejandro Flores,Detroit Tigers,269,88,181,Top 100,5.602003343538398,Y
+Omari Cheatem,Miami Marlins,270,283,-13,,0.0,N
+Jeff Baker,St. Louis Cardinals,271,414,-143,,0.0,N
+Renji Hatfield,Oakland Athletics,272,363,-91,,0.0,N
+Jonathan Vernon,Milwaukee Brewers,273,451,-178,,0.0,N
+Mitch Eaton,Seattle Mariners,274,407,-133,,0.0,N
+J.J. Moyer,Arizona Diamondbacks,275,61,214,Top 100,5.685319014063831,Y
+Gene Laday,Atlanta Braves,276,359,-83,,0.0,N
+Ward Peternek,Pittsburgh Pirates,277,626,-349,,0.0,N
+Darnell Baptiste,Boston Red Sox,278,235,43,Later,2.8920948169591307,Y
+Bobby Fithian,Washington Nationals,279,223,56,Later,3.021525633917275,Y
+Kierin Laupp,Chicago White Sox,280,243,37,Later,2.818793079863193,Y
+Butch Aldrich,Minnesota Twins,281,735,-454,,0.0,N
+Tim Holder,San Francisco Giants,282,180,102,Later,3.317364494114818,Y
+Julio Castillo,Cincinnati Reds,283,387,-104,,0.0,N
+Bobby Humeston,Colorado Rockies,284,671,-387,,0.0,N
+Amari Kenion,Los Angeles Dodgers,285,210,75,Later,3.1653666701431655,Y
+Tyrese Bethea,Tampa Bay Rays,286,640,-354,,0.0,N
+Federico Miranda,Houston Astros,287,427,-140,,0.0,N
+Greg Thomas,Cleveland Guardians,288,452,-164,,0.0,N
+Ben Westover,Kansas City Royals,289,462,-173,,0.0,N
+Chris Huddleston,Baltimore Orioles,290,509,-219,,0.0,N
+Freddie Joyner,Philadelphia Phillies,291,234,57,Later,3.0302215052732095,Y
+J.D. Nunley,New York Mets,292,139,153,Later,3.5184763012068148,Y
+Manolfi Connelly,Los Angeles Angels,293,351,-58,,0.0,N
+Linvel Swanson,New York Yankees,294,226,68,Later,3.11705325229863,Y
+Bayani Albio,Chicago Cubs,295,247,48,Later,2.9459101490553135,Y
+Geoff Burke,San Diego Padres,296,457,-161,,0.0,N
+Braiden Gelineau,Texas Rangers,297,613,-316,,0.0,N
+Andy Harding,Toronto Blue Jays,298,84,214,Top 100,5.685319014063831,Y
+Walt Powell,Detroit Tigers,299,179,120,Later,3.3978952727983707,Y
+Chris Coleman,Miami Marlins,300,525,-225,,0.0,N
+Reub Costanzo,St. Louis Cardinals,301,282,19,Later,2.497866136776995,Y
+David Holgin,Oakland Athletics,302,597,-295,,0.0,N
+Eric Mills,Milwaukee Brewers,303,467,-164,,0.0,N
+Dusty Diorio,Seattle Mariners,304,520,-216,,0.0,N
+Jeff Cook,Arizona Diamondbacks,305,111,194,Later,3.6364997792818734,Y
+Juan Guerrero,Atlanta Braves,306,608,-302,,0.0,N
+Omari Amoah,Pittsburgh Pirates,307,289,18,Later,2.47221948958322,Y
+Joe Noud,Boston Red Sox,308,340,-32,,0.0,N
+Josh Faucett,Washington Nationals,309,338,-29,,0.0,N
+Chris Conley,Chicago White Sox,310,702,-392,,0.0,N
+Jim Hodges,Minnesota Twins,311,795,-484,,0.0,N
+Chris Gardner,San Francisco Giants,312,218,94,Later,3.2769384458002704,Y
+Irwin Sweetland,Cincinnati Reds,313,431,-118,,0.0,N
+Ernesto Camargo,Colorado Rockies,314,493,-179,,0.0,N
+Dane Ray,Los Angeles Dodgers,315,426,-111,,0.0,N
+Steve Stuart,Tampa Bay Rays,316,463,-147,,0.0,N
+Jimmy Casterline,Houston Astros,317,753,-436,,0.0,N
+Juan Pacheco,Cleveland Guardians,318,694,-376,,0.0,N
+Stu Castaldi,Kansas City Royals,319,171,148,Later,3.5019731529727296,Y
+Bobby Rauscher,Baltimore Orioles,320,444,-124,,0.0,N
+Arturo Monroy,Philadelphia Phillies,321,140,181,Later,3.6020033435383976,Y
+Chris Barnes,New York Mets,322,844,-522,,0.0,N
+Muscle Kurth,Los Angeles Angels,323,367,-44,,0.0,N
+Chris Abella,New York Yankees,324,236,88,Later,3.24431818486607,Y
+Alfredo Fuentes,Chicago Cubs,325,648,-323,,0.0,N
+Ken Alberts,San Diego Padres,326,656,-330,,0.0,N
+Jim Piazza,Texas Rangers,327,323,4,Later,1.8047189562170503,Y
+A.J. Drake,Toronto Blue Jays,328,300,28,Later,2.6836479149932373,Y
+Bobby Minton,Detroit Tigers,329,281,48,Later,2.9459101490553135,Y
+Vicente Meneses,Miami Marlins,330,539,-209,,0.0,N
+L.L. Elam,St. Louis Cardinals,331,357,-26,,0.0,N
+Amari Guydon,Oakland Athletics,332,325,7,Later,2.039720770839918,Y
+Tommy Grier,Milwaukee Brewers,333,776,-443,,0.0,N
+Zion Latney,Seattle Mariners,334,434,-100,,0.0,N
+Mike Vogel,Arizona Diamondbacks,335,97,238,Top 100,5.7382317759657555,Y
+Mike Starcher,Atlanta Braves,336,308,28,Later,2.6836479149932373,Y
+Jace Bunzey,Pittsburgh Pirates,337,149,188,Later,3.6208735075298213,Y
+Jonathan Hoekstra,Boston Red Sox,338,400,-62,,0.0,N
+Danny Canfield,Washington Nationals,339,231,108,Later,3.3456739411145717,Y
+Steve Mullen,Chicago White Sox,340,272,68,Later,3.11705325229863,Y
+TreSean Meriwether,Minnesota Twins,341,386,-45,,0.0,N
+Phil Gravely,San Francisco Giants,342,370,-28,,0.0,N
+Sean Gellatly,Cincinnati Reds,343,669,-326,,0.0,N
+Joe Dahl,Colorado Rockies,344,537,-193,,0.0,N
+Josh Haferkamp,Los Angeles Dodgers,345,460,-115,,0.0,N
+Steve DiMiceli,Tampa Bay Rays,346,439,-93,,0.0,N
+Terrell McCallop,Houston Astros,347,230,117,Later,3.3853423122328326,Y
+Jim Andrews,Cleveland Guardians,348,543,-195,,0.0,N
+Terrell Quashie,Kansas City Royals,349,546,-197,,0.0,N
+Jadon Diah,Baltimore Orioles,350,268,82,Later,3.209420303898299,Y
+Bob West,Philadelphia Phillies,351,408,-57,,0.0,N
+Kymani Tesfaye,New York Mets,352,615,-263,,0.0,N
+Marc McWhorter,Los Angeles Angels,353,801,-448,,0.0,N

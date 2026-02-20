@@ -4,12 +4,16 @@ Draft Grades - Compares draft results to VOS draft pool projections.
 Reads draft_pool.md (or 05_draft_pool.md) from a directory, fetches current draft
 status from the league API, and awards "VOS Stamps" when a player is drafted at
 or after their projection. Top-100 projected players earn 3 points per stamp;
-later projections earn 1 point each. Grades A–F are assigned by percentile rank
-(relative to the league): top 10% = A, next 20% = B, next 40% = C, next 20% = D, bottom 10% = F.
+later projections earn 1 point each. A log-scaled bonus is added for how late
+they were taken (delta = pick - projection), so steals add value without one
+pick dominating. Reaches get 0 points (no penalty). Grades A–F are assigned by
+percentile rank (relative to the league): top 10% = A, next 20% = B, next 40% = C,
+next 20% = D, bottom 10% = F.
 """
 
 import argparse
 import csv
+import math
 import sys
 from pathlib import Path
 from typing import Dict, List, Optional
@@ -22,6 +26,8 @@ DEFAULT_API_URL = "https://atl-01.statsplus.net/wwoba/api/draft/"
 TOP_PROJECTION_CAP = 100
 POINTS_TOP_100 = 3
 POINTS_LATER = 1
+# Log-scaled bonus for delta (pick - projection); only for stamps. Prevents one big steal from dominating.
+DELTA_LOG_SCALE = 0.5
 
 # Percentile-based grading (relative to league): top 10% = A, next 20% = B, next 40% = C, next 20% = D, bottom 10% = F
 # Uses percentile rank: best team = 0th percentile, worst = 100th. Grade by cumulative cutoff.
@@ -148,15 +154,17 @@ def compare_draft_to_projections(
                     projection = r
                     break
         delta = (overall - projection) if projection is not None else None
-        # Stamps: at or after projection. Top 100 = 3 pts, later = 1 pt.
-        points = 0
+        # Stamps: at or after projection. Base pts + log-scaled delta bonus (reaches get 0, no penalty).
+        points = 0.0
         stamp_type = ""
         if projection is not None and overall >= projection:
+            safe_delta = max(0, delta if delta is not None else 0)
+            log_bonus = DELTA_LOG_SCALE * math.log(1 + safe_delta)
             if projection <= TOP_PROJECTION_CAP:
-                points = POINTS_TOP_100
+                points = POINTS_TOP_100 + log_bonus
                 stamp_type = "Top 100"
             else:
-                points = POINTS_LATER
+                points = POINTS_LATER + log_bonus
                 stamp_type = "Later"
         results.append({
             "Player Name": name,
@@ -173,15 +181,15 @@ def compare_draft_to_projections(
 
 def aggregate_by_team(rows: List[Dict]) -> Dict[str, Dict]:
     """Per team: total points, top-100 stamp count, later stamp count. All teams that drafted appear."""
-    # team -> {"points", "top_100", "later"}
-    by_team: Dict[str, Dict[str, int]] = {}
+    # team -> {"points", "top_100", "later"} (points may be float due to log delta bonus)
+    by_team: Dict[str, Dict] = {}
     for r in rows:
         team = (r.get("Team") or "").strip()
         if not team:
             continue
         if team not in by_team:
-            by_team[team] = {"points": 0, "top_100": 0, "later": 0}
-        pt = int(r.get("Points") or 0)
+            by_team[team] = {"points": 0.0, "top_100": 0, "later": 0}
+        pt = float(r.get("Points") or 0)
         by_team[team]["points"] += pt
         if r.get("Stamp Type") == "Top 100":
             by_team[team]["top_100"] += 1
@@ -243,7 +251,7 @@ def write_summary(team_data: Dict[str, Dict], path: Path) -> None:
             "Team": team,
             "Top 100 Stamps": data["top_100"],
             "Later Stamps": data["later"],
-            "Total Points": data["points"],
+            "Total Points": round(data["points"], 1),
             "Rank": info.get("rank", ""),
             "Grade": info.get("grade", "F"),
         })
@@ -317,8 +325,8 @@ def main() -> None:
     rows = compare_draft_to_projections(draft_rows, name_to_rank)
     top100_count = sum(1 for r in rows if r.get("Stamp Type") == "Top 100")
     later_count = sum(1 for r in rows if r.get("Stamp Type") == "Later")
-    total_pts = sum(int(r.get("Points") or 0) for r in rows)
-    print(f"  Stamps: {top100_count} top-100 (3 pts each), {later_count} later (1 pt each). Total points: {total_pts}.")
+    total_pts = sum(float(r.get("Points") or 0) for r in rows)
+    print(f"  Stamps: {top100_count} top-100 (3 pts each), {later_count} later (1 pt each). Total points: {total_pts:.1f}.")
 
     team_data = aggregate_by_team(rows)
     output_dir.mkdir(parents=True, exist_ok=True)
