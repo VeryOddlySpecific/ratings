@@ -6,9 +6,8 @@ status from the league API, and awards "VOS Stamps" when a player is drafted at
 or after their projection. Top-100 projected players earn 3 points per stamp;
 later projections earn 1 point each. A log-scaled bonus is added for how late
 they were taken (delta = pick - projection), so steals add value without one
-pick dominating. Reaches get 0 points (no penalty). Grades A–F are assigned by
-percentile rank (relative to the league): top 10% = A, next 20% = B, next 40% = C,
-next 20% = D, bottom 10% = F.
+pick dominating. Reaches get 0 points (no penalty). Grades A–F are assigned by points range: range = max(points) − min(points);
+the range is split into five equal bands, with A for the top band and F for the bottom.
 """
 
 import argparse
@@ -29,15 +28,9 @@ POINTS_LATER = 1
 # Log-scaled bonus for delta (pick - projection); only for stamps. Prevents one big steal from dominating.
 DELTA_LOG_SCALE = 0.5
 
-# Percentile-based grading (relative to league): top 10% = A, next 20% = B, next 40% = C, next 20% = D, bottom 10% = F
-# Uses percentile rank: best team = 0th percentile, worst = 100th. Grade by cumulative cutoff.
-GRADE_PERCENTILES = [
-    (0.10, "A"),   # top 10%
-    (0.30, "B"),   # next 20%
-    (0.70, "C"),   # next 40%
-    (0.90, "D"),   # next 20%
-    (1.00, "F"),   # bottom 10%
-]
+# Range-based grading: range = max(points) - min(points); five equal bands → A, B, C, D, F.
+# Position within range (0 = min, 1 = max) maps to grade: [0, 0.2)=F, [0.2, 0.4)=D, [0.4, 0.6)=C, [0.6, 0.8)=B, [0.8, 1]=A.
+GRADE_BANDS = [(0.2, "F"), (0.4, "D"), (0.6, "C"), (0.8, "B"), (1.0, "A")]
 
 
 def _normalize_name(name: str) -> str:
@@ -198,34 +191,41 @@ def aggregate_by_team(rows: List[Dict]) -> Dict[str, Dict]:
     return by_team
 
 
-def compute_grades_by_percentile(team_data: Dict[str, Dict]) -> Dict[str, Dict]:
+def compute_grades_by_range(team_data: Dict[str, Dict]) -> Dict[str, Dict]:
     """
-    Assign grades based on percentile rank (relative to league).
-    Returns team -> {grade, rank}. Teams sorted by points desc; ties get best rank in group.
+    Assign grades based on points range: range = max(points) - min(points);
+    five equal bands from min to max map to F, D, C, B, A.
+    Returns team -> {grade, rank}. Rank is still by points desc (best = 1).
     """
     if not team_data:
         return {}
-    # Sort by points desc, then name for stable order
+    points_list = [data["points"] for data in team_data.values()]
+    min_pts = min(points_list)
+    max_pts = max(points_list)
+    span = max_pts - min_pts
+
+    # Sort by points desc for rank; ties get best rank in group
     sorted_teams = sorted(
         team_data.items(),
         key=lambda x: (-x[1]["points"], x[0]),
     )
-    n = len(sorted_teams)
     result: Dict[str, Dict] = {}
     prev_pts = None
-    rank = 0
     for i, (team, data) in enumerate(sorted_teams):
         pts = data["points"]
         if pts != prev_pts:
-            rank = i + 1  # 1-based, best = 1
+            rank = i + 1
         prev_pts = pts
-        # Percentile: rank 1 = 0, rank n = (n-1)/n; lower = better
-        pct = (rank - 1) / n if n > 0 else 0.0
-        grade = "F"
-        for cutoff, g in GRADE_PERCENTILES:
-            if pct < cutoff:
+        if span == 0:
+            grade = "C"
+        else:
+            # Position within range: 0 = min, 1 = max; five equal bands → F, D, C, B, A
+            pos = (pts - min_pts) / span
+            grade = "F"
+            for cutoff, g in GRADE_BANDS:
                 grade = g
-                break
+                if pos < cutoff:
+                    break
         result[team] = {"grade": grade, "rank": rank}
     return result
 
@@ -242,8 +242,8 @@ def write_raw_csv(rows: List[Dict], path: Path) -> None:
 
 
 def write_summary(team_data: Dict[str, Dict], path: Path) -> None:
-    """Write summary: Team, Top 100 Stamps, Later Stamps, Total Points, Rank, Grade. Grades by percentile."""
-    grades = compute_grades_by_percentile(team_data)
+    """Write summary: Team, Top 100 Stamps, Later Stamps, Total Points, Rank, Grade. Grades by points range (even bands)."""
+    grades = compute_grades_by_range(team_data)
     rows = []
     for team, data in team_data.items():
         info = grades.get(team, {})
@@ -295,6 +295,13 @@ def main() -> None:
         default="draft_grades_summary.csv",
         help="Filename for team summary CSV",
     )
+    parser.add_argument(
+        "--exclude-team",
+        type=str,
+        default=None,
+        metavar="NAME",
+        help="Exclude this team from all calculations and output (as if it did not exist)",
+    )
     args = parser.parse_args()
 
     directory = Path(args.directory)
@@ -323,6 +330,14 @@ def main() -> None:
     print(f"  Fetched {len(draft_rows)} draft picks.")
 
     rows = compare_draft_to_projections(draft_rows, name_to_rank)
+
+    if args.exclude_team:
+        exclude_name = args.exclude_team.strip()
+        orig_len = len(rows)
+        rows = [r for r in rows if (r.get("Team") or "").strip().lower() != exclude_name.lower()]
+        n_removed = orig_len - len(rows)
+        print(f"  Excluding team {exclude_name!r}: removed {n_removed} picks from consideration.")
+
     top100_count = sum(1 for r in rows if r.get("Stamp Type") == "Top 100")
     later_count = sum(1 for r in rows if r.get("Stamp Type") == "Later")
     total_pts = sum(float(r.get("Points") or 0) for r in rows)
