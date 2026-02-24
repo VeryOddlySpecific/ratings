@@ -1,31 +1,31 @@
-Team,Top 100 Stamps,Later Stamps,Total Points,Rank,Grade
-St. Louis Cardinals,1,0,4.6,1,A
-Pittsburgh Pirates,1,0,4.6,2,A
-Baltimore Orioles,1,0,4.5,3,A
-Philadelphia Phillies,1,0,4.3,4,A
-Toronto Blue Jays,1,0,4.3,4,A
-Houston Astros,1,0,4.2,6,A
-Texas Rangers,1,0,4.1,7,A
-Chicago White Sox,1,0,4.0,8,A
-Milwaukee Brewers,1,0,3.9,9,A
-Seattle Mariners,1,0,3.9,9,A
-New York Mets,1,0,3.8,11,A
-Minnesota Twins,1,0,3.5,12,B
-Washington Nationals,1,0,3.3,13,B
-Chicago Cubs,1,0,3.0,14,B
-Anaheim Angels,0,0,0.0,15,F
-Atlanta Braves,0,0,0.0,15,F
-Boston Red Sox,0,0,0.0,15,F
-Charlotte Flyers,0,0,0.0,15,F
-Cincinnati Reds,0,0,0.0,15,F
-Cleveland Indians,0,0,0.0,15,F
-Colorado Rockies,0,0,0.0,15,F
-Detroit Tigers,0,0,0.0,15,F
-Las Vegas Rollers,0,0,0.0,15,F
-Los Angeles Dodgers,0,0,0.0,15,F
-Montreal Expos,0,0,0.0,15,F
-New York Yankees,0,0,0.0,15,F
-Oakland Athletics,0,0,0.0,15,F
-Ottawa Capitals,0,0,0.0,15,F
-San Diego Padres,0,0,0.0,15,F
-San Francisco Giants,0,0,0.0,15,F
+Team,Top 100 Stamps,Later Stamps,Managed Risk,Total Points,Rank,Grade
+Houston Astros,2,0,0,10.1,1,A
+Chicago White Sox,2,0,0,9.6,2,A
+Pittsburgh Pirates,1,0,1,6.6,3,B
+Boston Red Sox,1,0,1,6.5,4,B
+Montreal Expos,1,0,1,6.3,5,B
+Milwaukee Brewers,1,0,1,5.6,6,C
+New York Mets,1,0,1,5.5,7,C
+St. Louis Cardinals,1,0,0,5.1,8,C
+Anaheim Angels,1,0,0,5.0,9,C
+Atlanta Braves,1,0,0,5.0,10,C
+Baltimore Orioles,1,0,0,5.0,11,C
+Philadelphia Phillies,1,0,0,4.8,12,C
+Toronto Blue Jays,1,0,0,4.8,12,C
+Texas Rangers,1,0,0,4.6,14,C
+Seattle Mariners,1,0,0,4.4,15,C
+Minnesota Twins,1,0,0,4.0,16,C
+Washington Nationals,1,0,0,3.8,17,D
+Chicago Cubs,1,0,0,3.5,18,D
+Colorado Rockies,0,0,2,3.0,19,D
+San Diego Padres,0,0,1,1.5,20,F
+Oakland Athletics,0,0,1,1.5,21,F
+Cincinnati Reds,0,0,1,1.5,22,F
+Las Vegas Rollers,0,0,1,1.5,23,F
+Charlotte Flyers,0,0,1,1.2,24,F
+Cleveland Indians,0,0,0,0.0,25,F
+Detroit Tigers,0,0,0,0.0,25,F
+Los Angeles Dodgers,0,0,0,0.0,25,F
+New York Yankees,0,0,0,0.0,25,F
+Ottawa Capitals,0,0,0,0.0,25,F
+San Francisco Giants,0,0,0,0.0,25,F

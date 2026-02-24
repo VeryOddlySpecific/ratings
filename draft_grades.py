@@ -3,11 +3,11 @@
 Draft Grades - Compares draft results to VOS draft pool projections.
 Reads draft_pool.md (or 05_draft_pool.md) from a directory, fetches current draft
 status from the league API, and awards "VOS Stamps" when a player is drafted at
-or after their projection. Top-100 projected players earn 3 points per stamp;
-later projections earn 1 point each. A log-scaled bonus is added for how late
-they were taken (delta = pick - projection), so steals add value without one
-pick dominating. Reaches get 0 points (no penalty). Grades A–F are assigned by points range: range = max(points) − min(points);
-the range is split into five equal bands, with A for the top band and F for the bottom.
+or after their projection. Top-100 projected players earn 3.5 points per stamp;
+later projections earn 1.5 points each. A log-scaled bonus is added for how late
+they were taken (delta = pick - projection). Reaches get 0 points (no penalty)
+unless the reach is smaller than the number of teams (managed risk), which earns
+0.75 points plus a log bonus (smaller reach = higher bonus). Grades A–F are assigned by points range (five equal bands).
 """
 
 import argparse
@@ -21,10 +21,14 @@ from urllib.request import urlopen, Request
 # Default league draft API (override with --api-url)
 DEFAULT_API_URL = "https://atl-01.statsplus.net/wwoba/api/draft/"
 
-# Top 100: 3 points per stamp (drafted at or after projection). After top 100: 1 point each.
+# Top 100: 3.5 points per stamp (drafted at or after projection). After top 100: 1.5 points each.
 TOP_PROJECTION_CAP = 100
-POINTS_TOP_100 = 3
-POINTS_LATER = 1
+POINTS_TOP_100 = 3.5
+POINTS_LATER = 1.5
+# Managed risk: reach by less than num_teams (e.g. within one round) earns partial credit.
+POINTS_MANAGED_RISK = 0.75
+# Log bonus for managed risk: smaller reach → higher bonus. log(1 + (num_teams - |delta|)).
+MANAGED_RISK_LOG_SCALE = 0.25
 # Log-scaled bonus for delta (pick - projection); only for stamps. Prevents one big steal from dominating.
 DELTA_LOG_SCALE = 0.5
 
@@ -118,9 +122,11 @@ def get_draft_value(row: Dict[str, str], *keys: str) -> Optional[str]:
 def compare_draft_to_projections(
     draft_rows: List[Dict[str, str]],
     name_to_rank: Dict[str, int],
+    num_teams: int,
 ) -> List[Dict]:
     """
     For each drafted player, compute projection rank, delta, and VOS Stamp.
+    Managed risk: reach by less than num_teams earns POINTS_MANAGED_RISK.
     Returns list of dicts for raw output CSV.
     """
     results = []
@@ -148,6 +154,7 @@ def compare_draft_to_projections(
                     break
         delta = (overall - projection) if projection is not None else None
         # Stamps: at or after projection. Base pts + log-scaled delta bonus (reaches get 0, no penalty).
+        # Managed risk: reach by less than num_teams (e.g. within one round) earns partial credit.
         points = 0.0
         stamp_type = ""
         if projection is not None and overall >= projection:
@@ -159,6 +166,12 @@ def compare_draft_to_projections(
             else:
                 points = POINTS_LATER + log_bonus
                 stamp_type = "Later"
+        elif projection is not None and delta is not None and delta < 0 and abs(delta) < num_teams:
+            # Smaller reach → higher log bonus (reach 1 gets most, reach just under num_teams gets least).
+            reach = abs(delta)
+            log_bonus = MANAGED_RISK_LOG_SCALE * math.log(1 + (num_teams - reach))
+            points = POINTS_MANAGED_RISK + log_bonus
+            stamp_type = "Managed Risk"
         results.append({
             "Player Name": name,
             "Team": team or "",
@@ -173,21 +186,23 @@ def compare_draft_to_projections(
 
 
 def aggregate_by_team(rows: List[Dict]) -> Dict[str, Dict]:
-    """Per team: total points, top-100 stamp count, later stamp count. All teams that drafted appear."""
-    # team -> {"points", "top_100", "later"} (points may be float due to log delta bonus)
+    """Per team: total points, top-100 stamp count, later stamp count, managed risk count."""
+    # team -> {"points", "top_100", "later", "managed_risk"} (points may be float due to log delta bonus)
     by_team: Dict[str, Dict] = {}
     for r in rows:
         team = (r.get("Team") or "").strip()
         if not team:
             continue
         if team not in by_team:
-            by_team[team] = {"points": 0.0, "top_100": 0, "later": 0}
+            by_team[team] = {"points": 0.0, "top_100": 0, "later": 0, "managed_risk": 0}
         pt = float(r.get("Points") or 0)
         by_team[team]["points"] += pt
         if r.get("Stamp Type") == "Top 100":
             by_team[team]["top_100"] += 1
         elif r.get("Stamp Type") == "Later":
             by_team[team]["later"] += 1
+        elif r.get("Stamp Type") == "Managed Risk":
+            by_team[team]["managed_risk"] += 1
     return by_team
 
 
@@ -242,7 +257,7 @@ def write_raw_csv(rows: List[Dict], path: Path) -> None:
 
 
 def write_summary(team_data: Dict[str, Dict], path: Path) -> None:
-    """Write summary: Team, Top 100 Stamps, Later Stamps, Total Points, Rank, Grade. Grades by points range (even bands)."""
+    """Write summary: Team, Top 100 Stamps, Later Stamps, Managed Risk, Total Points, Rank, Grade."""
     grades = compute_grades_by_range(team_data)
     rows = []
     for team, data in team_data.items():
@@ -251,13 +266,15 @@ def write_summary(team_data: Dict[str, Dict], path: Path) -> None:
             "Team": team,
             "Top 100 Stamps": data["top_100"],
             "Later Stamps": data["later"],
+            "Managed Risk": data["managed_risk"],
             "Total Points": round(data["points"], 1),
             "Rank": info.get("rank", ""),
             "Grade": info.get("grade", "F"),
         })
     rows.sort(key=lambda r: (r["Rank"] or 999, r["Team"]))
+    fieldnames = ["Team", "Top 100 Stamps", "Later Stamps", "Managed Risk", "Total Points", "Rank", "Grade"]
     with open(path, "w", newline="", encoding="utf-8") as f:
-        w = csv.DictWriter(f, fieldnames=["Team", "Top 100 Stamps", "Later Stamps", "Total Points", "Rank", "Grade"])
+        w = csv.DictWriter(f, fieldnames=fieldnames)
         w.writeheader()
         w.writerows(rows)
 
@@ -270,6 +287,13 @@ def main() -> None:
         "directory",
         type=str,
         help="Directory containing draft analysis output (e.g. 05_draft_pool.md)",
+    )
+    parser.add_argument(
+        "--num-teams",
+        type=int,
+        required=True,
+        metavar="N",
+        help="Number of teams in the draft (used for managed-risk tier: reach < N spots earns 0.75 pts)",
     )
     parser.add_argument(
         "--api-url",
@@ -329,7 +353,7 @@ def main() -> None:
         sys.exit(1)
     print(f"  Fetched {len(draft_rows)} draft picks.")
 
-    rows = compare_draft_to_projections(draft_rows, name_to_rank)
+    rows = compare_draft_to_projections(draft_rows, name_to_rank, args.num_teams)
 
     if args.exclude_team:
         exclude_name = args.exclude_team.strip()
@@ -340,8 +364,10 @@ def main() -> None:
 
     top100_count = sum(1 for r in rows if r.get("Stamp Type") == "Top 100")
     later_count = sum(1 for r in rows if r.get("Stamp Type") == "Later")
+    managed_count = sum(1 for r in rows if r.get("Stamp Type") == "Managed Risk")
     total_pts = sum(float(r.get("Points") or 0) for r in rows)
-    print(f"  Stamps: {top100_count} top-100 (3 pts each), {later_count} later (1 pt each). Total points: {total_pts:.1f}.")
+    print(f"  Stamps: {top100_count} top-100 (3.5 pts + log bonus), {later_count} later (1.5 pts + log bonus), "
+          f"{managed_count} managed risk (0.75 pts + log bonus). Total points: {total_pts:.1f}.")
 
     team_data = aggregate_by_team(rows)
     output_dir.mkdir(parents=True, exist_ok=True)
@@ -353,7 +379,7 @@ def main() -> None:
 
     print(f"\nOutput written to {output_dir}:")
     print(f"  - {raw_path.name} (raw: delta, stamp type, points per pick)")
-    print(f"  - {summary_path.name} (teams, top 100 / later stamps, total points, grade)")
+    print(f"  - {summary_path.name} (teams, top 100 / later / managed risk, total points, grade)")
 
 
 if __name__ == "__main__":

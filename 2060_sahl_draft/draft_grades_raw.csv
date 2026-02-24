@@ -1,36 +1,48 @@
 Player Name,Team,Overall Pick,Projection Rank,Delta,Stamp Type,Points,VOS Stamp
-Miguel Trenado,Oakland Athletics,1,11,-10,,0.0,N
-Randy Fuller,Milwaukee Brewers,2,26,-24,,0.0,N
-Garrett Skaggs,Pittsburgh Pirates,3,13,-10,,0.0,N
-Wayne Dares,Boston Red Sox,4,5,-1,,0.0,N
-Marty Milberger,New York Mets,5,1,4,Top 100,3.8047189562170503,Y
-Marco Hernandez,San Diego Padres,6,14,-8,,0.0,N
+Miguel Trenado,Oakland Athletics,1,11,-10,Managed Risk,1.5111306094308556,Y
+Randy Fuller,Milwaukee Brewers,2,26,-24,Managed Risk,1.2364775372638284,Y
+Garrett Skaggs,Pittsburgh Pirates,3,13,-10,Managed Risk,1.5111306094308556,Y
+Wayne Dares,Boston Red Sox,4,5,-1,Managed Risk,1.600299345415539,Y
+Marty Milberger,New York Mets,5,1,4,Top 100,4.30471895621705,Y
+Marco Hernandez,San Diego Padres,6,14,-8,Managed Risk,1.5338735539822874,Y
 Nick DeLome,Anaheim Angels,7,142,-135,,0.0,N
 Jaime Dorry,Cleveland Indians,8,66,-58,,0.0,N
-Robert Balogh,Colorado Rockies,9,23,-14,,0.0,N
-Nick Akers,Chicago White Sox,10,3,7,Top 100,4.039720770839918,Y
-Pat Cameli,Montreal Expos,11,39,-28,,0.0,N
+Robert Balogh,Colorado Rockies,9,23,-14,Managed Risk,1.458303336014054,Y
+Nick Akers,Chicago White Sox,10,3,7,Top 100,4.539720770839918,Y
+Pat Cameli,Montreal Expos,11,39,-28,Managed Risk,1.0246530721670275,Y
 Willie Salgado,Washington Nationals,12,75,-63,,0.0,N
 Jason Sanders,Minnesota Twins,13,72,-59,,0.0,N
 Jose Lopez,Atlanta Braves,14,63,-49,,0.0,N
-Eric Counts,Houston Astros,15,6,9,Top 100,4.151292546497023,Y
-Jonathan Taylor,Chicago Cubs,16,16,0,Top 100,3.0,Y
+Eric Counts,Houston Astros,15,6,9,Top 100,4.651292546497023,Y
+Jonathan Taylor,Chicago Cubs,16,16,0,Top 100,3.5,Y
 Bobby Childers,New York Yankees,17,117,-100,,0.0,N
 Justin Gordon,Detroit Tigers,18,95,-77,,0.0,N
-Danny Miralles,Charlotte Flyers,19,44,-25,,0.0,N
-Mike Werner,Philadelphia Phillies,20,8,12,Top 100,4.282474678730768,Y
-Jan Corbett,Toronto Blue Jays,21,9,12,Top 100,4.282474678730768,Y
+Danny Miralles,Charlotte Flyers,19,44,-25,Managed Risk,1.1979398673070136,Y
+Mike Werner,Philadelphia Phillies,20,8,12,Top 100,4.782474678730768,Y
+Jan Corbett,Toronto Blue Jays,21,9,12,Top 100,4.782474678730768,Y
 Jose LeMasters,Los Angeles Dodgers,22,141,-119,,0.0,N
 Teodosio Minter,Ottawa Capitals,23,55,-32,,0.0,N
-Greg Ferres,Las Vegas Rollers,24,37,-13,,0.0,N
-Sean Smith,Texas Rangers,25,17,8,Top 100,4.09861228866811,Y
-Jim Cavanaugh,Cincinnati Reds,26,38,-12,,0.0,N
-Wayne Davis,Seattle Mariners,27,22,5,Top 100,3.8958797346140273,Y
-Dave Ramirez,Baltimore Orioles,28,10,18,Top 100,4.47221948958322,Y
-Logan Warrington,St. Louis Cardinals,29,4,25,Top 100,4.629048269010741,Y
+Greg Ferres,Las Vegas Rollers,24,37,-13,Managed Risk,1.4725929394740411,Y
+Sean Smith,Texas Rangers,25,17,8,Top 100,4.59861228866811,Y
+Jim Cavanaugh,Cincinnati Reds,26,38,-12,Managed Risk,1.48610974479161,Y
+Wayne Davis,Seattle Mariners,27,22,5,Top 100,4.395879734614027,Y
+Dave Ramirez,Baltimore Orioles,28,10,18,Top 100,4.97221948958322,Y
+Logan Warrington,St. Louis Cardinals,29,4,25,Top 100,5.129048269010741,Y
 Dan Malis,San Francisco Giants,30,71,-41,,0.0,N
-Adam Paxton,Minnesota Twins,31,29,2,Top 100,3.549306144334055,Y
-Isaiah Pruitt,Washington Nationals,32,31,1,Top 100,3.3465735902799727,Y
-Marcel Hardy,Milwaukee Brewers,33,28,5,Top 100,3.8958797346140273,Y
-Brad Rivera,Pittsburgh Pirates,34,12,22,Top 100,4.567747107964575,Y
+Adam Paxton,Minnesota Twins,31,29,2,Top 100,4.049306144334055,Y
+Isaiah Pruitt,Washington Nationals,32,31,1,Top 100,3.8465735902799727,Y
+Marcel Hardy,Milwaukee Brewers,33,28,5,Top 100,4.395879734614027,Y
+Brad Rivera,Pittsburgh Pirates,34,12,22,Top 100,5.067747107964575,Y
 Dave Sturgeon,Oakland Athletics,35,172,-137,,0.0,N
+Allen Reimers,Boston Red Sox,36,20,16,Top 100,4.916606672028108,Y
+Chris Johnson,New York Mets,37,62,-25,Managed Risk,1.1979398673070136,Y
+Eddie James,San Diego Padres,38,85,-47,,0.0,N
+Chris Vail,Anaheim Angels,39,18,21,Top 100,5.045521226679158,Y
+Mike Glover,Cleveland Indians,40,161,-121,,0.0,N
+Nick McIndoe,Colorado Rockies,41,46,-5,Managed Risk,1.5645241345053704,Y
+Chris Rea,Chicago White Sox,42,21,21,Top 100,5.045521226679158,Y
+Allan Bell,Montreal Expos,43,7,36,Top 100,5.305458956322112,Y
+Joel Zaniewski,Washington Nationals,44,137,-93,,0.0,N
+Tim Pant,Minnesota Twins,45,248,-203,,0.0,N
+Chris Cooke,Atlanta Braves,46,27,19,Top 100,4.997866136776995,Y
+Corey Belue,Houston Astros,47,2,45,Top 100,5.4143206982445475,Y
