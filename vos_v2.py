@@ -766,6 +766,25 @@ def development_adjustment_pitcher(row: Dict[str, str], cfg: Dict[str, Any]) -> 
     return current_bonus + (gap * 0.05)
 
 
+# -----------------------------------------------------------------------------
+# Draft-specific adjustments
+# -----------------------------------------------------------------------------
+
+def draft_age_modifier(age: Optional[float]) -> float:
+    """
+    Draft age modifier: -1.5 at age 17, +1.5 at age 22, linear in between.
+    Ages outside 17-22 are clamped to the endpoints.
+    """
+    if age is None:
+        return 0.0
+    if age <= 17:
+        return -1.5
+    if age >= 22:
+        return 1.5
+    # Linear: 17 -> -1.5, 22 -> +1.5  =>  slope = 3.0 / 5 = 0.6
+    return -1.5 + (age - 17) * 0.6
+
+
 def age_adjustment(
     age: Optional[float],
     league_label: str,
@@ -852,6 +871,7 @@ def build_hitter_row(
     league_lookup: Dict[int, str],
     teams: Dict[int, str],
     park_factors: Optional[Dict[str, Any]] = None,
+    draft_mode: bool = False,
 ) -> Optional[Dict[str, Any]]:
     """Build one output row for a hitter. Returns None if insufficient data. Optionally applies park factors."""
     park_config = (
@@ -881,11 +901,12 @@ def build_hitter_row(
     dev_adj = development_adjustment_hitter(row, cfg)
     age_adj = age_adjustment(age, league_label, cfg, "hitter")
     pers_adj = personality_adjustment(row, cfg)
-    raw_total = ideal_value + dev_adj + age_adj + pers_adj
+    draft_age_adj = draft_age_modifier(age) if draft_mode else 0.0
+    raw_total = ideal_value + dev_adj + age_adj + pers_adj + draft_age_adj
     center, scale, floor, ceiling = _normalization_params(cfg)
     vos = normalize_to_20_80(raw_total, center, scale, floor, ceiling)
     # Potential VOS: base from potential ratings only; no development adj (already potential); age/personality apply
-    raw_total_pot = ideal_value_pot + 0.0 + age_adj + pers_adj
+    raw_total_pot = ideal_value_pot + 0.0 + age_adj + pers_adj + draft_age_adj
     vos_potential = normalize_to_20_80(raw_total_pot, center, scale, floor, ceiling)
     out: Dict[str, Any] = {
         "ID": row.get("ID", ""),
@@ -902,6 +923,7 @@ def build_hitter_row(
         "Defense_Score": round(def_avg, 2),
         "Baserunning_Score": round(base, 2),
         "Pitching_Ability_Score": "",
+        "Pitching_Ability_Potential": "",
         "Pitching_Arsenal_Score": "",
         "Development_Adj": round(dev_adj, 2),
         "Age_Adj": round(age_adj, 2),
@@ -909,6 +931,8 @@ def build_hitter_row(
         "Park_Name": (park_config.get("name", "N/A") if park_config else "N/A"),
         "Park_Applied": park_config is not None,
     }
+    if draft_mode:
+        out["Draft_Age_Adj"] = round(draft_age_adj, 2)
     for pos in HITTER_POSITIONS:
         s = pos_scores.get(pos)
         col = f"{pos}_Score"
@@ -925,6 +949,7 @@ def build_pitcher_row(
     teams: Dict[int, str],
     role: str = "SP",
     park_factors: Optional[Dict[str, Any]] = None,
+    draft_mode: bool = False,
 ) -> Optional[Dict[str, Any]]:
     """Build one output row for a pitcher (evaluated as SP or RP). Optionally applies park factors to ability."""
     park_config = (
@@ -937,7 +962,7 @@ def build_pitcher_row(
         ability, arsenal, combined = pitcher_combined_score(
             row, role, cfg, park_config, park_rules, use_potential=False
         )
-        _, _, combined_pot = pitcher_combined_score(
+        ability_pot, _, combined_pot = pitcher_combined_score(
             row, role, cfg, park_config, park_rules, use_potential=True
         )
     except Exception as e:
@@ -951,11 +976,12 @@ def build_pitcher_row(
     dev_adj = development_adjustment_pitcher(row, cfg)
     age_adj = age_adjustment(age, league_label, cfg, "pitcher")
     pers_adj = personality_adjustment(row, cfg)
-    raw_total = combined + dev_adj + age_adj + pers_adj
+    draft_age_adj = draft_age_modifier(age) if draft_mode else 0.0
+    raw_total = combined + dev_adj + age_adj + pers_adj + draft_age_adj
     center, scale, floor, ceiling = _normalization_params(cfg)
     vos = normalize_to_20_80(raw_total, center, scale, floor, ceiling)
     # Potential VOS: ability from PotStf/PotMov/PotHRA/PotCtrl; arsenal already uses Pot* pitches; no dev adj
-    raw_total_pot = combined_pot + 0.0 + age_adj + pers_adj
+    raw_total_pot = combined_pot + 0.0 + age_adj + pers_adj + draft_age_adj
     vos_potential = normalize_to_20_80(raw_total_pot, center, scale, floor, ceiling)
     out: Dict[str, Any] = {
         "ID": row.get("ID", ""),
@@ -972,6 +998,7 @@ def build_pitcher_row(
         "Defense_Score": "",
         "Baserunning_Score": "",
         "Pitching_Ability_Score": round(ability, 2),
+        "Pitching_Ability_Potential": round(ability_pot, 2),
         "Pitching_Arsenal_Score": round(arsenal, 2),
         "Development_Adj": round(dev_adj, 2),
         "Age_Adj": round(age_adj, 2),
@@ -979,6 +1006,8 @@ def build_pitcher_row(
         "Park_Name": (park_config.get("name", "N/A") if park_config else "N/A"),
         "Park_Applied": park_config is not None,
     }
+    if draft_mode:
+        out["Draft_Age_Adj"] = round(draft_age_adj, 2)
     for pos in HITTER_POSITIONS:
         out[f"{pos}_Score"] = ""
     out["Ideal_Position"] = role
@@ -996,7 +1025,7 @@ def is_pitcher(row: Dict[str, str]) -> bool:
 # Main
 # -----------------------------------------------------------------------------
 
-def write_output_csv(rows: List[Dict[str, Any]], path: Path) -> None:
+def write_output_csv(rows: List[Dict[str, Any]], path: Path, draft_mode: bool = False) -> None:
     """Write evaluation summary CSV with consistent column order."""
     if not rows:
         logger.warning("No rows to write")
@@ -1004,10 +1033,12 @@ def write_output_csv(rows: List[Dict[str, Any]], path: Path) -> None:
     cols = [
         "ID", "Name", "Pos", "Age", "Team", "Org", "League_Level",
         "VOS_Score", "VOS_Potential", "Batting_Score", "Batting_Potential", "Defense_Score", "Baserunning_Score",
-        "Pitching_Ability_Score", "Pitching_Arsenal_Score",
+        "Pitching_Ability_Score", "Pitching_Ability_Potential", "Pitching_Arsenal_Score",
         "Development_Adj", "Age_Adj", "Personality_Adj",
         "Park_Name", "Park_Applied",
     ]
+    if draft_mode:
+        cols.insert(cols.index("Personality_Adj") + 1, "Draft_Age_Adj")
     pos_cols = [f"{p}_Score" for p in HITTER_POSITIONS]
     cols += pos_cols
     cols += ["Ideal_Position", "Ideal_Value"]
@@ -1023,6 +1054,7 @@ def main() -> int:
     parser.add_argument("--output", default=None, help="Output CSV path (default: evaluation_summary_{league}_{timestamp}.csv)")
     parser.add_argument("--ids-file", default=None, type=Path, help="Optional file of player IDs to include")
     parser.add_argument("--park-factors", default=None, type=str, help="Optional path to park-factors.json for ballpark-specific adjustments")
+    parser.add_argument("--draft", action="store_true", help="Enable draft-specific adjustments (e.g. age modifier 17→-1.5, 22→+1.5)")
     parser.add_argument("--data-dir", type=Path, default=DEFAULT_DATA_DIR, help="Data directory")
     parser.add_argument("--config-dir", type=Path, default=DEFAULT_CONFIG_DIR, help="Config directory")
     args = parser.parse_args()
@@ -1052,24 +1084,25 @@ def main() -> int:
     else:
         out_path = Path(out_path)
 
+    draft_mode = args.draft
     rows: List[Dict[str, Any]] = []
     for row in players:
         if is_pitcher(row):
             pos = (row.get("Pos") or "").strip().upper()
             role = "RP" if pos in ("RP", "CL") else "SP"
             out_row = build_pitcher_row(
-                row, cfg, league_lookup, teams, role=role, park_factors=park_factors
+                row, cfg, league_lookup, teams, role=role, park_factors=park_factors, draft_mode=draft_mode
             )
         else:
             out_row = build_hitter_row(
-                row, cfg, league_lookup, teams, park_factors=park_factors
+                row, cfg, league_lookup, teams, park_factors=park_factors, draft_mode=draft_mode
             )
         if out_row is not None:
             rows.append(out_row)
         else:
             logger.debug("Skipped row ID %s", row.get("ID"))
 
-    write_output_csv(rows, out_path)
+    write_output_csv(rows, out_path, draft_mode=draft_mode)
     logger.info("Wrote %d rows to %s", len(rows), out_path)
 
     # Validation: VOS scores in 20-80
