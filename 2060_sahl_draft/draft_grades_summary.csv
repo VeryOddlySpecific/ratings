@@ -1,4 +1,5 @@
 Team,Top 100 Stamps,Later Stamps,Managed Risk,Total Points,Rank,Grade
+<<<<<<< HEAD
 Minnesota Twins,5,14,0,78.7,1,A
 Oakland Athletics,3,13,2,70.2,2,A
 Detroit Tigers,2,13,2,61.8,3,B
@@ -28,3 +29,35 @@ Baltimore Orioles,1,8,0,34.1,26,F
 Los Angeles Dodgers,1,6,2,31.6,27,F
 Anaheim Angels,2,5,2,30.4,28,F
 Ottawa Capitals,0,8,0,27.0,29,F
+=======
+Chicago White Sox,2,0,1,10.9,1,A
+Houston Astros,2,0,0,10.1,2,A
+Seattle Mariners,2,0,0,9.6,3,A
+Philadelphia Phillies,2,0,0,9.6,4,A
+Toronto Blue Jays,2,0,0,9.3,5,A
+Texas Rangers,2,0,0,9.1,6,A
+Pittsburgh Pirates,1,0,1,6.6,7,B
+Boston Red Sox,1,0,1,6.5,8,C
+Montreal Expos,1,0,1,6.3,9,C
+Milwaukee Brewers,1,0,1,5.6,10,C
+New York Mets,1,0,1,5.5,11,C
+Los Angeles Dodgers,1,0,0,5.4,12,C
+New York Yankees,1,0,0,5.1,13,C
+St. Louis Cardinals,1,0,0,5.1,14,C
+Anaheim Angels,1,0,0,5.0,15,C
+San Francisco Giants,1,0,0,5.0,15,C
+Atlanta Braves,1,0,0,5.0,17,C
+Baltimore Orioles,1,0,0,5.0,18,C
+Detroit Tigers,1,0,0,4.7,19,C
+Minnesota Twins,1,0,0,4.0,20,D
+Washington Nationals,1,0,0,3.8,21,D
+Chicago Cubs,1,0,0,3.5,22,D
+Colorado Rockies,0,0,2,3.0,23,D
+San Diego Padres,0,0,1,1.5,24,F
+Oakland Athletics,0,0,1,1.5,25,F
+Cincinnati Reds,0,0,1,1.5,26,F
+Las Vegas Rollers,0,0,1,1.5,27,F
+Charlotte Flyers,0,0,1,1.2,28,F
+Cleveland Indians,0,0,0,0.0,29,F
+Ottawa Capitals,0,0,0,0.0,29,F
+>>>>>>> 58648a27bfbb04d2df0a68f3f9b1c90173ccbfc4

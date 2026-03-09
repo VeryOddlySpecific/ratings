@@ -12,10 +12,11 @@ unless the reach is smaller than the number of teams (managed risk), which earns
 
 import argparse
 import csv
+import json
 import math
 import sys
 from pathlib import Path
-from typing import Dict, List, Optional
+from typing import Dict, List, Optional, Tuple
 from urllib.request import urlopen, Request
 
 # Default league draft API (override with --api-url)
@@ -55,15 +56,18 @@ def find_draft_pool_md(directory: Path) -> Path:
     )
 
 
-def load_projections_from_md(md_path: Path) -> Dict[str, int]:
+def load_projections_from_md(md_path: Path) -> Tuple[Dict[str, int], Dict[str, str]]:
     """
     Parse draft pool markdown table (sorted by VOS, best first).
-    Returns dict: normalized player name -> 1-based projection rank.
+    Returns (name_to_rank, name_to_pos):
+      - name_to_rank: normalized player name -> 1-based projection rank
+      - name_to_pos: normalized player name -> position (e.g. "CF")
     Only includes first TOP_PROJECTION_CAP players for stamp eligibility.
     """
     text = md_path.read_text(encoding="utf-8")
     lines = [ln.strip() for ln in text.splitlines() if ln.strip()]
     name_to_rank: Dict[str, int] = {}
+    name_to_pos: Dict[str, str] = {}
     rank = 0
     in_table = False
     for line in lines:
@@ -84,13 +88,15 @@ def load_projections_from_md(md_path: Path) -> Dict[str, int]:
         name = _normalize_name(parts[0])
         if not name:
             continue
+        pos = parts[1].strip() if len(parts) > 1 else ""
         rank += 1
+        name_to_pos[name] = pos
         if rank <= TOP_PROJECTION_CAP:
             name_to_rank[name] = rank
         else:
             # Still record rank for delta/reference but no stamp eligibility
             name_to_rank[name] = rank
-    return name_to_rank
+    return name_to_rank, name_to_pos
 
 
 def fetch_draft_csv(api_url: str) -> List[Dict[str, str]]:
@@ -256,6 +262,58 @@ def write_raw_csv(rows: List[Dict], path: Path) -> None:
         w.writerows(rows)
 
 
+def load_slack_config(config_path: Optional[Path] = None) -> Optional[Dict[str, str]]:
+    """
+    Load team -> Slack handle mapping from config JSON.
+    Returns None if file is missing or invalid; caller can fall back to no Slack substitution.
+    """
+    if config_path is None:
+        config_path = Path(__file__).resolve().parent / "config" / "sahl-gm-slack.json"
+    if not config_path.exists():
+        return None
+    try:
+        data = json.loads(config_path.read_text(encoding="utf-8"))
+        return data if isinstance(data, dict) else None
+    except (json.JSONDecodeError, OSError):
+        return None
+
+
+def write_headlines_txt(
+    rows: List[Dict],
+    name_to_pos: Dict[str, str],
+    path: Path,
+    team_to_slack: Optional[Dict[str, str]] = None,
+) -> None:
+    """
+    Write a .txt file with one headline per pick that earned points.
+    If team_to_slack is provided: "was drafted by the {Team} at #M. ... final draft score of @{SlackHandle}."
+    Otherwise: "was drafted at #M. ... final draft score of the {Team}."
+    """
+    lines = []
+    for r in rows:
+        pts = float(r.get("Points") or 0)
+        if pts <= 0:
+            continue
+        name = (r.get("Player Name") or "").strip()
+        team = (r.get("Team") or "").strip()
+        overall = r.get("Overall Pick", "")
+        projection = r.get("Projection Rank", "")
+        norm_name = _normalize_name(name)
+        pos = (name_to_pos.get(norm_name) or "").strip()
+        if pos:
+            lead = f"{pos} {name}"
+        else:
+            lead = name
+        pts_str = f"{pts:.2f}"
+        if team_to_slack and team and team in team_to_slack:
+            slack_handle = team_to_slack[team]
+            line = f"{lead} - projected at #{projection} overall - was drafted by the {team} at #{overall}. This adds {pts_str} to the final draft score of @{slack_handle}."
+        else:
+            line = f"{lead} - projected at #{projection} overall - was drafted at #{overall}. This adds {pts_str} to the final draft score of the {team}."
+        lines.append(line)
+    path.write_text("\n".join(lines) + ("\n" if lines else ""), encoding="utf-8")
+
+
 def write_summary(team_data: Dict[str, Dict], path: Path) -> None:
     """Write summary: Team, Top 100 Stamps, Later Stamps, Managed Risk, Total Points, Rank, Grade."""
     grades = compute_grades_by_range(team_data)
@@ -320,11 +378,22 @@ def main() -> None:
         help="Filename for team summary CSV",
     )
     parser.add_argument(
+        "--headlines-name",
+        type=str,
+        default="draft_grades_headlines.txt",
+        help="Filename for one-line headlines (picks that earned points)",
+    )
+    parser.add_argument(
         "--exclude-team",
         type=str,
         default=None,
         metavar="NAME",
         help="Exclude this team from all calculations and output (as if it did not exist)",
+    )
+    parser.add_argument(
+        "--slack-headlines",
+        action="store_true",
+        help="In headlines, use 'drafted by the {Team} at #N' and replace team at end with @Slack handle (from config/sahl-gm-slack.json)",
     )
     args = parser.parse_args()
 
@@ -342,7 +411,7 @@ def main() -> None:
         sys.exit(1)
 
     print(f"Loading projections from {pool_path}...")
-    name_to_rank = load_projections_from_md(pool_path)
+    name_to_rank, name_to_pos = load_projections_from_md(pool_path)
     print(f"  Loaded {len(name_to_rank)} players (top {TOP_PROJECTION_CAP} eligible for VOS Stamp).")
 
     print(f"Fetching draft status from {args.api_url}...")
@@ -373,13 +442,25 @@ def main() -> None:
     output_dir.mkdir(parents=True, exist_ok=True)
     raw_path = output_dir / args.raw_name
     summary_path = output_dir / args.summary_name
+    headlines_path = output_dir / args.headlines_name
+
+    team_to_slack = None
+    if args.slack_headlines:
+        slack_path = Path(__file__).resolve().parent / "config" / "sahl-gm-slack.json"
+        team_to_slack = load_slack_config(slack_path)
+        if not team_to_slack:
+            print("Warning: --slack-headlines requested but config/sahl-gm-slack.json not found or invalid; using plain team names.", file=sys.stderr)
+        else:
+            print(f"  Using Slack handles from {slack_path.name} for headlines.")
 
     write_raw_csv(rows, raw_path)
     write_summary(team_data, summary_path)
+    write_headlines_txt(rows, name_to_pos, headlines_path, team_to_slack=team_to_slack)
 
     print(f"\nOutput written to {output_dir}:")
     print(f"  - {raw_path.name} (raw: delta, stamp type, points per pick)")
     print(f"  - {summary_path.name} (teams, top 100 / later / managed risk, total points, grade)")
+    print(f"  - {headlines_path.name} (one-line headlines for picks that earned points)")
 
 
 if __name__ == "__main__":

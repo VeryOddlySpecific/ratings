@@ -44,6 +44,10 @@ Allan Bell,Montreal Expos,43,7,36,Top 100,5.305458956322112,Y
 Joel Zaniewski,Washington Nationals,44,137,-93,,0.0,N
 Tim Pant,Minnesota Twins,45,248,-203,,0.0,N
 Chris Cooke,Atlanta Braves,46,27,19,Top 100,4.997866136776995,Y
+<<<<<<< HEAD
+=======
+Corey Belue,Houston Astros,47,2,45,Top 100,5.4143206982445475,Y
+>>>>>>> 58648a27bfbb04d2df0a68f3f9b1c90173ccbfc4
 Chris Weichard,Chicago Cubs,48,211,-163,,0.0,N
 Nate Berg,Chicago White Sox,49,70,-21,Managed Risk,1.3256462732485115,Y
 Vince Coomer,New York Yankees,50,24,26,Top 100,5.147918433002165,Y
@@ -62,6 +66,7 @@ Sam Davis,St. Louis Cardinals,62,183,-121,,0.0,N
 Dave Roberts,San Francisco Giants,63,42,21,Top 100,5.045521226679158,Y
 Brian Pool,Milwaukee Brewers,64,244,-180,,0.0,N
 Omari Smith,Pittsburgh Pirates,65,154,-89,,0.0,N
+<<<<<<< HEAD
 Andy Dutton,Oakland Athletics,66,61,5,Top 100,4.395879734614027,Y
 Zachary Harker,Boston Red Sox,67,74,-7,Managed Risk,1.5445134575869863,Y
 Paul Dillard,New York Mets,68,30,38,Top 100,5.331780823064824,Y
@@ -726,3 +731,5 @@ Rafael Tamayo,Seattle Mariners,749,776,-27,Managed Risk,1.0965735902799727,Y
 Omar Gurrola,Baltimore Orioles,750,876,-126,,0.0,N
 Scott Holbrook,St. Louis Cardinals,751,763,-12,Managed Risk,1.48610974479161,Y
 Mike Hanner,San Francisco Giants,752,431,321,Later,4.387275772772204,Y
+=======
+>>>>>>> 58648a27bfbb04d2df0a68f3f9b1c90173ccbfc4
