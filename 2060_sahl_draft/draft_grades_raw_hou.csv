@@ -13,6 +13,7 @@ Pat Cameli,Montreal Expos,11,39,-28,Managed Risk,1.0246530721670275,Y
 Willie Salgado,Washington Nationals,12,75,-63,,0.0,N
 Jason Sanders,Minnesota Twins,13,72,-59,,0.0,N
 Jose Lopez,Atlanta Braves,14,63,-49,,0.0,N
+Eric Counts,Houston Astros,15,6,9,Top 100,4.651292546497023,Y
 Jonathan Taylor,Chicago Cubs,16,16,0,Top 100,3.5,Y
 Bobby Childers,New York Yankees,17,117,-100,,0.0,N
 Justin Gordon,Detroit Tigers,18,95,-77,,0.0,N
@@ -44,6 +45,7 @@ Allan Bell,Montreal Expos,43,7,36,Top 100,5.305458956322112,Y
 Joel Zaniewski,Washington Nationals,44,137,-93,,0.0,N
 Tim Pant,Minnesota Twins,45,248,-203,,0.0,N
 Chris Cooke,Atlanta Braves,46,27,19,Top 100,4.997866136776995,Y
+Corey Belue,Houston Astros,47,2,45,Top 100,5.4143206982445475,Y
 Chris Weichard,Chicago Cubs,48,211,-163,,0.0,N
 Nate Berg,Chicago White Sox,49,70,-21,Managed Risk,1.3256462732485115,Y
 Vince Coomer,New York Yankees,50,24,26,Top 100,5.147918433002165,Y
@@ -73,6 +75,7 @@ Mike Woolverton,Chicago White Sox,73,204,-131,,0.0,N
 Victor Ortiz,Montreal Expos,74,140,-66,,0.0,N
 Rory Wallace,Washington Nationals,75,194,-119,,0.0,N
 Juan Holguin,Minnesota Twins,76,259,-183,,0.0,N
+Andre Walker,Houston Astros,77,25,52,Top 100,5.485145956776061,Y
 Bill Mulligan,Chicago Cubs,78,447,-369,,0.0,N
 Charlie Isais,New York Yankees,79,99,-20,Managed Risk,1.3494738181995927,Y
 Mike Dowd,Detroit Tigers,80,164,-84,,0.0,N
@@ -102,6 +105,7 @@ Chris Timmerman,Montreal Expos,103,250,-147,,0.0,N
 Marty Conn,Washington Nationals,104,266,-162,,0.0,N
 Joel Chrzanowski,Minnesota Twins,105,96,9,Top 100,4.651292546497023,Y
 Greg Kubicz,Atlanta Braves,106,435,-329,,0.0,N
+Matt Burkard,Houston Astros,107,45,62,Top 100,5.571567363195767,Y
 Tim Lesser,Chicago Cubs,108,103,5,Later,2.3958797346140273,Y
 Dan Leitschuh,New York Yankees,109,145,-36,,0.0,N
 Justin Rachlin,Detroit Tigers,110,58,52,Top 100,5.485145956776061,Y
@@ -131,6 +135,7 @@ Jayden Cathey,Montreal Expos,133,196,-63,,0.0,N
 Greg Clark,Washington Nationals,134,98,36,Top 100,5.305458956322112,Y
 Justin Krull,Minnesota Twins,135,36,99,Top 100,5.802585092994046,Y
 Ricardo Rocha,Atlanta Braves,136,220,-84,,0.0,N
+Adam Negley,Houston Astros,137,57,80,Top 100,5.69722457733622,Y
 Matthew Stephens,Chicago Cubs,138,120,18,Later,2.97221948958322,Y
 Hänsel Schirmer,New York Yankees,139,319,-180,,0.0,N
 Cameron Owens,Detroit Tigers,140,252,-112,,0.0,N
@@ -160,6 +165,7 @@ Andy Fike,Montreal Expos,163,53,110,Top 100,5.8547651006561665,Y
 Matt Del Gaizo,Washington Nationals,164,328,-164,,0.0,N
 Josh Crabtree,Minnesota Twins,165,129,36,Later,3.305458956322112,Y
 Jason Bolton,Atlanta Braves,166,517,-351,,0.0,N
+Sean Mercier,Houston Astros,167,54,113,Top 100,5.868099224197248,Y
 Randy Lazaro,Chicago Cubs,168,210,-42,,0.0,N
 Jon Osbrink,New York Yankees,169,512,-343,,0.0,N
 Chris Keller,Detroit Tigers,170,298,-128,,0.0,N
@@ -189,6 +195,7 @@ Tony Robledo,Montreal Expos,193,126,67,Later,3.6097538525880535,Y
 Bobby Fullwood,Washington Nationals,194,654,-460,,0.0,N
 Chad Pope,Minnesota Twins,195,77,118,Top 100,5.889561746555765,Y
 Matt Pou,Atlanta Braves,196,50,146,Top 100,5.995216293389368,Y
+Jason Mello,Houston Astros,197,56,141,Top 100,5.977913528800631,Y
 Brian Lang,Chicago Cubs,198,271,-73,,0.0,N
 Brian Mounts,New York Yankees,199,106,93,Later,3.771647391135002,Y
 Mike Rook,Detroit Tigers,200,113,87,Later,3.7386684072391034,Y
@@ -218,6 +225,7 @@ Matt Deskin,Montreal Expos,223,151,72,Later,3.6452297205741955,Y
 John Harlow,Washington Nationals,224,493,-269,,0.0,N
 Billy Ripley,Minnesota Twins,225,69,156,Top 100,6.028122902674154,Y
 Chris McLeish,Atlanta Braves,226,533,-307,,0.0,N
+Bryan Gilley,Houston Astros,227,59,168,Top 100,6.064949357461536,Y
 Jerry Weinberg,Chicago Cubs,228,276,-48,,0.0,N
 Bryan Kimble,New York Yankees,229,224,5,Later,2.3958797346140273,Y
 Jorge Lopez,Detroit Tigers,230,265,-35,,0.0,N
@@ -247,6 +255,7 @@ Michael Prince,Montreal Expos,253,65,188,Top 100,6.120873507529821,Y
 Chris Dominey,Washington Nationals,254,313,-59,,0.0,N
 Josh Campbell,Minnesota Twins,255,127,128,Later,3.929906202180836,Y
 Mike Jurgensen,Atlanta Braves,256,88,168,Top 100,6.064949357461536,Y
+Steve Knutson,Houston Astros,257,68,189,Top 100,6.123512036080243,Y
 Billy Hofheinz,Chicago Cubs,258,751,-493,,0.0,N
 Jeff Gilbert,New York Yankees,259,366,-107,,0.0,N
 Erik Synan,Detroit Tigers,260,206,54,Later,3.5036665926162356,Y
@@ -276,6 +285,7 @@ Ramiro Cumpian,Montreal Expos,283,494,-211,,0.0,N
 Gabriel Cook,Washington Nationals,284,554,-270,,0.0,N
 Zach Logan,Minnesota Twins,285,122,163,Later,4.0499332139121,Y
 Matt Bingham,Atlanta Braves,286,115,171,Later,4.073747238406726,Y
+Pete Perske,Houston Astros,287,91,196,Top 100,6.141601864368994,Y
 Randy Beardmore,Chicago Cubs,288,279,9,Later,2.651292546497023,Y
 Ken Spencer,New York Yankees,289,445,-156,,0.0,N
 Ray King,Detroit Tigers,290,202,88,Later,3.74431818486607,Y
@@ -305,6 +315,7 @@ Steve Mautner,Montreal Expos,313,92,221,Top 100,6.20133869093614,Y
 Jason Jensen,Washington Nationals,314,318,-4,Managed Risk,1.5739592165010823,Y
 Bobby Apodaca,Minnesota Twins,315,222,93,Later,3.771647391135002,Y
 Arturo Lopez,Atlanta Braves,316,274,42,Later,3.380600057846781,Y
+Ray Breeden,Houston Astros,317,76,241,Top 100,6.244468863078343,Y
 Estevan Barrientos,Chicago Cubs,318,230,88,Later,3.74431818486607,Y
 Adrian Goddard,New York Yankees,319,168,151,Later,4.011940260423138,Y
 Daniel Pocock,Detroit Tigers,320,303,17,Later,2.9451858789480823,Y
@@ -334,6 +345,7 @@ Jonathan Meckstroth,Montreal Expos,343,290,53,Later,3.4944920232821373,Y
 John Haydon,Washington Nationals,344,522,-178,,0.0,N
 Francisco Azua,Minnesota Twins,345,337,8,Later,2.59861228866811,Y
 Ricardo Taveras,Atlanta Braves,346,334,12,Later,2.782474678730768,Y
+Bobby Maddalena,Houston Astros,347,101,246,Later,4.254694168313989,Y
 Ivan Chapa,Chicago Cubs,348,231,117,Later,3.8853423122328326,Y
 Roger Stevenson,New York Yankees,349,143,206,Later,4.166359396632684,Y
 Brian Wolf,Detroit Tigers,350,590,-240,,0.0,N
@@ -363,6 +375,7 @@ Bobby Morrell,Montreal Expos,373,338,35,Later,3.291759469228055,Y
 Noah Huffman,Washington Nationals,374,558,-184,,0.0,N
 Jake Jorgensen,Minnesota Twins,375,214,161,Later,4.043798167616192,Y
 Jason Wald,Atlanta Braves,376,535,-159,,0.0,N
+Jim Mauldin,Houston Astros,377,112,265,Later,4.29174815439085,Y
 Dylan Perkins,Chicago Cubs,378,314,64,Later,3.5871936349478184,Y
 Chad Tisher,New York Yankees,379,226,153,Later,4.018476301206815,Y
 Oliver Barnett,Detroit Tigers,380,369,11,Later,2.742453324894,Y
@@ -392,6 +405,7 @@ Bryce Gibson,Montreal Expos,403,497,-94,,0.0,N
 Roy Gonzales,Washington Nationals,404,354,50,Later,3.465912816362163,Y
 Jeremy Likens,Minnesota Twins,405,209,196,Later,4.141601864368994,Y
 Ian Reeder,Atlanta Braves,406,519,-113,,0.0,N
+Dan Wooten,Houston Astros,407,121,286,Later,4.32974110787981,Y
 Phil Woolen,Chicago Cubs,408,608,-200,,0.0,N
 Jody Barrick,New York Yankees,409,362,47,Later,3.4356005054539454,Y
 C.J. Finley,Detroit Tigers,410,345,65,Later,3.5948273710132126,Y
@@ -421,6 +435,7 @@ Rich Monin,Montreal Expos,433,392,41,Later,3.368834809141684,Y
 Jeff Lynch,Washington Nationals,434,384,50,Later,3.465912816362163,Y
 Jon Nunez,Minnesota Twins,435,939,-504,,0.0,N
 Alvaro Armendariz,Atlanta Braves,436,643,-207,,0.0,N
+Willie Sanchez,Houston Astros,437,156,281,Later,4.320953535469057,Y
 Dave Underhay,Chicago Cubs,438,200,238,Later,4.2382317759657555,Y
 Rafael Hernandez,New York Yankees,439,610,-171,,0.0,N
 Brian Shelby,Detroit Tigers,440,240,200,Later,4.151652454029538,Y
@@ -450,6 +465,7 @@ Brian Gary,Montreal Expos,463,449,14,Later,2.8540251005511053,Y
 Ted Barnette,Washington Nationals,464,450,14,Later,2.8540251005511053,Y
 Jesse Vasquez,Minnesota Twins,465,203,262,Later,4.286077016088882,Y
 Bobby Mullen,Atlanta Braves,466,247,219,Later,4.196813773176181,Y
+Casey Tuthill,Houston Astros,467,186,281,Later,4.320953535469057,Y
 Kyle White,Chicago Cubs,468,752,-284,,0.0,N
 Joel Baker,New York Yankees,469,521,-52,,0.0,N
 Ben Jez,Detroit Tigers,470,473,-3,Managed Risk,1.583051127543801,Y
@@ -479,6 +495,7 @@ Dennis Holland,Montreal Expos,493,680,-187,,0.0,N
 Jeff Michielli,Washington Nationals,494,560,-66,,0.0,N
 Melvin Bautista,Minnesota Twins,495,280,215,Later,4.187639203842083,Y
 Mike Baker,Atlanta Braves,496,383,113,Later,3.868099224197248,Y
+Brian Sheridan,Houston Astros,497,198,299,Later,4.3518912373281005,Y
 Rob Hake,Chicago Cubs,498,952,-454,,0.0,N
 Armando Pulido,New York Yankees,499,474,25,Later,3.129048269010741,Y
 Matt Rohm,Detroit Tigers,500,419,81,Later,3.7033596236321267,Y
@@ -508,6 +525,7 @@ Eddie Sanchez,Montreal Expos,523,421,102,Later,3.817364494114818,Y
 Brad Manning,Washington Nationals,524,652,-128,,0.0,N
 Glenn Canterbury,Minnesota Twins,525,581,-56,,0.0,N
 Jose Melendez,Atlanta Braves,526,170,356,Later,4.438867890889819,Y
+Alfredo Castro,Houston Astros,527,178,349,Later,4.428966577241729,Y
 Jon Nicholson,Chicago Cubs,528,540,-12,Managed Risk,1.48610974479161,Y
 Chris Yost,New York Yankees,529,463,66,Later,3.602346309695483,Y
 Tony Martinez,Detroit Tigers,530,572,-42,,0.0,N
@@ -537,6 +555,7 @@ Jonathan McKane,Montreal Expos,553,683,-130,,0.0,N
 Nick Wilson,Washington Nationals,554,778,-224,,0.0,N
 Erik Coovert,Minnesota Twins,555,272,283,Later,4.324487119080603,Y
 Mike Besa,Atlanta Braves,556,850,-294,,0.0,N
+Ramiro Cortez,Houston Astros,557,215,342,Later,4.418865223582969,Y
 Rocky Bergeron,Chicago Cubs,558,472,86,Later,3.732954059327292,Y
 Ethan Samuel,New York Yankees,559,630,-71,,0.0,N
 Kenny Bensen,Detroit Tigers,560,809,-249,,0.0,N
@@ -566,6 +585,7 @@ Mike Marten,Montreal Expos,583,858,-275,,0.0,N
 Owen LePage,Washington Nationals,584,516,68,Later,3.61705325229863,Y
 Jared Lies,Minnesota Twins,585,563,22,Later,3.067747107964575,Y
 Kyle Jones,Atlanta Braves,586,444,142,Later,3.9814223151299535,Y
+Leo Webster,Houston Astros,587,238,349,Later,4.428966577241729,Y
 Aaron Schlegel,Chicago Cubs,588,557,31,Later,3.2328679513998635,Y
 Willis Bowden,New York Yankees,589,866,-277,,0.0,N
 Cy Alvord,Detroit Tigers,590,489,101,Later,3.8124864066421353,Y
@@ -595,6 +615,7 @@ John Basile,Montreal Expos,613,315,298,Later,4.350221786695343,Y
 Andy Barnell,Washington Nationals,614,311,303,Later,4.358513850703111,Y
 Jason Merrill,Minnesota Twins,615,507,108,Later,3.8456739411145717,Y
 Adrian Hobbs,Atlanta Braves,616,837,-221,,0.0,N
+Bobby Schutte,Houston Astros,617,258,359,Later,4.443052015725078,Y
 Kyle Anderson,Chicago Cubs,618,656,-38,,0.0,N
 Brian Jarman,New York Yankees,619,865,-246,,0.0,N
 Aaron Keber,Detroit Tigers,620,434,186,Later,4.115554308427294,Y
@@ -624,6 +645,7 @@ Jon Smith,Montreal Expos,643,509,134,Later,3.952637389219215,Y
 Eric Davis,Washington Nationals,644,924,-280,,0.0,N
 Danny Muller,Minnesota Twins,645,685,-40,,0.0,N
 Elliot Baroch,Atlanta Braves,646,575,71,Later,3.6383330595080277,Y
+Brian DeGroff,Houston Astros,647,236,411,Later,4.510511674674763,Y
 Brian Hughes,Chicago Cubs,648,422,226,Later,4.212475008740702,Y
 Dave Harvey,New York Yankees,649,602,47,Later,3.4356005054539454,Y
 Allen Iacono,Detroit Tigers,650,273,377,Later,4.467447097809794,Y
@@ -653,6 +675,7 @@ Brad Lemanski,Montreal Expos,673,777,-104,,0.0,N
 Lee Allen,Washington Nationals,674,862,-188,,0.0,N
 Nick Adler,Minnesota Twins,675,795,-120,,0.0,N
 Josh Bowman,Atlanta Braves,676,781,-105,,0.0,N
+Chris Candelaia,Houston Astros,677,275,402,Later,4.499468280973341,Y
 Adam Butera,Chicago Cubs,678,719,-41,,0.0,N
 Matt Shepherd,New York Yankees,679,748,-69,,0.0,N
 Hector Garivay,Detroit Tigers,680,576,104,Later,3.8269801750787615,Y
@@ -682,6 +705,7 @@ Nick Subbarao,Montreal Expos,703,655,48,Later,3.4459101490553135,Y
 Bob Carmona,Washington Nationals,704,331,373,Later,4.462127898707266,Y
 Matt Allen,Minnesota Twins,705,686,19,Later,2.997866136776995,Y
 Jim Zimmerle,Atlanta Braves,706,611,95,Later,3.782174095733918,Y
+Tom Staszak,Houston Astros,707,277,430,Later,4.533054045051873,Y
 John Woodward,Chicago Cubs,708,644,64,Later,3.5871936349478184,Y
 Bobby Mosley,New York Yankees,709,757,-48,,0.0,N
 Dave Guillet,Detroit Tigers,710,715,-5,Managed Risk,1.5645241345053704,Y
@@ -711,6 +735,7 @@ Eddie Babbie,Montreal Expos,733,823,-90,,0.0,N
 Mike Simko,Washington Nationals,734,618,116,Later,3.881086967398878,Y
 Ron Carvalho,Minnesota Twins,735,646,89,Later,3.7499048351651325,Y
 Bobby Butler,Atlanta Braves,736,824,-88,,0.0,N
+Kyle Schempp,Houston Astros,737,324,413,Later,4.5129329869126575,Y
 Alex Taylor,Chicago Cubs,738,634,104,Later,3.8269801750787615,Y
 Josh Yoder,New York Yankees,739,805,-66,,0.0,N
 Bob Creviston,Detroit Tigers,740,552,188,Later,4.120873507529821,Y

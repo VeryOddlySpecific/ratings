@@ -1,6 +1,7 @@
 Player Name,Team,Overall Pick,Projection Rank,Delta,Stamp Type,Points,VOS Stamp
 Floyd Canales,San Diego Padres,1,5,-4,Managed Risk,1.62412689036662,Y
 Albie Reed,London Royals,2,56,-54,,0.0,N
+Will Friedman,Las Vegas Knights,3,4,-1,Managed Risk,1.6458797346140275,Y
 Isaac Eggert,Minnesota Twins,4,1,3,Top 100,4.193147180559945,Y
 Dixon On,Boston Red Sox,5,50,-45,,0.0,N
 Ben Bodie,Portland Hops,6,24,-18,Managed Risk,1.48610974479161,Y
@@ -29,10 +30,12 @@ Carson Holtkamp,Washington Nationals,28,6,22,Top 100,5.067747107964575,Y
 Tom Theriault,Arizona Diamondbacks,29,131,-102,,0.0,N
 Ethan Cooper,California Angels,30,16,14,Top 100,4.854025100551105,Y
 Merlin Cristobal,Montreal Expos,31,276,-245,,0.0,N
+Vince Kenney,Las Vegas Knights,32,13,19,Top 100,4.997866136776995,Y
 Jayce Safian,Tampa Bay Rays,33,41,-8,Managed Risk,1.5918239574966186,Y
 Matthew Dooley,Colorado Rockies,34,23,11,Top 100,4.742453324894,Y
 Gabe Daly,Boston Red Sox,35,66,-31,Managed Risk,1.1979398673070136,Y
 Channing Homberger,Los Angeles Dodgers,36,21,15,Top 100,4.886294361119891,Y
+Walt Sutton,Las Vegas Knights,37,7,30,Top 100,5.216993602242573,Y
 Hudson Pechacek,Houston Astros,38,99,-61,,0.0,N
 Sal Boal,Houston Astros,39,240,-201,,0.0,N
 Dave Stanley,Cincinnati Reds,40,89,-49,,0.0,N
@@ -57,6 +60,7 @@ Pete Holt,New York Yankees,58,112,-54,,0.0,N
 Mohammed Ramos,New York Mets,59,64,-5,Managed Risk,1.6164339756999317,Y
 Eason Tyson,Boston Red Sox,60,47,13,Top 100,4.819528664807629,Y
 Luke Peralta,Memphis Blues,61,173,-112,,0.0,N
+Mason Allison,Las Vegas Knights,62,8,54,Top 100,5.503666592616236,Y
 Brad Selke,St. Louis Cardinals,63,40,23,Top 100,5.089026915173973,Y
 Tyler Buonocore,Indianapolis Ignition,64,27,37,Top 100,5.318793079863193,Y
 Stanford Rosenberg,Tampa Bay Rays,65,180,-115,,0.0,N
@@ -64,10 +68,12 @@ Oscar Amerson,Colorado Rockies,66,150,-84,,0.0,N
 Zach Elmore,Cleveland Indians,67,38,29,Top 100,5.200598690831078,Y
 Rob Navarrette,Milwaukee Brewers,68,14,54,Top 100,5.503666592616236,Y
 Christian Purvey,St. Louis Cardinals,69,43,26,Top 100,5.147918433002165,Y
+Bobby Child,Las Vegas Knights,70,11,59,Top 100,5.547172281111051,Y
 Randie Hagan,Boston Red Sox,71,17,54,Top 100,5.503666592616236,Y
 E.J. Chandler,Los Angeles Dodgers,72,95,-23,Managed Risk,1.4097643324038147,Y
 Carmelo Valtierra,London Royals,73,236,-163,,0.0,N
 Rusty Raya,Toronto Blue Jays,74,350,-276,,0.0,N
+Jaden Gatlin,Las Vegas Knights,75,12,63,Top 100,5.579441541679836,Y
 Nathan Thompson,London Royals,76,208,-132,,0.0,N
 Donagh Reid,Houston Astros,77,314,-237,,0.0,N
 Stan Schmeltzer,Cincinnati Reds,78,305,-227,,0.0,N
@@ -104,6 +110,7 @@ Adrian Pestana,Montreal Expos,108,222,-114,,0.0,N
 Terrance Leroux,Boston Red Sox,109,57,52,Top 100,5.485145956776061,Y
 Sloan DeWitt,Chicago Cubs,110,117,-7,Managed Risk,1.600299345415539,Y
 Hank Jackson,Toronto Blue Jays,111,591,-480,,0.0,N
+Alexander Okura,Las Vegas Knights,112,52,60,Top 100,5.555436932086655,Y
 Lance Riegel,London Royals,113,137,-24,Managed Risk,1.391237339365384,Y
 Mitt Gamboa,Houston Astros,114,199,-85,,0.0,N
 Jody Stewart,Cincinnati Reds,115,192,-77,,0.0,N
@@ -143,6 +150,7 @@ Greyson Matkins,Boston Red Sox,148,15,133,Top 100,5.948919899975456,Y
 Vince Waldenmaier,Chicago White Sox,149,175,-26,Managed Risk,1.3494738181995927,Y
 Zayden Wellington,Arizona Diamondbacks,150,60,90,Top 100,5.755429753258425,Y
 Russ Garner,Toronto Blue Jays,151,39,112,Top 100,5.86369390935617,Y
+Hunter Weeks,Las Vegas Knights,152,86,66,Top 100,5.602346309695482,Y
 Karson Bussey,London Royals,153,273,-120,,0.0,N
 Tony Novak,London Royals,154,257,-103,,0.0,N
 Lloyd Campbell,Cincinnati Reds,155,84,71,Top 100,5.638333059508028,Y
@@ -179,6 +187,7 @@ Kelsey Wingard,Montreal Expos,185,597,-412,,0.0,N
 Kyle James,Boston Red Sox,186,71,115,Top 100,5.876795095553183,Y
 Jedidiah Smart,Los Angeles Dodgers,187,458,-271,,0.0,N
 Sean Van Damme,Milwaukee Brewers,188,334,-146,,0.0,N
+Etienne Langlois,Las Vegas Knights,189,158,31,Later,3.2328679513998635,Y
 Caleb Harvill,London Royals,190,402,-212,,0.0,N
 Gunner Watson,Houston Astros,191,266,-75,,0.0,N
 Vince Townsend,Cincinnati Reds,192,629,-437,,0.0,N
@@ -214,6 +223,7 @@ Jimmy Joe Tanner,Texas Rangers,221,231,-10,Managed Risk,1.5739592165010823,Y
 Luke Salazar,Montreal Expos,222,225,-3,Managed Risk,1.6315901311540404,Y
 Dana Jeffrey,Boston Red Sox,223,837,-614,,0.0,N
 Jack Hamm,Los Angeles Dodgers,224,286,-62,,0.0,N
+Remilde Ortiz,Las Vegas Knights,225,224,1,Later,1.8465735902799727,Y
 Sylvester Cooper,London Royals,226,468,-242,,0.0,N
 Roy Fournier,Houston Astros,227,268,-41,,0.0,N
 Everton Lundberg,Portland Hops,228,109,119,Later,3.893745871391023,Y
@@ -249,6 +259,7 @@ Elijah Zaken,Texas Rangers,257,138,119,Later,3.893745871391023,Y
 Mel Badie,Montreal Expos,258,878,-620,,0.0,N
 Julian Coggins,Boston Red Sox,259,452,-193,,0.0,N
 Jacque Saylor,Los Angeles Dodgers,260,482,-222,,0.0,N
+Martin Wicinski,Las Vegas Knights,261,252,9,Later,2.651292546497023,Y
 Kendrick O'Reilly,Pittsburgh Pirates,262,844,-582,,0.0,N
 Sam Bartone,Houston Astros,263,174,89,Later,3.7499048351651325,Y
 Kyle Hitchcock,Cincinnati Reds,264,204,60,Later,3.5554369320866557,Y
@@ -284,6 +295,7 @@ Patton Tsukino,Texas Rangers,293,833,-540,,0.0,N
 Julian Bullins,Montreal Expos,294,347,-53,,0.0,N
 Rudy Moore,Boston Red Sox,295,983,-688,,0.0,N
 Noah Goodwill,Los Angeles Dodgers,296,393,-97,,0.0,N
+Troy Smart,Las Vegas Knights,297,293,4,Later,2.3047189562170503,Y
 Benjamin Gleason,London Royals,298,127,171,Later,4.073747238406726,Y
 Ricardo Pinedo,Houston Astros,299,478,-179,,0.0,N
 Clarence Mathieu,Seattle Mariners,300,307,-7,Managed Risk,1.600299345415539,Y
@@ -319,6 +331,7 @@ Hadley Graff,Texas Rangers,329,720,-391,,0.0,N
 Jesse Andersen,Montreal Expos,330,630,-300,,0.0,N
 Lawrence Garrett,Boston Red Sox,331,538,-207,,0.0,N
 Levi Villanueva,Los Angeles Dodgers,332,997,-665,,0.0,N
+Ray Jones,Las Vegas Knights,333,343,-10,Managed Risk,1.5739592165010823,Y
 Emerson Gildea,London Royals,334,436,-102,,0.0,N
 Keven Crane,Houston Astros,335,178,157,Later,4.031297516513483,Y
 Hector Llanez,Seattle Mariners,336,580,-244,,0.0,N
@@ -354,6 +367,7 @@ Phil Walkley,Texas Rangers,365,689,-324,,0.0,N
 Jermaine Payne,Montreal Expos,366,157,209,Later,4.173553765358735,Y
 Michael Barrientos,Boston Red Sox,367,561,-194,,0.0,N
 Michael White,Minnesota Twins,368,676,-308,,0.0,N
+Bret Tucker,Las Vegas Knights,369,352,17,Later,2.9451858789480823,Y
 Max Gibson,London Royals,370,425,-55,,0.0,N
 Adolphus Hendrix,Houston Astros,371,387,-16,Managed Risk,1.5111306094308556,Y
 Bryce Allison,Cincinnati Reds,372,761,-389,,0.0,N
@@ -389,6 +403,7 @@ Sevastian Urich,Texas Rangers,401,567,-166,,0.0,N
 Jack Raphael,Montreal Expos,402,313,89,Later,3.7499048351651325,Y
 John Leavens,Milwaukee Brewers,403,547,-144,,0.0,N
 Jude Kissner,Los Angeles Dodgers,404,741,-337,,0.0,N
+Nellie McDannell,Las Vegas Knights,405,442,-37,,0.0,N
 Collin Schuster,London Royals,406,255,151,Later,4.011940260423138,Y
 P.J. Miles,Houston Astros,407,940,-533,,0.0,N
 Soloman Bash,Cincinnati Reds,408,480,-72,,0.0,N
@@ -424,6 +439,7 @@ Jeremiah Schultz,Texas Rangers,437,235,202,Later,4.156602989520893,Y
 Michael Hunkpapa,Montreal Expos,438,554,-116,,0.0,N
 Damon Rasmussen,Milwaukee Brewers,439,376,63,Later,3.5794415416798357,Y
 Connor Deeg,Los Angeles Dodgers,440,883,-443,,0.0,N
+Daniel Bertola,Las Vegas Knights,441,479,-38,,0.0,N
 Justin Norton,London Royals,442,253,189,Later,4.123512036080243,Y
 Brown Wattenbarger,Houston Astros,443,882,-439,,0.0,N
 Shawn Crabtree,Cincinnati Reds,444,1060,-616,,0.0,N
@@ -459,6 +475,7 @@ Braden Masone,Texas Rangers,473,336,137,Later,3.9636268425786025,Y
 Wiley Harbin,Montreal Expos,474,859,-385,,0.0,N
 Rain Bailey,Milwaukee Brewers,475,530,-55,,0.0,N
 Jared Johnson,Los Angeles Dodgers,476,794,-318,,0.0,N
+Hartley Gramuglia,Las Vegas Knights,477,483,-6,Managed Risk,1.6084968011212866,Y
 Cole Seabolt,London Royals,478,845,-367,,0.0,N
 Dan Lacar,Houston Astros,479,116,363,Later,4.44857693381837,Y
 Reeve Erne,Cincinnati Reds,480,717,-237,,0.0,N
@@ -492,7 +509,9 @@ Andrew Richardson,Cleveland Indians,507,399,108,Later,3.8456739411145717,Y
 Chris Sarafian,California Angels,508,724,-216,,0.0,N
 Biff Lundell,Texas Rangers,509,462,47,Later,3.4356005054539454,Y
 Michael Vercauteren,Montreal Expos,510,670,-160,,0.0,N
+Landon Heath,Las Vegas Knights,511,503,8,Later,2.59861228866811,Y
 Mal Sanders,Los Angeles Dodgers,512,431,81,Later,3.7033596236321267,Y
+Leonardo Sanchez,Las Vegas Knights,513,535,-22,Managed Risk,1.4270125502755526,Y
 Ulysses Day,London Royals,514,475,39,Later,3.344439727056968,Y
 Andrés Rosa,Houston Astros,515,954,-439,,0.0,N
 Matt Tosh,Cincinnati Reds,516,684,-168,,0.0,N
@@ -526,7 +545,9 @@ Pete Duren,Cleveland Indians,543,695,-152,,0.0,N
 Emmanuel Segler,California Angels,544,732,-188,,0.0,N
 Braydon Brennan,Texas Rangers,545,390,155,Later,4.024928003624769,Y
 Daniel Rex,Montreal Expos,546,1103,-557,,0.0,N
+Paul Russell,Las Vegas Knights,547,555,-8,Managed Risk,1.5918239574966186,Y
 Jayden Galitsis,Los Angeles Dodgers,548,609,-61,,0.0,N
+Mason West,Las Vegas Knights,549,557,-8,Managed Risk,1.5918239574966186,Y
 Andy Sack,London Royals,550,397,153,Later,4.018476301206815,Y
 Jude Nast,Houston Astros,551,135,416,Later,4.5165431108994,Y
 Jericho Jinta,Cincinnati Reds,552,831,-279,,0.0,N
@@ -560,7 +581,9 @@ Andy Schow,Cleveland Indians,579,1089,-510,,0.0,N
 Dominic Vivo,California Angels,580,685,-105,,0.0,N
 Nick Cary,Texas Rangers,581,709,-128,,0.0,N
 Matthew Becerra,Montreal Expos,582,409,173,Later,4.0795276496072646,Y
+Ethan Eyster,Las Vegas Knights,583,559,24,Later,3.1094379124341005,Y
 Cale Ross,Los Angeles Dodgers,584,578,6,Later,2.4729550745276567,Y
+Dan Newell,Las Vegas Knights,585,574,11,Later,2.742453324894,Y
 Bobby Jo Henderson,London Royals,586,624,-38,,0.0,N
 Armani Brown,Houston Astros,587,949,-362,,0.0,N
 Josh Rone,Cincinnati Reds,588,705,-117,,0.0,N
@@ -594,7 +617,9 @@ Kelsey Nady,Cleveland Indians,615,384,231,Later,4.2233686858331545,Y
 Bobby Brunken,California Angels,616,909,-293,,0.0,N
 Reid DeLauder,Texas Rangers,617,272,345,Later,4.423219387528862,Y
 Nolan Bradley,Montreal Expos,618,374,244,Later,4.250629105272363,Y
+Mike Monroe,Las Vegas Knights,619,582,37,Later,3.318793079863193,Y
 Jude Germack,Los Angeles Dodgers,620,775,-155,,0.0,N
+Eriberto Andujar,Las Vegas Knights,621,589,32,Later,3.24825378073324,Y
 Adam Ly,London Royals,622,825,-203,,0.0,N
 Corey Parkinson,Houston Astros,623,931,-308,,0.0,N
 Stew Helsing,Cincinnati Reds,624,952,-328,,0.0,N
@@ -628,7 +653,9 @@ Roger Borkowski,Cleveland Indians,651,910,-259,,0.0,N
 Rod Johnson,California Angels,652,901,-249,,0.0,N
 Devin Roundtree,Texas Rangers,653,637,16,Later,2.916606672028108,Y
 Mitch Masella,Montreal Expos,654,729,-75,,0.0,N
+Gerard Getz,Las Vegas Knights,655,599,56,Later,3.521525633917275,Y
 Vermudo Landaverde,Los Angeles Dodgers,656,1117,-461,,0.0,N
+Brock Perales,Las Vegas Knights,657,612,45,Later,3.4143206982445475,Y
 Jace Ryckman,London Royals,658,543,115,Later,3.8767950955531822,Y
 Curtis Wilborn,Houston Astros,659,549,110,Later,3.854765100656167,Y
 Tyree Hughes,Cincinnati Reds,660,842,-182,,0.0,N
@@ -662,7 +689,9 @@ Marcus Hill,Cleveland Indians,687,564,123,Later,3.9101407828025185,Y
 Jeremy Coffey,California Angels,688,758,-70,,0.0,N
 M.J. Mullen,Texas Rangers,689,828,-139,,0.0,N
 Garrett Fraze,Montreal Expos,690,456,234,Later,4.2297927570720795,Y
+Peni Kaihea,Las Vegas Knights,691,627,64,Later,3.5871936349478184,Y
 Dave Ochs,Los Angeles Dodgers,692,1039,-347,,0.0,N
+Todd Holley,Las Vegas Knights,693,655,38,Later,3.331780823064823,Y
 Max McMahon,London Royals,694,643,51,Later,3.4756218592907135,Y
 Keith Creasey,Houston Astros,695,440,255,Later,4.272588722239782,Y
 Newton Hill,Cincinnati Reds,696,995,-299,,0.0,N
@@ -696,7 +725,9 @@ Kurt Schroeder,Cleveland Indians,723,886,-163,,0.0,N
 Phil Armstrong,California Angels,724,1188,-464,,0.0,N
 J.J. Hogan,Texas Rangers,725,598,127,Later,3.9260151319598084,Y
 Rudolph Skinner,Montreal Expos,726,863,-137,,0.0,N
+Braydon Harvey,Las Vegas Knights,727,1080,-353,,0.0,N
 Gary Fitton,Los Angeles Dodgers,728,692,36,Later,3.305458956322112,Y
+Nic Corrigan,Las Vegas Knights,729,657,72,Later,3.6452297205741955,Y
 David Herrmann,London Royals,730,601,129,Later,3.933767225227791,Y
 Bryan Springhetti,Houston Astros,731,760,-29,Managed Risk,1.269860385419959,Y
 Johnny Garza,Cincinnati Reds,732,860,-128,,0.0,N
@@ -730,7 +761,9 @@ Dale Wilson,Cleveland Indians,759,930,-171,,0.0,N
 Ken Graham,California Angels,760,727,33,Later,3.263180262308081,Y
 Funky Felix,Texas Rangers,761,958,-197,,0.0,N
 Bernardito Reyes,Montreal Expos,762,303,459,Later,4.56561324474157,Y
+Warren Almeida,Las Vegas Knights,763,628,135,Later,3.956327442868026,Y
 Perry Parret,Los Angeles Dodgers,764,1054,-290,,0.0,N
+Richy Kearney,Las Vegas Knights,765,847,-82,,0.0,N
 Kent Vannelli,London Royals,766,677,89,Later,3.7499048351651325,Y
 Rolly Runihura,Houston Astros,767,766,1,Later,1.8465735902799727,Y
 Dylan Tsakonas,Cincinnati Reds,768,853,-85,,0.0,N
@@ -764,7 +797,9 @@ Karter Bickley,Cleveland Indians,795,992,-197,,0.0,N
 Sebastian Imad,California Angels,796,433,363,Later,4.44857693381837,Y
 B.J. Brewer,Texas Rangers,797,935,-138,,0.0,N
 Johnny Fall,Montreal Expos,798,970,-172,,0.0,N
+Aydin Propst,Las Vegas Knights,799,348,451,Later,4.556841089916116,Y
 Eugenio Bermudez,Los Angeles Dodgers,800,659,141,Later,3.9779135288006304,Y
+Joe White,Las Vegas Knights,801,849,-48,,0.0,N
 Lyle Salley,London Royals,802,834,-32,Managed Risk,1.1523594781085251,Y
 Orvin Peterson,Houston Astros,803,1147,-344,,0.0,N
 Carson Chang,Cincinnati Reds,804,1071,-267,,0.0,N
@@ -798,7 +833,9 @@ Ken Gustafson,Cleveland Indians,831,296,535,Later,4.642067080535401,Y
 Joe Keeling,California Angels,832,723,109,Later,3.8502401828962083,Y
 Bob Dennison,Texas Rangers,833,980,-147,,0.0,N
 Alexander Richard,Montreal Expos,834,912,-78,,0.0,N
+Luther Eckles,Las Vegas Knights,835,1096,-261,,0.0,N
 Collin Dahlberg,Los Angeles Dodgers,836,418,418,Later,4.518935459961069,Y
+Alex Thompson,Las Vegas Knights,837,532,305,Later,4.36179255097619,Y
 Brayden Hutchens,London Royals,838,923,-85,,0.0,N
 Jacob Walter,Houston Astros,839,546,293,Later,4.341789883669341,Y
 Hendrick Sanders,Cincinnati Reds,840,516,324,Later,4.391912591164869,Y
@@ -832,7 +869,9 @@ Oliver Farrell,Cleveland Indians,867,817,50,Later,3.465912816362163,Y
 Cooper Taylor,California Angels,868,722,146,Later,3.995216293389368,Y
 Erick Fleming,Texas Rangers,869,977,-108,,0.0,N
 Noah Rizzo,Montreal Expos,870,875,-5,Managed Risk,1.6164339756999317,Y
+Carter Weisel,Las Vegas Knights,871,771,100,Later,3.80756025842063,Y
 Myles Kish,Los Angeles Dodgers,872,454,418,Later,4.518935459961069,Y
+Andy Hicks,Las Vegas Knights,873,888,-15,Managed Risk,1.522760613339579,Y
 Max Williamson,London Royals,874,463,411,Later,4.510511674674763,Y
 Elvis Fowlkes,Houston Astros,875,416,459,Later,4.56561324474157,Y
 Darnell Hampton,Cincinnati Reds,876,927,-51,,0.0,N
@@ -866,7 +905,9 @@ Luke Shimmin,Cleveland Indians,903,810,93,Later,3.771647391135002,Y
 Skeet Clay,California Angels,904,807,97,Later,3.792483739335286,Y
 Ryan McNamara,Texas Rangers,905,1153,-248,,0.0,N
 Austin Calhoun,Montreal Expos,906,551,355,Later,4.437465365426015,Y
+Galt Kuhl,Las Vegas Knights,907,512,395,Later,4.490707105627241,Y
 Didier Twiss,Los Angeles Dodgers,908,443,465,Later,4.572092817062822,Y
+Bryan Ruddy,Las Vegas Knights,909,1184,-275,,0.0,N
 Mitch Bucher,London Royals,910,322,588,Later,4.689213091825794,Y
 Aaron Ward,Houston Astros,911,973,-62,,0.0,N
 Trenton De La Cruz,Cincinnati Reds,912,737,175,Later,4.085241997519075,Y
@@ -900,7 +941,9 @@ Jason Levine,Cleveland Indians,939,715,224,Later,4.2080502011022105,Y
 Duane Haggard,California Angels,940,702,238,Later,4.2382317759657555,Y
 Julino Molina,Texas Rangers,941,961,-20,Managed Risk,1.458303336014054,Y
 Tucker Truax,Montreal Expos,942,1138,-196,,0.0,N
+Levi McIntosh,Las Vegas Knights,943,420,523,Later,4.630745842160521,Y
 Danny Timlin,Los Angeles Dodgers,944,413,531,Later,4.638321744670822,Y
+Elijah Reed,Las Vegas Knights,945,606,339,Later,4.414472808805104,Y
 Emilio Ramos,London Royals,946,939,7,Later,2.539720770839918,Y
 Dean Yu,Houston Astros,947,985,-38,,0.0,N
 Elijah Warner,Cincinnati Reds,948,796,152,Later,4.015218960696218,Y
@@ -934,7 +977,9 @@ Skyler Burton,Cleveland Indians,975,639,336,Later,4.410041465176181,Y
 Jeremiah Jennings,California Angels,976,541,435,Later,4.538821121674517,Y
 Will Niessner,Texas Rangers,977,1097,-120,,0.0,N
 Terry Barton,Montreal Expos,978,1028,-50,,0.0,N
+Armando Ovalle,Las Vegas Knights,979,1088,-109,,0.0,N
 Sidell Marchand,Los Angeles Dodgers,980,840,140,Later,3.974379945189084,Y
+Raudy Sosa,Las Vegas Knights,981,1150,-169,,0.0,N
 Jason Miller,London Royals,982,792,190,Later,4.126136714023315,Y
 O.C. Craig,Houston Astros,983,908,75,Later,3.6653666701431655,Y
 Godrell See,Cincinnati Reds,984,765,219,Later,4.196813773176181,Y
@@ -968,4 +1013,5 @@ Trent Ray,Cleveland Indians,1011,725,286,Later,4.32974110787981,Y
 Houston Lyons,California Angels,1012,237,775,Later,4.8270762600916095,Y
 Nomar San Martin,Texas Rangers,1013,869,144,Later,3.988366871210287,Y
 Titan Spence,Montreal Expos,1014,812,202,Later,4.156602989520893,Y
+Dirk Travis,Las Vegas Knights,1015,634,381,Later,4.472710304303288,Y
 Avery Forrest,Los Angeles Dodgers,1016,1130,-114,,0.0,N
