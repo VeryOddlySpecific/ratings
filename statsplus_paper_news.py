@@ -8,12 +8,16 @@ HTML and PNG for every output under a single dated directory:
 
   {league}_news_{YYYYMMDD}
 
-Dependencies: requests, beautifulsoup4. For PNG output: playwright (then run
-  playwright install chromium).
+With --magazine, also builds a combined multi-page PDF (magazine.html and
+magazine.pdf) using a standard page size (--page-size: letter, a4, or WxH).
+
+Dependencies: requests, beautifulsoup4. For PNG and magazine PDF: playwright
+  (then run: playwright install chromium).
 
 Usage:
   python statsplus_paper_news.py --league uba --league-id 106
   python statsplus_paper_news.py --league uba --league-id 106 --days 14 --output ./out
+  python statsplus_paper_news.py --league uba --league-id 106 --magazine --page-size letter
 """
 
 import argparse
@@ -42,6 +46,25 @@ LEAGUE_BASE_URLS: Dict[str, str] = {
     "uba": "https://statsplus.net/uba",
     "sol": "https://atl-02.statsplus.net/sol/"
 }
+
+# Page dimensions for magazine PDF (width, height) with units for CSS/Playwright
+PAGE_SIZES: Dict[str, Tuple[str, str]] = {
+    "letter": ("8.5in", "11in"),
+    "a4": ("210mm", "297mm"),
+}
+
+
+def parse_page_size(page_size_arg: str) -> Tuple[str, str]:
+    """Parse --page-size: 'letter', 'a4', or 'WxH' / 'WxHin' / 'WxHmm'. Return (width, height)."""
+    if page_size_arg.lower() in PAGE_SIZES:
+        return PAGE_SIZES[page_size_arg.lower()]
+    m = re.match(r"^([\d.]+)\s*[xX×]\s*([\d.]+)\s*(in|mm)?$", page_size_arg.strip())
+    if not m:
+        raise ValueError(
+            f"Invalid --page-size '{page_size_arg}'. Use 'letter', 'a4', or WxH (e.g. 8.5x11 or 210x297mm)."
+        )
+    w, h, unit = m.group(1), m.group(2), (m.group(3) or "in").lower()
+    return (f"{w}{unit}", f"{h}{unit}")
 
 
 def construct_content_url(base_url: str, content_filename: str) -> str:
@@ -201,7 +224,20 @@ def markdown_like_to_html(text: str) -> str:
     return "\n    ".join(parts)
 
 
-# Paper HTML template (placeholders: PAPER_NAME, DATELINE, SECTION_TAG, H1, DECK, BYLINE, BODY_HTML, TITLE)
+# Inner section fragment (placeholders: PAPER_NAME, DATELINE, SECTION_TAG, H1, DECK, BYLINE, BODY_HTML)
+PAPER_SECTION_TEMPLATE = """  <div class="masthead">
+    <div class="paper-name">{{PAPER_NAME}}</div>
+    <div class="dateline">{{DATELINE}}</div>
+  </div>
+  <div class="section-tag">{{SECTION_TAG}}</div>
+  <h1>{{H1}}</h1>
+  <div class="deck">{{DECK}}</div>
+  <div class="byline">{{BYLINE}}</div>
+  <div class="columns">
+    {{BODY_HTML}}
+  </div>"""
+
+# Full single-page document (placeholders: TITLE, SECTION_HTML)
 PAPER_TEMPLATE = """<!DOCTYPE html>
 <html lang="en">
 <head>
@@ -234,20 +270,62 @@ PAPER_TEMPLATE = """<!DOCTYPE html>
 </head>
 <body>
 <div class="paper">
-  <div class="masthead">
-    <div class="paper-name">{{PAPER_NAME}}</div>
-    <div class="dateline">{{DATELINE}}</div>
-  </div>
-  <div class="section-tag">{{SECTION_TAG}}</div>
-  <h1>{{H1}}</h1>
-  <div class="deck">{{DECK}}</div>
-  <div class="byline">{{BYLINE}}</div>
-  <div class="columns">
-    {{BODY_HTML}}
-  </div>
+{{SECTION_HTML}}
 </div>
 </body>
 </html>"""
+
+# Magazine: multi-page document with @page size and break-after between sections
+# Placeholders: PAGE_WIDTH, PAGE_HEIGHT, SECTIONS
+MAGAZINE_TEMPLATE = """<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>League News Magazine</title>
+<link href="https://fonts.googleapis.com/css2?family=UnifrakturMaguntia&family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Source+Serif+4:ital,wght@0,300;0,400;1,300&display=swap" rel="stylesheet">
+<style>
+  @page { size: {{PAGE_WIDTH}} {{PAGE_HEIGHT}}; }
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  body { background: #f2ead8; font-family: 'Source Serif 4', Georgia, serif; color: #1a1208; }
+  .magazine-page { break-after: page; }
+  .magazine-page .paper { break-inside: avoid; }
+  .paper { max-width: 100%; margin: 0 auto; background: #faf5e8; border: 1px solid #c8b98a; box-shadow: 4px 4px 20px rgba(0,0,0,0.18); padding: 48px 56px 60px; }
+  .masthead { text-align: center; border-bottom: 3px double #1a1208; padding-bottom: 12px; margin-bottom: 8px; }
+  .paper-name { font-family: 'UnifrakturMaguntia', cursive; font-size: 52px; line-height: 1; letter-spacing: 1px; color: #0f0800; }
+  .dateline { font-size: 11px; letter-spacing: 2px; text-transform: uppercase; color: #5a4a2a; margin-top: 6px; border-top: 1px solid #1a1208; border-bottom: 1px solid #1a1208; padding: 3px 0; }
+  .section-tag { text-align: center; font-family: 'Playfair Display', serif; font-size: 11px; letter-spacing: 3px; text-transform: uppercase; color: #8b3a1a; margin: 14px 0 10px; }
+  h1 { font-family: 'Playfair Display', serif; font-size: 42px; font-weight: 700; line-height: 1.1; text-align: center; margin-bottom: 6px; color: #0f0800; }
+  .deck { font-family: 'Playfair Display', serif; font-style: italic; font-size: 17px; text-align: center; color: #3d2d10; margin-bottom: 16px; line-height: 1.4; }
+  .byline { text-align: center; font-size: 11px; letter-spacing: 2px; text-transform: uppercase; color: #5a4a2a; border-top: 1px solid #c8b98a; border-bottom: 1px solid #c8b98a; padding: 5px 0; margin-bottom: 22px; }
+  .columns { column-count: 2; column-gap: 36px; column-rule: 1px solid #c8b98a; }
+  p { font-size: 15px; line-height: 1.75; margin-bottom: 14px; text-align: justify; hyphens: auto; font-weight: 300; }
+  p:first-child::first-letter { font-family: 'Playfair Display', serif; font-size: 62px; font-weight: 700; float: left; line-height: 0.78; margin-right: 6px; margin-top: 8px; color: #0f0800; }
+  .day-head { font-family: 'Playfair Display', serif; font-weight: 700; font-size: 16px; margin-top: 18px; margin-bottom: 4px; color: #8b3a1a; }
+  .stats-box { border: 1px solid #c8b98a; background: #f0e8d0; padding: 14px 18px; margin: 0 0 14px 0; break-inside: avoid; }
+  .stats-box.compact { font-size: 12px; padding: 8px 10px; }
+  .stats-box table { width: 100%; }
+  .stats-box td, .stats-box th { padding: 2px 4px; }
+  .linescore-table { font-size: 13px; margin: 8px 0; width: 100%; }
+  .linescore-table td, .linescore-table th { padding: 2px 4px; }
+</style>
+</head>
+<body>
+{{SECTIONS}}
+</body>
+</html>"""
+
+
+def build_magazine_html(sections: List[str], page_width: str, page_height: str) -> str:
+    """Build a single HTML document with all sections, each in a magazine-page div with page break."""
+    wrapped = "".join(
+        f'<div class="magazine-page"><div class="paper">\n{s}\n</div></div>\n' for s in sections
+    )
+    return (
+        MAGAZINE_TEMPLATE.replace("{{PAGE_WIDTH}}", page_width)
+        .replace("{{PAGE_HEIGHT}}", page_height)
+        .replace("{{SECTIONS}}", wrapped)
+    )
 
 
 @dataclass
@@ -545,6 +623,27 @@ def parse_news_oneliners(html: str, num_days: int) -> List[Tuple[str, List[str]]
     return days
 
 
+def build_paper_section(
+    paper_name: str,
+    dateline: str,
+    section_tag: str,
+    h1: str,
+    deck: str,
+    byline: str,
+    body_html: str,
+) -> str:
+    """Build the inner paper section HTML (masthead + section + body). Used for single pages and magazine."""
+    return (
+        PAPER_SECTION_TEMPLATE.replace("{{PAPER_NAME}}", paper_name)
+        .replace("{{DATELINE}}", dateline)
+        .replace("{{SECTION_TAG}}", section_tag)
+        .replace("{{H1}}", h1)
+        .replace("{{DECK}}", deck)
+        .replace("{{BYLINE}}", byline)
+        .replace("{{BODY_HTML}}", body_html)
+    )
+
+
 def build_paper_html(
     paper_name: str,
     dateline: str,
@@ -556,16 +655,16 @@ def build_paper_html(
     title: Optional[str] = None,
 ) -> str:
     t = title or h1
-    return (
-        PAPER_TEMPLATE.replace("{{PAPER_NAME}}", paper_name)
-        .replace("{{DATELINE}}", dateline)
-        .replace("{{SECTION_TAG}}", section_tag)
-        .replace("{{H1}}", h1)
-        .replace("{{DECK}}", deck)
-        .replace("{{BYLINE}}", byline)
-        .replace("{{BODY_HTML}}", body_html)
-        .replace("{{TITLE}}", t)
+    section_html = build_paper_section(
+        paper_name=paper_name,
+        dateline=dateline,
+        section_tag=section_tag,
+        h1=h1,
+        deck=deck,
+        byline=byline,
+        body_html=body_html,
     )
+    return PAPER_TEMPLATE.replace("{{SECTION_HTML}}", section_html).replace("{{TITLE}}", t)
 
 
 def render_html_to_png(html_path: Path, png_path: Path) -> bool:
@@ -593,6 +692,38 @@ def render_html_to_png(html_path: Path, png_path: Path) -> bool:
         return False
 
 
+def render_magazine_to_pdf(
+    html_path: Path, pdf_path: Path, page_width: str, page_height: str
+) -> bool:
+    """Render magazine HTML to a multi-page PDF with the given page dimensions."""
+    try:
+        from playwright.sync_api import sync_playwright
+    except ImportError:
+        print(
+            "[WARNING] playwright not installed; skipping PDF. pip install playwright && playwright install chromium",
+            file=sys.stderr,
+        )
+        return False
+    try:
+        with sync_playwright() as p:
+            browser = p.chromium.launch()
+            page = browser.new_page()
+            file_url = "file:///" + str(html_path.resolve()).replace("\\", "/")
+            page.goto(file_url, wait_until="networkidle")
+            page.wait_for_timeout(500)
+            page.pdf(
+                path=str(pdf_path),
+                width=page_width,
+                height=page_height,
+                margin={"top": "0.5in", "bottom": "0.5in", "left": "0.5in", "right": "0.5in"},
+            )
+            browser.close()
+        return True
+    except Exception as e:
+        print(f"[WARNING] Magazine PDF render failed for {html_path}: {e}", file=sys.stderr)
+        return False
+
+
 def parse_args() -> argparse.Namespace:
     p = argparse.ArgumentParser(
         description="Fetch StatsPlus league news and generate paper-style HTML + PNG.",
@@ -605,6 +736,13 @@ def parse_args() -> argparse.Namespace:
     p.add_argument("--base-url", type=str, help="Override base URL")
     p.add_argument("--timeout", type=int, default=30, help="Request timeout (seconds)")
     p.add_argument("--output", "-o", type=Path, help="Parent directory for output (default: cwd)")
+    p.add_argument("--magazine", action="store_true", help="Build a combined multi-page magazine PDF")
+    p.add_argument(
+        "--page-size",
+        type=str,
+        default="letter",
+        help="Page size for magazine PDF: 'letter', 'a4', or WxH e.g. 8.5x11 or 210x297mm (default: letter)",
+    )
     return p.parse_args()
 
 
@@ -634,19 +772,33 @@ def main() -> None:
     paper_name = f"The {league_tag.upper()} Chronicle" if league_tag != "league" else "League Chronicle"
     dateline_base = f"{home_data.date_display}  ·  League News  ·  Baseball"
 
+    magazine_sections: List[str] = []
+
     home_path = out_dir / "home.html"
+    body_parts = []
+    if home_data.featured:
+        for fb in home_data.featured:
+            body_parts.append(f'<div class="day-head">{fb.headline}</div>')
+            body_parts.append(f'<p style="font-size:11px; color:#5a4a2a;">{fb.date_str}</p>')
+            body_parts.append(f"<p>{fb.body_html}</p>")
+    if home_data.news_links:
+        body_parts.append('<div class="day-head">Today\'s Headlines</div>')
+        for link in home_data.news_links:
+            body_parts.append(f"<p>· {link.title}</p>")
+    home_body = "\n    ".join(body_parts) if body_parts else "<p>No content.</p>"
+    if args.magazine:
+        magazine_sections.append(
+            build_paper_section(
+                paper_name=paper_name,
+                dateline=dateline_base,
+                section_tag="★ League News ★",
+                h1="Today's Headlines",
+                deck="Latest from the league",
+                byline="StatsPlus League News",
+                body_html=home_body,
+            )
+        )
     if not home_path.exists():
-        body_parts = []
-        if home_data.featured:
-            for fb in home_data.featured:
-                body_parts.append(f'<div class="day-head">{fb.headline}</div>')
-                body_parts.append(f'<p style="font-size:11px; color:#5a4a2a;">{fb.date_str}</p>')
-                body_parts.append(f"<p>{fb.body_html}</p>")
-        if home_data.news_links:
-            body_parts.append('<div class="day-head">Today\'s Headlines</div>')
-            for link in home_data.news_links:
-                body_parts.append(f"<p>· {link.title}</p>")
-        home_body = "\n    ".join(body_parts) if body_parts else "<p>No content.</p>"
         home_html_out = build_paper_html(
             paper_name=paper_name,
             dateline=dateline_base,
@@ -684,6 +836,18 @@ def main() -> None:
                 title=link.title,
             )
             art_path.write_text(art_html_out, encoding="utf-8")
+            if args.magazine:
+                magazine_sections.append(
+                    build_paper_section(
+                        paper_name=paper_name,
+                        dateline=dateline_base,
+                        section_tag="League News",
+                        h1=link.title,
+                        deck="",
+                        byline="StatsPlus",
+                        body_html=body_html or "<p>No content.</p>",
+                    )
+                )
             print(f"[INFO] Wrote {art_path}")
         except Exception as e:
             print(f"[WARNING] Failed article {link.article_id}: {e}", file=sys.stderr)
@@ -711,6 +875,18 @@ def main() -> None:
             title=f"Daily Summary {home_data.date_yyyymmdd}",
         )
         summary_path.write_text(summary_html_out, encoding="utf-8")
+        if args.magazine:
+            magazine_sections.append(
+                build_paper_section(
+                    paper_name=paper_name,
+                    dateline=dateline_base,
+                    section_tag="Daily Summary",
+                    h1=f"Past {args.days} Days",
+                    deck=f"One-liners from the last {len(day_groups)} day(s)",
+                    byline="StatsPlus",
+                    body_html=summary_body,
+                )
+            )
         print(f"[INFO] Wrote {summary_path}")
     else:
         print(f"[INFO] {summary_path.name} exists, skipping")
@@ -759,6 +935,18 @@ def main() -> None:
             title=f"Scores & Box Scores {date_yyyymmdd}",
         )
         roundup_path.write_text(roundup_html_out, encoding="utf-8")
+        if args.magazine:
+            magazine_sections.append(
+                build_paper_section(
+                    paper_name=paper_name,
+                    dateline=dateline_base,
+                    section_tag="★ Box Scores ★",
+                    h1=f"Scores — {date_display}",
+                    deck="Game summaries and linescores.",
+                    byline="StatsPlus",
+                    body_html=roundup_body,
+                )
+            )
         print(f"[INFO] Wrote {roundup_path}")
 
     html_files = list(out_dir.glob("*.html"))
@@ -769,6 +957,22 @@ def main() -> None:
             continue
         if render_html_to_png(hp, png_path):
             print(f"[INFO] Rendered {png_path}")
+
+    if args.magazine and magazine_sections:
+        try:
+            page_width, page_height = parse_page_size(args.page_size)
+        except ValueError as e:
+            print(f"[ERROR] {e}", file=sys.stderr)
+            sys.exit(1)
+        magazine_html = build_magazine_html(magazine_sections, page_width, page_height)
+        magazine_path = out_dir / "magazine.html"
+        magazine_path.write_text(magazine_html, encoding="utf-8")
+        print(f"[INFO] Wrote {magazine_path}")
+        pdf_path = out_dir / "magazine.pdf"
+        if render_magazine_to_pdf(magazine_path, pdf_path, page_width, page_height):
+            print(f"[INFO] Rendered {pdf_path}")
+        else:
+            print(f"[WARNING] Magazine PDF not generated", file=sys.stderr)
 
     print(f"[SUCCESS] Done. Output in {out_dir.resolve()}")
 
