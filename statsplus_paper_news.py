@@ -4,12 +4,13 @@ StatsPlus Paper News
 
 Fetches league home page, top 5 news articles, and N days of one-liners from
 StatsPlus; assembles each into a paper-style HTML (newspaper look); saves
-HTML and PNG for every output under a single dated directory:
+HTML under a single dated directory. Use --png to also render each HTML to PNG.
 
   {league}_news_{YYYYMMDD}
 
-With --magazine, also builds a combined multi-page PDF (magazine.html and
-magazine.pdf) using a standard page size (--page-size: letter, a4, or WxH).
+With --magazine, builds a combined multi-page newspaper/magazine (magazine.html
+and magazine.pdf): home, then articles, then one-liners, laid out on A4-sized
+pages (--page-size, default a4) with content flowing to the next page when full.
 
 Dependencies: requests, beautifulsoup4. For PNG and magazine PDF: playwright
   (then run: playwright install chromium).
@@ -266,6 +267,11 @@ PAPER_TEMPLATE = """<!DOCTYPE html>
   .stats-box td, .stats-box th { padding: 2px 4px; }
   .linescore-table { font-size: 13px; margin: 8px 0; width: 100%; }
   .linescore-table td, .linescore-table th { padding: 2px 4px; }
+  .standings-block { break-inside: avoid; margin-bottom: 18px; }
+  .standings-block table { width: 100%; font-size: 13px; }
+  .standings-block td, .standings-block th { padding: 3px 6px; }
+  .standings-block th { text-align: left; }
+  .standings-block .boxtitle { font-family: 'Playfair Display', serif; font-size: 14px; color: #8b3a1a; }
 </style>
 </head>
 <body>
@@ -287,11 +293,15 @@ MAGAZINE_TEMPLATE = """<!DOCTYPE html>
 <style>
   @page { size: {{PAGE_WIDTH}} {{PAGE_HEIGHT}}; }
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-  body { background: #f2ead8; font-family: 'Source Serif 4', Georgia, serif; color: #1a1208; }
+  body { background: #e0d8c4; font-family: 'Source Serif 4', Georgia, serif; color: #1a1208; }
   .magazine-page { break-after: page; }
-  .magazine-page .paper { break-inside: avoid; }
-  .paper { max-width: 100%; margin: 0 auto; background: #faf5e8; border: 1px solid #c8b98a; box-shadow: 4px 4px 20px rgba(0,0,0,0.18); padding: 48px 56px 60px; }
+  .paper { width: 90%; max-width: 90%; aspect-ratio: 22/34; margin: 0 auto 2em; background: #ebe3d2; border: none; box-shadow: none; padding: 40px 3% 48px; break-inside: auto; }
   .masthead { text-align: center; border-bottom: 3px double #1a1208; padding-bottom: 12px; margin-bottom: 8px; }
+  section > .masthead ~ .masthead,
+  section > .section-tag ~ .section-tag,
+  section ~ section > h1 ~ h1,
+  section ~ .deck ~ .deck { display: none; }
+  section > .byline ~ .byline { margin: 15px 0 15px 0; }
   .paper-name { font-family: 'UnifrakturMaguntia', cursive; font-size: 52px; line-height: 1; letter-spacing: 1px; color: #0f0800; }
   .dateline { font-size: 11px; letter-spacing: 2px; text-transform: uppercase; color: #5a4a2a; margin-top: 6px; border-top: 1px solid #1a1208; border-bottom: 1px solid #1a1208; padding: 3px 0; }
   .section-tag { text-align: center; font-family: 'Playfair Display', serif; font-size: 11px; letter-spacing: 3px; text-transform: uppercase; color: #8b3a1a; margin: 14px 0 10px; }
@@ -308,6 +318,11 @@ MAGAZINE_TEMPLATE = """<!DOCTYPE html>
   .stats-box td, .stats-box th { padding: 2px 4px; }
   .linescore-table { font-size: 13px; margin: 8px 0; width: 100%; }
   .linescore-table td, .linescore-table th { padding: 2px 4px; }
+  .standings-block { break-inside: avoid; margin-bottom: 18px; }
+  .standings-block table { width: 100%; font-size: 13px; }
+  .standings-block td, .standings-block th { padding: 3px 6px; }
+  .standings-block th { text-align: left; }
+  .standings-block .boxtitle { font-family: 'Playfair Display', serif; font-size: 14px; color: #8b3a1a; }
 </style>
 </head>
 <body>
@@ -316,11 +331,33 @@ MAGAZINE_TEMPLATE = """<!DOCTYPE html>
 </html>"""
 
 
-def build_magazine_html(sections: List[str], page_width: str, page_height: str) -> str:
-    """Build a single HTML document with all sections, each in a magazine-page div with page break."""
-    wrapped = "".join(
-        f'<div class="magazine-page"><div class="paper">\n{s}\n</div></div>\n' for s in sections
-    )
+def build_magazine_html(
+    sections: List[Tuple[str, str]],
+    page_width: str,
+    page_height: str,
+) -> str:
+    """Build a single HTML document. sections is a list of (section_type, html).
+    Each type (home, standings, article, scores_roundup, daily_summary) gets one
+    <section class="paper {type}"> containing all that type's content. Home and
+    standings are wrapped in magazine-page for a page break."""
+    # Group by type, preserving order of first occurrence
+    grouped: Dict[str, List[str]] = {}
+    order: List[str] = []
+    for section_type, html in sections:
+        if section_type not in grouped:
+            order.append(section_type)
+            grouped[section_type] = []
+        grouped[section_type].append(html)
+    parts = []
+    for section_type in order:
+        inner = "\n".join(grouped[section_type])
+        if section_type in ("home", "standings"):
+            parts.append(
+                f'<div class="magazine-page"><section class="paper {section_type}">\n{inner}\n</section></div>\n'
+            )
+        else:
+            parts.append(f'<section class="paper {section_type}">\n{inner}\n</section>\n')
+    wrapped = "".join(parts)
     return (
         MAGAZINE_TEMPLATE.replace("{{PAGE_WIDTH}}", page_width)
         .replace("{{PAGE_HEIGHT}}", page_height)
@@ -597,6 +634,90 @@ def parse_scoreboard_box_links(html: str) -> List[int]:
     return ids
 
 
+# Standings default columns: Team, W, L, PCT, GB (first 5 columns)
+STANDINGS_DEFAULT_COLUMNS = 5
+
+
+def _standings_table_trim_columns(table) -> str:
+    """Return table HTML with only the first STANDINGS_DEFAULT_COLUMNS columns (Team, W, L, PCT, GB)."""
+    if BeautifulSoup is None:
+        return str(table)
+    rows_html = []
+    for tr in table.find_all("tr"):
+        cells = tr.find_all(["td", "th"])
+        if not cells:
+            continue
+        rows_html.append("<tr>" + "".join(str(c) for c in cells[:STANDINGS_DEFAULT_COLUMNS]) + "</tr>")
+    if not rows_html:
+        return str(table)
+    attrs = getattr(table, "attrs", {})
+    attr_parts = []
+    for k, v in attrs.items():
+        val = " ".join(v) if isinstance(v, list) else v
+        attr_parts.append(f'{k}="{val}"')
+    open_tag = "<table " + " ".join(attr_parts) + ">" if attr_parts else "<table>"
+    return open_tag + "".join(rows_html) + "</table>"
+
+
+def parse_standings_page(
+    html: str, *, full_standings: bool = False
+) -> Tuple[Optional[str], Optional[str]]:
+    """Extract National League and American League standings from a StatsPlus standings page HTML.
+    The standings page has multiple sections per league: divisions and wildcard. Each section is a
+    row with td.boxtitle (or th.boxtitle) followed by a row containing a table.data.
+    When full_standings is False (default), only Team, W, L, PCT, GB columns are kept.
+    Returns (nl_html, al_html); each is the concatenation of all that league's sections (header + table per section).
+    """
+    if BeautifulSoup is None:
+        return (None, None)
+    soup = BeautifulSoup(html, "html.parser")
+    nl_parts: List[str] = []
+    al_parts: List[str] = []
+    # Standings page uses td.boxtitle; home page snippet used th.boxtitle — support both
+    for cell in soup.find_all(["td", "th"], class_="boxtitle"):
+        text = (cell.get_text() or "").strip().upper()
+        if "LEAGUE" not in text:
+            continue
+        is_nl = "NATIONAL" in text and "AMERICAN" not in text
+        is_al = "AMERICAN" in text
+        if not is_nl and not is_al:
+            continue
+        parent_tr = cell.find_parent("tr")
+        if not parent_tr:
+            continue
+        next_tr = parent_tr.find_next_sibling("tr")
+        if not next_tr:
+            continue
+        data_table = next_tr.find("table", class_=re.compile(r"data", re.I))
+        if not data_table:
+            continue
+        title_text = (cell.get_text() or "").strip()
+        header_html = (
+            '<table class="databg" cellspacing="0" cellpadding="0">'
+            f'<tr><td class="boxtitle">{title_text}</td></tr></table>'
+        )
+        table_html = str(data_table) if full_standings else _standings_table_trim_columns(data_table)
+        section_block = header_html + "\n" + table_html
+        if is_nl:
+            nl_parts.append(section_block)
+        else:
+            al_parts.append(section_block)
+    nl_html = "\n".join(nl_parts) if nl_parts else None
+    al_html = "\n".join(al_parts) if al_parts else None
+    return (nl_html, al_html)
+
+
+def extract_paper_section_html(html: str) -> Optional[str]:
+    """Extract the inner HTML of the .paper div from a full paper HTML document (for magazine reuse)."""
+    if BeautifulSoup is None:
+        return None
+    soup = BeautifulSoup(html, "html.parser")
+    paper = soup.find("div", class_="paper")
+    if not paper:
+        return None
+    return paper.decode_contents()
+
+
 def parse_news_oneliners(html: str, num_days: int) -> List[Tuple[str, List[str]]]:
     """Return list of (date_string, list of one-liner HTML strings) for the first num_days."""
     if BeautifulSoup is None:
@@ -740,8 +861,19 @@ def parse_args() -> argparse.Namespace:
     p.add_argument(
         "--page-size",
         type=str,
-        default="letter",
-        help="Page size for magazine PDF: 'letter', 'a4', or WxH e.g. 8.5x11 or 210x297mm (default: letter)",
+        default="a4",
+        help="Page size for combined magazine: 'a4', 'letter', or WxH e.g. 210x297mm (default: a4)",
+    )
+    p.add_argument(
+        "--png",
+        action="store_true",
+        dest="render_png",
+        help="Render each HTML file to PNG (default: off; requires playwright)",
+    )
+    p.add_argument(
+        "--full-standings",
+        action="store_true",
+        help="Include all standings columns (default: only Team, W, L, PCT, GB)",
     )
     return p.parse_args()
 
@@ -772,7 +904,8 @@ def main() -> None:
     paper_name = f"The {league_tag.upper()} Chronicle" if league_tag != "league" else "League Chronicle"
     dateline_base = f"{home_data.date_display}  ·  League News  ·  Baseball"
 
-    magazine_sections: List[str] = []
+    magazine_sections: List[Tuple[str, str]] = []  # (section_type, html)
+    magazine_daily_summary: Optional[str] = None
 
     home_path = out_dir / "home.html"
     body_parts = []
@@ -788,14 +921,17 @@ def main() -> None:
     home_body = "\n    ".join(body_parts) if body_parts else "<p>No content.</p>"
     if args.magazine:
         magazine_sections.append(
-            build_paper_section(
-                paper_name=paper_name,
-                dateline=dateline_base,
-                section_tag="★ League News ★",
-                h1="Today's Headlines",
-                deck="Latest from the league",
-                byline="StatsPlus League News",
-                body_html=home_body,
+            (
+                "home",
+                build_paper_section(
+                    paper_name=paper_name,
+                    dateline=dateline_base,
+                    section_tag="★ League News ★",
+                    h1="Today's Headlines",
+                    deck="Latest from the league",
+                    byline="StatsPlus League News",
+                    body_html=home_body,
+                ),
             )
         )
     if not home_path.exists():
@@ -814,9 +950,76 @@ def main() -> None:
     else:
         print(f"[INFO] {home_path.name} exists, skipping")
 
+    # League standings article: fetch league_###_standings.html, parse NL/AL, NL in first column, AL in second
+    standings_path = out_dir / "standings.html"
+    nl_standings: Optional[str] = None
+    al_standings: Optional[str] = None
+    need_standings_data = not standings_path.exists() or args.magazine
+    if need_standings_data:
+        standings_url = construct_content_url(base_url, f"league_{args.league_id}_standings.html")
+        try:
+            print(f"[INFO] Fetching standings: {standings_url}")
+            standings_html = fetch_html(standings_url, args.timeout)
+            nl_standings, al_standings = parse_standings_page(
+                standings_html, full_standings=getattr(args, "full_standings", False)
+            )
+        except requests.RequestException as e:
+            print(f"[WARNING] Could not fetch standings page: {e}", file=sys.stderr)
+    if nl_standings or al_standings:
+        parts = []
+        if nl_standings:
+            parts.append(f'<div class="standings-block stats-box">{nl_standings}</div>')
+        if al_standings:
+            parts.append(f'<div class="standings-block stats-box">{al_standings}</div>')
+        standings_body = "\n    ".join(parts)
+        if not standings_path.exists():
+            standings_html_out = build_paper_html(
+                paper_name=paper_name,
+                dateline=dateline_base,
+                section_tag="League Standings",
+                h1="League Standings",
+                deck="National League and American League",
+                byline="StatsPlus",
+                body_html=standings_body,
+                title=f"League Standings {home_data.date_yyyymmdd}",
+            )
+            standings_path.write_text(standings_html_out, encoding="utf-8")
+            print(f"[INFO] Wrote {standings_path}")
+        if args.magazine:
+            magazine_sections.append(
+                (
+                    "standings",
+                    build_paper_section(
+                        paper_name=paper_name,
+                        dateline=dateline_base,
+                        section_tag="League Standings",
+                        h1="League Standings",
+                        deck="National League and American League",
+                        byline="StatsPlus",
+                        body_html=standings_body,
+                    ),
+                )
+            )
+    elif standings_path.exists():
+        if args.magazine:
+            try:
+                section_html = extract_paper_section_html(standings_path.read_text(encoding="utf-8"))
+                if section_html:
+                    magazine_sections.append(("standings", section_html))
+            except Exception as e:
+                print(f"[WARNING] Could not read standings for magazine: {e}", file=sys.stderr)
+        print(f"[INFO] {standings_path.name} exists, skipping")
+
     for link in home_data.news_links:
         art_path = out_dir / f"article_{link.article_id}.html"
         if art_path.exists():
+            if args.magazine:
+                try:
+                    section_html = extract_paper_section_html(art_path.read_text(encoding="utf-8"))
+                    if section_html:
+                        magazine_sections.append(("article", section_html))
+                except Exception as e:
+                    print(f"[WARNING] Could not read {art_path.name} for magazine: {e}", file=sys.stderr)
             print(f"[INFO] {art_path.name} exists, skipping")
             continue
         try:
@@ -838,14 +1041,17 @@ def main() -> None:
             art_path.write_text(art_html_out, encoding="utf-8")
             if args.magazine:
                 magazine_sections.append(
-                    build_paper_section(
-                        paper_name=paper_name,
-                        dateline=dateline_base,
-                        section_tag="League News",
-                        h1=link.title,
-                        deck="",
-                        byline="StatsPlus",
-                        body_html=body_html or "<p>No content.</p>",
+                    (
+                        "article",
+                        build_paper_section(
+                            paper_name=paper_name,
+                            dateline=dateline_base,
+                            section_tag="League News",
+                            h1=link.title,
+                            deck="",
+                            byline="StatsPlus",
+                            body_html=body_html or "<p>No content.</p>",
+                        ),
                     )
                 )
             print(f"[INFO] Wrote {art_path}")
@@ -876,19 +1082,24 @@ def main() -> None:
         )
         summary_path.write_text(summary_html_out, encoding="utf-8")
         if args.magazine:
-            magazine_sections.append(
-                build_paper_section(
-                    paper_name=paper_name,
-                    dateline=dateline_base,
-                    section_tag="Daily Summary",
-                    h1=f"Past {args.days} Days",
-                    deck=f"One-liners from the last {len(day_groups)} day(s)",
-                    byline="StatsPlus",
-                    body_html=summary_body,
-                )
+            magazine_daily_summary = build_paper_section(
+                paper_name=paper_name,
+                dateline=dateline_base,
+                section_tag="Daily Summary",
+                h1=f"Past {args.days} Days",
+                deck=f"One-liners from the last {len(day_groups)} day(s)",
+                byline="StatsPlus",
+                body_html=summary_body,
             )
         print(f"[INFO] Wrote {summary_path}")
     else:
+        if args.magazine:
+            try:
+                section_html = extract_paper_section_html(summary_path.read_text(encoding="utf-8"))
+                if section_html:
+                    magazine_daily_summary = section_html
+            except Exception as e:
+                print(f"[WARNING] Could not read daily summary for magazine: {e}", file=sys.stderr)
         print(f"[INFO] {summary_path.name} exists, skipping")
 
     # Scores & box scores: one roundup file per day (skip days with no games)
@@ -898,6 +1109,13 @@ def main() -> None:
         date_yyyymmdd = d.strftime("%Y%m%d")
         roundup_path = out_dir / f"scores_roundup_{date_yyyymmdd}.html"
         if roundup_path.exists():
+            if args.magazine:
+                try:
+                    section_html = extract_paper_section_html(roundup_path.read_text(encoding="utf-8"))
+                    if section_html:
+                        magazine_sections.append(("scores_roundup", section_html))
+                except Exception as e:
+                    print(f"[WARNING] Could not read {roundup_path.name} for magazine: {e}", file=sys.stderr)
             print(f"[INFO] {roundup_path.name} exists, skipping")
             continue
         scoreboard_filename = f"league_{args.league_id}_scores_{d.year}_{d.month:02d}_{d.day:02d}.html"
@@ -937,26 +1155,34 @@ def main() -> None:
         roundup_path.write_text(roundup_html_out, encoding="utf-8")
         if args.magazine:
             magazine_sections.append(
-                build_paper_section(
-                    paper_name=paper_name,
-                    dateline=dateline_base,
-                    section_tag="★ Box Scores ★",
-                    h1=f"Scores — {date_display}",
-                    deck="Game summaries and linescores.",
-                    byline="StatsPlus",
-                    body_html=roundup_body,
+                (
+                    "scores_roundup",
+                    build_paper_section(
+                        paper_name=paper_name,
+                        dateline=dateline_base,
+                        section_tag="★ Box Scores ★",
+                        h1=f"Scores — {date_display}",
+                        deck="Game summaries and linescores.",
+                        byline="StatsPlus",
+                        body_html=roundup_body,
+                    ),
                 )
             )
         print(f"[INFO] Wrote {roundup_path}")
 
-    html_files = list(out_dir.glob("*.html"))
-    for hp in html_files:
-        png_path = hp.with_suffix(".png")
-        if png_path.exists():
-            print(f"[INFO] {png_path.name} exists, skipping")
-            continue
-        if render_html_to_png(hp, png_path):
-            print(f"[INFO] Rendered {png_path}")
+    if args.magazine and magazine_daily_summary is not None:
+        magazine_sections.append(("daily_summary", magazine_daily_summary))
+
+    # PNG conversion: skipped by default; use --png to enable
+    if getattr(args, "render_png", False):
+        html_files = list(out_dir.glob("*.html"))
+        for hp in html_files:
+            png_path = hp.with_suffix(".png")
+            if png_path.exists():
+                print(f"[INFO] {png_path.name} exists, skipping")
+                continue
+            if render_html_to_png(hp, png_path):
+                print(f"[INFO] Rendered {png_path}")
 
     if args.magazine and magazine_sections:
         try:
