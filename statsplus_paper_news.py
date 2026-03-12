@@ -8,8 +8,8 @@ HTML under a single dated directory. Use --png to also render each HTML to PNG.
 
   {league}_news_{YYYYMMDD}
 
-With --magazine, builds a combined multi-page newspaper/magazine (magazine.html
-and magazine.pdf): home, then articles, then one-liners, laid out on A4-sized
+With --magazine, builds a combined multi-page newspaper/magazine (league_###_magazine.html):
+home, then articles, then one-liners, laid out on A4-sized
 pages (--page-size, default a4) with content flowing to the next page when full.
 
 Dependencies: requests, beautifulsoup4. For PNG and magazine PDF: playwright
@@ -42,7 +42,7 @@ LEAGUE_BASE_URLS: Dict[str, str] = {
     "wwoba": "https://atl-01.statsplus.net/wwoba",
     "sahl": "https://statsplus.net/sahl",
     "sky": "https://atl-01.statsplus.net/skylinebaseball",
-    "smdb": "https://statsplus.net/sdmbootp",
+    "sdmb": "https://statsplus.net/sdmbootp",
     "tlg": "https://atl-02.statsplus.net/tlg",
     "uba": "https://statsplus.net/uba",
     "sol": "https://atl-02.statsplus.net/sol/"
@@ -76,6 +76,18 @@ def construct_content_url(base_url: str, content_filename: str) -> str:
 def construct_box_score_url(base_url: str, game_id: int) -> str:
     base_url = base_url.rstrip("/")
     return f"{base_url}/reports/news/html/box_scores/game_box_{game_id}.html"
+
+
+def content_base_url(base_url: str) -> str:
+    """Base URL for news HTML content (teams, players, leagues, etc.). Relative hrefs like ../teams/... resolve here."""
+    return f"{base_url.rstrip('/')}/reports/news/html"
+
+
+def rewrite_relative_hrefs(html: str, content_base: str) -> str:
+    """Replace relative href=\"../... and href='../... with absolute URLs using content_base."""
+    html = html.replace('href="../', f'href="{content_base}/')
+    html = html.replace("href='../", f"href='{content_base}/")
+    return html
 
 
 def dates_for_scores(date_yyyymmdd: str, num_days: int) -> List[date]:
@@ -239,13 +251,7 @@ PAPER_SECTION_TEMPLATE = """  <div class="masthead">
   </div>"""
 
 # Full single-page document (placeholders: TITLE, SECTION_HTML)
-PAPER_TEMPLATE = """<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>{{TITLE}}</title>
-<link href="https://fonts.googleapis.com/css2?family=UnifrakturMaguntia&family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Source+Serif+4:ital,wght@0,300;0,400;1,300&display=swap" rel="stylesheet">
+PAPER_TEMPLATE = """
 <style>
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
   body { background: #f2ead8; background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='4' height='4'%3E%3Crect width='4' height='4' fill='%23f2ead8'/%3E%3Ccircle cx='1' cy='1' r='0.6' fill='%23d9cdb0' opacity='0.4'/%3E%3C/svg%3E"); font-family: 'Source Serif 4', Georgia, serif; color: #1a1208; padding: 40px 20px; }
@@ -259,7 +265,7 @@ PAPER_TEMPLATE = """<!DOCTYPE html>
   .byline { text-align: center; font-size: 11px; letter-spacing: 2px; text-transform: uppercase; color: #5a4a2a; border-top: 1px solid #c8b98a; border-bottom: 1px solid #c8b98a; padding: 5px 0; margin-bottom: 22px; }
   .columns { column-count: 2; column-gap: 36px; column-rule: 1px solid #c8b98a; }
   p { font-size: 15px; line-height: 1.75; margin-bottom: 14px; text-align: justify; hyphens: auto; font-weight: 300; }
-  p:first-child::first-letter { font-family: 'Playfair Display', serif; font-size: 62px; font-weight: 700; float: left; line-height: 0.78; margin-right: 6px; margin-top: 8px; color: #0f0800; }
+  .wp-block-post-content p:first-child::first-letter { font-family: 'Playfair Display', serif; font-size: 62px; font-weight: 700; float: left; line-height: 0.78; margin-right: 6px; margin-top: 8px; color: #0f0800; }
   .day-head { font-family: 'Playfair Display', serif; font-weight: 700; font-size: 16px; margin-top: 18px; margin-bottom: 4px; color: #8b3a1a; }
   .stats-box { border: 1px solid #c8b98a; background: #f0e8d0; padding: 14px 18px; margin: 0 0 14px 0; break-inside: avoid; }
   .stats-box.compact { font-size: 12px; padding: 8px 10px; }
@@ -273,23 +279,15 @@ PAPER_TEMPLATE = """<!DOCTYPE html>
   .standings-block th { text-align: left; }
   .standings-block .boxtitle { font-family: 'Playfair Display', serif; font-size: 14px; color: #8b3a1a; }
 </style>
-</head>
-<body>
+
 <div class="paper">
 {{SECTION_HTML}}
 </div>
-</body>
-</html>"""
+"""
 
 # Magazine: multi-page document with @page size and break-after between sections
 # Placeholders: PAGE_WIDTH, PAGE_HEIGHT, SECTIONS
-MAGAZINE_TEMPLATE = """<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>League News Magazine</title>
-<link href="https://fonts.googleapis.com/css2?family=UnifrakturMaguntia&family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Source+Serif+4:ital,wght@0,300;0,400;1,300&display=swap" rel="stylesheet">
+MAGAZINE_TEMPLATE = """
 <style>
   @page { size: {{PAGE_WIDTH}} {{PAGE_HEIGHT}}; }
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -310,7 +308,7 @@ MAGAZINE_TEMPLATE = """<!DOCTYPE html>
   .byline { text-align: center; font-size: 11px; letter-spacing: 2px; text-transform: uppercase; color: #5a4a2a; border-top: 1px solid #c8b98a; border-bottom: 1px solid #c8b98a; padding: 5px 0; margin-bottom: 22px; }
   .columns { column-count: 2; column-gap: 36px; column-rule: 1px solid #c8b98a; }
   p { font-size: 15px; line-height: 1.75; margin-bottom: 14px; text-align: justify; hyphens: auto; font-weight: 300; }
-  p:first-child::first-letter { font-family: 'Playfair Display', serif; font-size: 62px; font-weight: 700; float: left; line-height: 0.78; margin-right: 6px; margin-top: 8px; color: #0f0800; }
+  .wp-block-post-contentp:first-child::first-letter { font-family: 'Playfair Display', serif; font-size: 62px; font-weight: 700; float: left; line-height: 0.78; margin-right: 6px; margin-top: 8px; color: #0f0800; }
   .day-head { font-family: 'Playfair Display', serif; font-weight: 700; font-size: 16px; margin-top: 18px; margin-bottom: 4px; color: #8b3a1a; }
   .stats-box { border: 1px solid #c8b98a; background: #f0e8d0; padding: 14px 18px; margin: 0 0 14px 0; break-inside: avoid; }
   .stats-box.compact { font-size: 12px; padding: 8px 10px; }
@@ -324,11 +322,7 @@ MAGAZINE_TEMPLATE = """<!DOCTYPE html>
   .standings-block th { text-align: left; }
   .standings-block .boxtitle { font-family: 'Playfair Display', serif; font-size: 14px; color: #8b3a1a; }
 </style>
-</head>
-<body>
-{{SECTIONS}}
-</body>
-</html>"""
+{{SECTIONS}}"""
 
 
 def build_magazine_html(
@@ -901,13 +895,15 @@ def main() -> None:
     out_dir.mkdir(parents=True, exist_ok=True)
     print(f"[INFO] Output directory: {out_dir.resolve()}")
 
+    file_prefix = f"league_{args.league_id}_"
+
     paper_name = f"The {league_tag.upper()} Chronicle" if league_tag != "league" else "League Chronicle"
     dateline_base = f"{home_data.date_display}  ·  League News  ·  Baseball"
 
     magazine_sections: List[Tuple[str, str]] = []  # (section_type, html)
     magazine_daily_summary: Optional[str] = None
 
-    home_path = out_dir / "home.html"
+    home_path = out_dir / f"{file_prefix}home.html"
     body_parts = []
     if home_data.featured:
         for fb in home_data.featured:
@@ -951,7 +947,7 @@ def main() -> None:
         print(f"[INFO] {home_path.name} exists, skipping")
 
     # League standings article: fetch league_###_standings.html, parse NL/AL, NL in first column, AL in second
-    standings_path = out_dir / "standings.html"
+    standings_path = out_dir / f"{file_prefix}standings.html"
     nl_standings: Optional[str] = None
     al_standings: Optional[str] = None
     need_standings_data = not standings_path.exists() or args.magazine
@@ -1011,7 +1007,7 @@ def main() -> None:
         print(f"[INFO] {standings_path.name} exists, skipping")
 
     for link in home_data.news_links:
-        art_path = out_dir / f"article_{link.article_id}.html"
+        art_path = out_dir / f"{file_prefix}article_{link.article_id}.html"
         if art_path.exists():
             if args.magazine:
                 try:
@@ -1058,7 +1054,7 @@ def main() -> None:
         except Exception as e:
             print(f"[WARNING] Failed article {link.article_id}: {e}", file=sys.stderr)
 
-    summary_path = out_dir / "daily_summary.html"
+    summary_path = out_dir / f"{file_prefix}daily_summary.html"
     if not summary_path.exists():
         news_url = construct_content_url(base_url, f"league_{args.league_id}_news.html")
         print(f"[INFO] Fetching one-liners: {news_url}")
@@ -1107,7 +1103,7 @@ def main() -> None:
     score_dates = dates_for_scores(home_data.date_yyyymmdd, args.days)
     for d in score_dates:
         date_yyyymmdd = d.strftime("%Y%m%d")
-        roundup_path = out_dir / f"scores_roundup_{date_yyyymmdd}.html"
+        roundup_path = out_dir / f"{file_prefix}scores_roundup_{date_yyyymmdd}.html"
         if roundup_path.exists():
             if args.magazine:
                 try:
@@ -1191,14 +1187,11 @@ def main() -> None:
             print(f"[ERROR] {e}", file=sys.stderr)
             sys.exit(1)
         magazine_html = build_magazine_html(magazine_sections, page_width, page_height)
-        magazine_path = out_dir / "magazine.html"
+        content_base = content_base_url(base_url)
+        magazine_html = rewrite_relative_hrefs(magazine_html, content_base)
+        magazine_path = out_dir / f"{file_prefix}magazine.html"
         magazine_path.write_text(magazine_html, encoding="utf-8")
         print(f"[INFO] Wrote {magazine_path}")
-        pdf_path = out_dir / "magazine.pdf"
-        if render_magazine_to_pdf(magazine_path, pdf_path, page_width, page_height):
-            print(f"[INFO] Rendered {pdf_path}")
-        else:
-            print(f"[WARNING] Magazine PDF not generated", file=sys.stderr)
 
     print(f"[SUCCESS] Done. Output in {out_dir.resolve()}")
 
