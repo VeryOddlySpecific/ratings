@@ -1,0 +1,167 @@
+{
+  "_comment": "Park factors for St. Louis Cardinals - VOS Evaluation",
+  "_comment_2": "This file contains park adjustments for evaluating players specifically for the STL organization",
+  "_comment_3": "Each team should have its own park factors file (e.g., park-factors-{team-code}.json)",
+
+  "team_info": {
+    "team_name": "St. Louis Cardinals",
+    "team_code": "STL",
+    "park_name": "Busch Stadium"
+  },
+
+  "raw_park_factors": {
+    "_comment": "Raw park factors from OOTP - 1.0 = league average",
+    "avg_overall": 0.98,
+    "avg_rhb": 0.98,
+    "avg_lhb": 0.98,
+    "doubles": 0.993,
+    "triples": 0.95,
+    "hr_overall": 0.863,
+    "hr_rhb": 0.81,
+    "hr_lhb": 0.96
+  },
+
+  "park_profile": {
+    "_comment": "Human-readable summary of park characteristics",
+    "type": "pitcher_friendly_hr_suppressor",
+    "description": "Slightly pitcher-friendly environment with notable home run suppression, especially for right-handed hitters.",
+    "key_characteristics": [
+      "Moderate HR suppression (-13.7% overall)",
+      "Strong RHB HR suppression (-19.0%)",
+      "Mild LHB HR suppression (-4.0%)",
+      "Slight batting average suppression (-2.0%)"
+    ]
+  },
+
+  "tool_adjustments": {
+    "_comment": "Multipliers applied to tool ratings. 1.0 = no change, >1.0 = more valuable, <1.0 = less valuable",
+    "_comment_2": "These are calculated from raw park factors using conversion formulas",
+
+    "batting": {
+      "Pow": 0.918,
+      "_calculation_Pow": "1.0 + ((0.863 - 1.0) x 0.6) = 0.918 | Power worth 8.2% less",
+
+      "Gap": 0.982,
+      "_calculation_Gap": "1.0 + (((-0.007 x 0.5) + (-0.050 x 0.3))) = 0.982 | Gap worth 1.8% less",
+
+      "Eye": 0.994,
+      "_calculation_Eye": "1.0 + ((0.980 - 1.0) x 0.3) = 0.994 | Eye worth 0.6% less",
+
+      "Ks": 1.004,
+      "_calculation_Ks": "1.0 + ((0.980 - 1.0) x -0.2) = 1.004 | Avoiding Ks worth 0.4% more"
+    },
+
+    "defense": {
+      "_comment": "Slightly lower XBH environment means mostly neutral defensive effects",
+
+      "OFR": 0.99,
+      "_rationale_OFR": "Lower triples rate slightly reduces outfield range pressure",
+
+      "IFR": 1.0,
+      "_rationale_IFR": "Only minor changes to balls in play profile overall",
+
+      "OFE": 1.0,
+      "OFA": 1.0,
+      "IFE": 1.0,
+      "IFA": 1.0,
+      "TDP": 1.0,
+      "CArm": 1.0,
+      "CBlk": 1.0,
+      "CFrm": 1.0
+    },
+
+    "baserunning": {
+      "_comment": "Slightly fewer extra-base outcomes marginally reduce speed value",
+
+      "Speed": 0.99,
+      "_rationale_Speed": "Slightly reduced doubles/triples environment",
+
+      "Run": 0.98,
+      "_rationale_Run": "Fewer big-base-hit advancement opportunities",
+
+      "StealAbi": 1.0,
+      "StlRt": 1.0
+    },
+
+    "pitcher_ability": {
+      "_comment": "Home run suppression reduces differential value of HR-specific skills",
+
+      "Stuff": 1.0,
+
+      "Movement": 0.98,
+      "_rationale_Movement": "Park already suppresses homers, reducing movement premium slightly",
+
+      "Control": 1.01,
+      "_rationale_Control": "Run prevention still rewards limiting baserunners",
+
+      "HR_Avoid": 0.93,
+      "_rationale_HR_Avoid": "Park already suppresses HRs, so HR prevention specialists gain less relative value"
+    }
+  },
+
+  "handedness_splits": {
+    "_comment": "Optional handedness-specific adjustments - only used if use_handedness_splits is true",
+    "_comment_2": "Busch has meaningful split (RHB 0.810 vs LHB 0.960), so handedness splits are recommended",
+
+    "enabled": true,
+    "_rationale": "Large split (~15%) makes handedness-aware power adjustments useful",
+
+    "RHB": {
+      "Pow": 0.886,
+      "_calculation": "1.0 + ((0.810 - 1.0) x 0.6) = 0.886"
+    },
+
+    "LHB": {
+      "Pow": 0.976,
+      "_calculation": "1.0 + ((0.960 - 1.0) x 0.6) = 0.976"
+    }
+  },
+
+  "application_rules": {
+    "_comment": "Rules for when and how aggressively to apply these park factors",
+
+    "apply_to_prospects": true,
+    "_comment_prospects": "Apply to all players in St. Louis Cardinals organization, including minors",
+
+    "apply_to_major_leaguers": true,
+    "_comment_major_leaguers": "Apply to players at ML level with this team",
+
+    "use_handedness_splits": true,
+    "_comment_handedness": "Enabled due to meaningful RHB/LHB HR suppression difference",
+
+    "adjustment_strength": 0.5,
+    "_comment_strength": "Use 50% strength as conservative starting point. 1.0 = full strength, 0.5 = half strength",
+    "_comment_strength_2": "At 0.5 strength: Pow becomes 0.959 (4.1% reduction) instead of 0.918 (8.2% reduction)"
+  },
+
+  "validation_examples": {
+    "_comment": "Test cases to verify park factors are working correctly",
+
+    "power_hitter_vs_gap_hitter": {
+      "description": "Compare 80 Pow / 45 Gap player vs 45 Pow / 80 Gap player",
+
+      "player_a_power_hitter": {
+        "tools": { "Gap": 45, "Pow": 80, "Eye": 50, "Ks": 55 },
+        "without_park": "~57.5 batting score",
+        "with_park_half_strength": "~55.9 batting score (-1.6)",
+        "impact": "Power devalued in HR-suppressing park"
+      },
+
+      "player_b_gap_hitter": {
+        "tools": { "Gap": 80, "Pow": 45, "Eye": 50, "Ks": 55 },
+        "without_park": "~56.0 batting score",
+        "with_park_half_strength": "~55.6 batting score (-0.4)",
+        "impact": "Gap profile is less penalized than pure power profile"
+      },
+
+      "result": "Power-heavy profile loses more value than balanced/gap profile"
+    }
+  },
+
+  "usage_notes": {
+    "command_line_example": "python vos_v2.py --league woba --park-factors park-factors-woba.json",
+    "creating_files_for_other_teams": "Copy this file and adjust raw_park_factors and team_info sections",
+    "tuning_adjustment_strength": "Start at 0.5, increase to 0.7-1.0 if you want more aggressive park effects",
+    "when_to_enable_handedness_splits": "Enable when RHB/LHB HR factors differ by >10% (this park differs by ~15%)"
+  }
+}

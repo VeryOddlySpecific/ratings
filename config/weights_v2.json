@@ -377,6 +377,11 @@
           "low": -0.5
         }
       }
+    },
+
+    "draft_role_penalties": {
+      "_comment": "Applied only in --draft mode. Use negatives to push certain roles down draft boards.",
+      "RP": -2.0
     }
   },
   
