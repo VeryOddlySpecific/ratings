@@ -785,6 +785,18 @@ def draft_age_modifier(age: Optional[float]) -> float:
     return -1.5 + (age - 17) * 0.6
 
 
+def draft_role_penalty(role: str, cfg: Dict[str, Any], draft_mode: bool) -> float:
+    """Optional draft-only role penalty (e.g., push RPs down draft boards)."""
+    if not draft_mode:
+        return 0.0
+    penalties = ((cfg.get("adjustments") or {}).get("draft_role_penalties") or {})
+    if not isinstance(penalties, dict):
+        return 0.0
+    key = (role or "").strip().upper()
+    value = penalties.get(key, 0.0)
+    return float(value) if isinstance(value, (int, float)) else 0.0
+
+
 def age_adjustment(
     age: Optional[float],
     league_label: str,
@@ -902,6 +914,7 @@ def build_hitter_row(
     age_adj = age_adjustment(age, league_label, cfg, "hitter")
     pers_adj = personality_adjustment(row, cfg)
     draft_age_adj = draft_age_modifier(age) if draft_mode else 0.0
+    draft_rp_penalty = 0.0
     raw_total = ideal_value + dev_adj + age_adj + pers_adj + draft_age_adj
     center, scale, floor, ceiling = _normalization_params(cfg)
     vos = normalize_to_20_80(raw_total, center, scale, floor, ceiling)
@@ -933,6 +946,7 @@ def build_hitter_row(
     }
     if draft_mode:
         out["Draft_Age_Adj"] = round(draft_age_adj, 2)
+        out["Draft_RP_Penalty"] = round(draft_rp_penalty, 2)
     for pos in HITTER_POSITIONS:
         s = pos_scores.get(pos)
         col = f"{pos}_Score"
@@ -977,11 +991,12 @@ def build_pitcher_row(
     age_adj = age_adjustment(age, league_label, cfg, "pitcher")
     pers_adj = personality_adjustment(row, cfg)
     draft_age_adj = draft_age_modifier(age) if draft_mode else 0.0
-    raw_total = combined + dev_adj + age_adj + pers_adj + draft_age_adj
+    draft_rp_penalty = draft_role_penalty(role, cfg, draft_mode)
+    raw_total = combined + dev_adj + age_adj + pers_adj + draft_age_adj + draft_rp_penalty
     center, scale, floor, ceiling = _normalization_params(cfg)
     vos = normalize_to_20_80(raw_total, center, scale, floor, ceiling)
     # Potential VOS: ability from PotStf/PotMov/PotHRA/PotCtrl; arsenal already uses Pot* pitches; no dev adj
-    raw_total_pot = combined_pot + 0.0 + age_adj + pers_adj + draft_age_adj
+    raw_total_pot = combined_pot + 0.0 + age_adj + pers_adj + draft_age_adj + draft_rp_penalty
     vos_potential = normalize_to_20_80(raw_total_pot, center, scale, floor, ceiling)
     out: Dict[str, Any] = {
         "ID": row.get("ID", ""),
@@ -1008,6 +1023,7 @@ def build_pitcher_row(
     }
     if draft_mode:
         out["Draft_Age_Adj"] = round(draft_age_adj, 2)
+        out["Draft_RP_Penalty"] = round(draft_rp_penalty, 2)
     for pos in HITTER_POSITIONS:
         out[f"{pos}_Score"] = ""
     out["Ideal_Position"] = role
@@ -1039,6 +1055,7 @@ def write_output_csv(rows: List[Dict[str, Any]], path: Path, draft_mode: bool = 
     ]
     if draft_mode:
         cols.insert(cols.index("Personality_Adj") + 1, "Draft_Age_Adj")
+        cols.insert(cols.index("Draft_Age_Adj") + 1, "Draft_RP_Penalty")
     pos_cols = [f"{p}_Score" for p in HITTER_POSITIONS]
     cols += pos_cols
     cols += ["Ideal_Position", "Ideal_Value"]
