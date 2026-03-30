@@ -1,0 +1,189 @@
+{
+    "_comment": "Park factors for Atlanta Bandits - VOS Evaluation (UBA)",
+    "_comment_2": "This file contains park adjustments for evaluating players specifically for the UBA organization",
+    "_comment_3": "Each team should have its own park factors file (e.g., park-factors-{team-code}.json)",
+
+    "team_info": {
+      "team_name": "Atlanta Bandits",
+      "team_code": "UBA",
+      "park_name": "Atlanta Bandits Ballpark"
+    },
+
+    "raw_park_factors": {
+      "_comment": "Raw park factors from OOTP - 1.0 = league average",
+      "avg_overall": 0.980,
+      "avg_rhb": 0.980,
+      "avg_lhb": 0.980,
+      "doubles": 1.055,
+      "triples": 1.050,
+      "hr_overall": 0.967,
+      "hr_rhb": 0.960,
+      "hr_lhb": 0.980
+    },
+
+    "park_profile": {
+      "_comment": "Human-readable summary of park characteristics",
+      "type": "balanced_slight_gap",
+      "description": "Near-neutral batting average with modest extra-base boost and slight home run suppression. Slightly favors gap hitters over pure power.",
+      "key_characteristics": [
+        "Modest HR suppression (-3.3% overall)",
+        "Modest doubles boost (+5.5%)",
+        "Modest triples boost (+5.0%)",
+        "Slight batting average depression (-2.0%)"
+      ]
+    },
+
+    "tool_adjustments": {
+      "_comment": "Multipliers applied to tool ratings. 1.0 = no change, >1.0 = more valuable, <1.0 = less valuable",
+      "_comment_2": "These are calculated from raw park factors using conversion formulas",
+
+      "batting": {
+        "Pow": 0.980,
+        "_calculation_Pow": "1.0 + ((0.967 - 1.0) × 0.6) = 0.980 | Power worth 2.0% less",
+
+        "Gap": 1.043,
+        "_calculation_Gap": "1.0 + ((0.055 × 0.5) + (0.050 × 0.3)) = 1.043 | Gap worth 4.3% more",
+
+        "Eye": 0.994,
+        "_calculation_Eye": "1.0 + ((0.980 - 1.0) × 0.3) = 0.994 | Eye worth 0.6% less",
+
+        "Ks": 1.004,
+        "_calculation_Ks": "1.0 + ((0.980 - 1.0) × -0.2) = 1.004 | Avoiding Ks worth 0.4% more"
+      },
+
+      "defense": {
+        "_comment": "Elevated doubles/triples with slightly depressed average — outfield range still matters for gaps; slightly fewer BIP vs league average",
+
+        "OFR": 1.04,
+        "_rationale_OFR": "Above-average 2B/3B rates reward outfield range on balls in the alleys",
+
+        "IFR": 0.99,
+        "_rationale_IFR": "Slightly below-average average implies marginally fewer balls to infielders",
+
+        "OFE": 1.0,
+        "OFA": 1.0,
+        "IFE": 1.0,
+        "IFA": 1.0,
+        "TDP": 1.0,
+        "CArm": 1.0,
+        "CBlk": 1.0,
+        "CFrm": 1.0
+      },
+
+      "baserunning": {
+        "_comment": "Modest doubles/triples environment rewards speed and reads slightly",
+
+        "Speed": 1.02,
+        "_rationale_Speed": "Extra-base opportunities slightly above average",
+
+        "Run": 1.03,
+        "_rationale_Run": "Triples rate nudges value of smart baserunning",
+
+        "StealAbi": 1.0,
+        "StlRt": 1.0
+      },
+
+      "pitcher_ability": {
+        "_comment": "Park characteristics affect which pitcher skills are most valuable",
+
+        "Stuff": 1.0,
+
+        "Movement": 1.02,
+        "_rationale_Movement": "Some help limiting hard contact in the gaps",
+
+        "Control": 1.01,
+        "_rationale_Control": "Marginally more important with slightly depressed average",
+
+        "HR_Avoid": 0.98,
+        "_rationale_HR_Avoid": "Mild HR suppression — HR avoidance still matters a bit less than in a big HR park"
+      }
+    },
+
+    "handedness_splits": {
+      "_comment": "Optional handedness-specific adjustments - only used if use_handedness_splits is true",
+      "_comment_2": "RHB 0.960 vs LHB 0.980 HR factors — small split",
+
+      "enabled": false,
+      "_rationale": "Splits are modest (~2% HR difference) — optional complexity",
+
+      "RHB": {
+        "Pow": 0.976,
+        "_calculation": "1.0 + ((0.960 - 1.0) × 0.6) = 0.976"
+      },
+
+      "LHB": {
+        "Pow": 0.988,
+        "_calculation": "1.0 + ((0.980 - 1.0) × 0.6) = 0.988"
+      }
+    },
+
+    "application_rules": {
+      "_comment": "Rules for when and how aggressively to apply these park factors",
+
+      "apply_to_prospects": true,
+      "_comment_prospects": "Apply to all players in Atlanta Bandits / UBA organization, including minors",
+
+      "apply_to_major_leaguers": true,
+      "_comment_major_leaguers": "Apply to players at ML level with this team",
+
+      "use_handedness_splits": false,
+      "_comment_handedness": "Disabled by default — RHB/LHB HR gap is small",
+
+      "adjustment_strength": 0.5,
+      "_comment_strength": "Use 50% strength as conservative starting point. 1.0 = full strength, 0.5 = half strength",
+      "_comment_strength_2": "At 0.5 strength: blended adjustments move halfway toward neutral vs full raw-derived multipliers"
+    },
+
+    "validation_examples": {
+      "_comment": "Test cases to verify park factors are working correctly",
+
+      "power_hitter_vs_gap_hitter": {
+        "description": "Compare 80 Pow / 45 Gap player vs 45 Pow / 80 Gap player",
+
+        "player_a_power_hitter": {
+          "tools": { "Gap": 45, "Pow": 80, "Eye": 50, "Ks": 55 },
+          "without_park": "~57.5 batting score (illustrative)",
+          "with_park_half_strength": "~56.0 batting score (illustrative — mild Pow drag)",
+          "impact": "Power slightly devalued in mild HR-suppressing park"
+        },
+
+        "player_b_gap_hitter": {
+          "tools": { "Gap": 80, "Pow": 45, "Eye": 50, "Ks": 55 },
+          "without_park": "~56.0 batting score (illustrative)",
+          "with_park_half_strength": "~58.0 batting score (illustrative — modest Gap lift)",
+          "impact": "Gap profile gets a small boost from 2B/3B factors"
+        },
+
+        "result": "Effects are smaller than extreme parks — tune adjustment_strength if needed"
+      },
+
+      "center_fielder_evaluation": {
+        "description": "CF with strong range gets a modest outfield boost",
+
+        "elite_range_cf": {
+          "OFR": 75,
+          "without_park": "Defense score based on 75 OFR",
+          "with_park_half_strength": "Defense score based on ~75 × 1.02 effective OFR (illustrative)",
+          "impact": "Small bump to range contribution in gap-friendly outfield"
+        }
+      },
+
+      "baserunner_evaluation": {
+        "description": "Smart baserunners get a slight reward",
+
+        "high_baserunning": {
+          "Run": 70,
+          "without_park": "Baserunning contribution from 70 Run",
+          "with_park_half_strength": "Baserunning contribution from ~70 × 1.015 effective Run (illustrative)",
+          "impact": "Mild boost — less dramatic than a spacious triples park"
+        }
+      }
+    },
+
+    "usage_notes": {
+      "command_line_example": "python vos_v2.py --league uba --park-factors park-factors-uba.json",
+      "creating_files_for_other_teams": "Copy this file and adjust raw_park_factors and team_info sections",
+      "tuning_adjustment_strength": "Start at 0.5, increase to 0.7-1.0 if you want more aggressive park effects",
+      "when_to_enable_handedness_splits": "Consider if RHB/LHB HR factors differ by >10% (here ~2%)"
+    }
+  }
