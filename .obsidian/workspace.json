@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "README_VOS_V2.md",
-                "mode": "source",
+                "file": "2041_woba_draft/2041_scouting_blurbs.md",
+                "mode": "preview",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "README_VOS_V2"
+              "title": "2041_scouting_blurbs"
             }
           }
         ]
@@ -185,9 +185,18 @@
   },
   "active": "8e9e502eed50e4fd",
   "lastOpenFiles": [
-    "2041_woba_draftboard_STL.txt",
-    "2041_woba_draft_STL.csv",
-    "config/park-factors-woba.json",
-    "2041_woba_draft_VOS.csv"
+    "README_VOS_V2.md",
+    "2041_woba_draft/2041_scouting_blurbs.md",
+    "2041_woba_draft/draft_grades_headlines.txt",
+    "2041_woba_draft/draft_grades_summary.csv",
+    "2041_woba_draft/draft_grades_raw.csv",
+    "2041_woba_draft/summary_data.csv",
+    "2041_woba_draft/05_draft_pool.md",
+    "2041_woba_draft/04_prospect_tiers.txt",
+    "2041_woba_draft/03_vos_potential_distribution.txt",
+    "2041_woba_draft/02_position_strength.txt",
+    "2041_woba_draft/00_summary.txt",
+    "2041_woba_draft/01_position_distribution.txt",
+    "2041_woba_draft"
   ]
 }
