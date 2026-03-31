@@ -185,18 +185,20 @@
   },
   "active": "8e9e502eed50e4fd",
   "lastOpenFiles": [
+    "data/Claude Setup.exe",
+    "data/Unconfirmed 963154.crdownload",
+    "2052_tlg_draft/draft_grades_summary.csv",
+    "2052_tlg_draft/draft_grades_raw.csv",
+    "2052_tlg_draft/draft_grades_raw_wsh.csv",
+    "2052_tlg_draft/draft_grades_summary_wsh.csv",
+    "2052_tlg_draft/draft_grades_headlines.txt",
+    "2052_tlg_draft/05_draft_pool.md",
+    "2052_tlg_draft/summary_data.csv",
+    "2052_tlg_draft/04_prospect_tiers.txt",
+    "2052_tlg_draft/03_vos_potential_distribution.txt",
+    "2052_tlg_draft/02_position_strength.txt",
     "README_VOS_V2.md",
     "2041_woba_draft/2041_scouting_blurbs.md",
-    "2041_woba_draft/draft_grades_headlines.txt",
-    "2041_woba_draft/draft_grades_summary.csv",
-    "2041_woba_draft/draft_grades_raw.csv",
-    "2041_woba_draft/summary_data.csv",
-    "2041_woba_draft/05_draft_pool.md",
-    "2041_woba_draft/04_prospect_tiers.txt",
-    "2041_woba_draft/03_vos_potential_distribution.txt",
-    "2041_woba_draft/02_position_strength.txt",
-    "2041_woba_draft/00_summary.txt",
-    "2041_woba_draft/01_position_distribution.txt",
-    "2041_woba_draft"
+    "2041_woba_draft/05_draft_pool.md"
   ]
 }
