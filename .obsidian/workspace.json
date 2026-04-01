@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "forum_vospectus.md",
+                "file": "2041_woba_draft/2041_scouting_blurbs.md",
                 "mode": "preview",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "forum_vospectus"
+              "title": "2041_scouting_blurbs"
             }
           }
         ]
@@ -185,23 +185,24 @@
   },
   "active": "8e9e502eed50e4fd",
   "lastOpenFiles": [
-    "draftpool-skylinebaseball.csv",
-    "2072_sky_lvk_board.txt",
-    "2072_sky_draft_ids.txt",
-    "2072_draft_vos.csv",
-    "2072_draft_lvk.csv",
-    "2041_woba_draft/2041_scouting_blurbs.md",
-    "forum_vospectus.md",
-    "forum_vospectus.md.tmp.5.1774977137627",
-    "player_pages/fetch_log.txt",
-    "player_pages/player_91253.html",
-    "player_pages/player_94288.html",
-    "player_pages/player_98562.html",
-    "player_pages/player_91373.html",
-    "sahl-top-100-prospects_files/bnn_bottom_bar.jpg",
+    "sahl-top-100-prospects.html",
+    "scrape_prospects.py",
+    "sahl-top-100-prospects_files/styles.css",
+    "sahl-top-100-prospects_files/sorttable.js.download",
     "sahl-top-100-prospects_files/pixel.gif",
     "sahl-top-100-prospects_files/major_league_baseball.png",
+    "sahl-top-100-prospects_files/bnn_bottom_bar.jpg",
+    "sahl-top-100-prospects_files",
+    "player_pages/player_98695.html",
+    "player_pages/player_98716.html",
+    "player_pages/player_98679.html",
+    "player_pages/player_98669.html",
+    "player_pages/player_98562.html",
+    "player_pages/player_97380.html",
+    "forum_vospectus.md",
+    "2052_tlg_draft/05_draft_pool.md",
     "README_VOS_V2.md",
+    "2041_woba_draft/2041_scouting_blurbs.md",
     "2041_woba_draft/05_draft_pool.md"
   ]
 }

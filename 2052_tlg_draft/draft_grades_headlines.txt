@@ -1,0 +1,419 @@
+3B Jake Berg - projected at #1 overall - was drafted at #1. This adds 3.50 to the final draft score of the Colorado Rockies.
+LF Doug Downes - projected at #3 overall - was drafted at #2. This adds 1.60 to the final draft score of the Cincinnati Reds.
+CF Ron Barr - projected at #7 overall - was drafted at #6. This adds 1.60 to the final draft score of the Cleveland Guardians.
+SP Jake Wreyford - projected at #2 overall - was drafted at #7. This adds 4.40 to the final draft score of the Montreal Expos.
+SP Randy Bender - projected at #10 overall - was drafted at #9. This adds 1.60 to the final draft score of the New Orleans Voodoo.
+CF Dan Cook - projected at #21 overall - was drafted at #10. This adds 1.50 to the final draft score of the Texas Rangers.
+2B Pat Higginson - projected at #25 overall - was drafted at #11. This adds 1.46 to the final draft score of the Baltimore Orioles.
+3B Jerry Munson - projected at #4 overall - was drafted at #12. This adds 4.60 to the final draft score of the San Diego Padres.
+SP Mike Norris - projected at #23 overall - was drafted at #13. This adds 1.51 to the final draft score of the St. Louis Cardinals.
+CF Mike Andrade - projected at #22 overall - was drafted at #14. This adds 1.53 to the final draft score of the Boston Red Sox.
+SP Sam Woodward - projected at #27 overall - was drafted at #16. This adds 1.50 to the final draft score of the Los Angeles Dodgers.
+3B Steve Dupree - projected at #38 overall - was drafted at #17. This adds 1.33 to the final draft score of the Los Angeles Angels.
+CF Chad Rabine - projected at #36 overall - was drafted at #18. This adds 1.39 to the final draft score of the New York Mets.
+CF Robert Diaz - projected at #29 overall - was drafted at #20. This adds 1.52 to the final draft score of the Minnesota Twins.
+2B Tim Turnage - projected at #6 overall - was drafted at #21. This adds 4.89 to the final draft score of the Chicago White Sox.
+CF Dan Stewart - projected at #20 overall - was drafted at #22. This adds 4.05 to the final draft score of the Seattle Mariners.
+SP Josh Modisette - projected at #33 overall - was drafted at #23. This adds 1.51 to the final draft score of the Milwaukee Brewers.
+SP Mirim Jirecek - projected at #34 overall - was drafted at #24. This adds 1.51 to the final draft score of the Pittsburgh Pirates.
+RF Jonathon Davison - projected at #18 overall - was drafted at #25. This adds 4.54 to the final draft score of the Houston Astros.
+SS Jim Lundy - projected at #49 overall - was drafted at #26. This adds 1.27 to the final draft score of the Los Angeles Angels.
+SS D.J. Mitchum - projected at #16 overall - was drafted at #27. This adds 4.74 to the final draft score of the Chicago Cubs.
+CF Ron Kavanaugh - projected at #53 overall - was drafted at #28. This adds 1.20 to the final draft score of the Toronto Blue Jays.
+2B Jordan Esqueda - projected at #8 overall - was drafted at #29. This adds 5.05 to the final draft score of the Philadelphia Phillies.
+SP Mike Case - projected at #24 overall - was drafted at #31. This adds 4.54 to the final draft score of the New York Yankees.
+CL Steve Sherburn - projected at #41 overall - was drafted at #34. This adds 1.54 to the final draft score of the Chicago White Sox.
+2B Isaiah Cutliff - projected at #60 overall - was drafted at #37. This adds 1.27 to the final draft score of the Chicago Cubs.
+2B Jorge Sandoval - projected at #32 overall - was drafted at #39. This adds 4.54 to the final draft score of the Oakland Athletics.
+C Bobby Steiner - projected at #46 overall - was drafted at #48. This adds 4.05 to the final draft score of the New Orleans Voodoo.
+SS Ben Houck - projected at #51 overall - was drafted at #50. This adds 1.60 to the final draft score of the Baltimore Orioles.
+SP Tommy Krueger - projected at #40 overall - was drafted at #51. This adds 4.74 to the final draft score of the San Diego Padres.
+RF Jon Beason - projected at #14 overall - was drafted at #55. This adds 5.37 to the final draft score of the Oakland Athletics.
+CF Dan Lantz - projected at #59 overall - was drafted at #56. This adds 1.58 to the final draft score of the Los Angeles Dodgers.
+LF Greg Shaughnessy - projected at #66 overall - was drafted at #57. This adds 1.52 to the final draft score of the Montreal Expos.
+SP Chris McDermott - projected at #74 overall - was drafted at #58. This adds 1.43 to the final draft score of the Los Angeles Angels.
+SP Jake Basnight - projected at #79 overall - was drafted at #60. This adds 1.37 to the final draft score of the Atlanta Braves.
+2B Vince Figueroa - projected at #28 overall - was drafted at #61. This adds 5.26 to the final draft score of the Minnesota Twins.
+CL Luis Perez - projected at #12 overall - was drafted at #62. This adds 5.47 to the final draft score of the Chicago White Sox.
+1B Gabe Havens - projected at #54 overall - was drafted at #64. This adds 4.70 to the final draft score of the Milwaukee Brewers.
+C Jesus Rios - projected at #78 overall - was drafted at #65. This adds 1.47 to the final draft score of the Pittsburgh Pirates.
+SS Bruce Brocklebank - projected at #65 overall - was drafted at #68. This adds 4.19 to the final draft score of the Toronto Blue Jays.
+SS Tim Cassella - projected at #89 overall - was drafted at #72. This adds 1.41 to the final draft score of the Colorado Rockies.
+RP Zach Petersen - projected at #62 overall - was drafted at #73. This adds 4.74 to the final draft score of the Detroit Tigers.
+RP R.J. Romsdahl - projected at #64 overall - was drafted at #77. This adds 4.82 to the final draft score of the Miami Marlins.
+LF Chris Moore - projected at #9 overall - was drafted at #78. This adds 5.62 to the final draft score of the Montreal Expos.
+RP Chris Ladd - projected at #17 overall - was drafted at #81. This adds 5.59 to the final draft score of the Texas Rangers.
+C Kevin Weisberg - projected at #97 overall - was drafted at #84. This adds 1.47 to the final draft score of the St. Louis Cardinals.
+2B Josh Hansen - projected at #31 overall - was drafted at #85. This adds 5.50 to the final draft score of the Boston Red Sox.
+LF Daniel Carreto - projected at #35 overall - was drafted at #87. This adds 5.49 to the final draft score of the Los Angeles Dodgers.
+SP Travis Williams - projected at #37 overall - was drafted at #88. This adds 5.48 to the final draft score of the Los Angeles Angels.
+SS Kevin Hillesheim - projected at #115 overall - was drafted at #90. This adds 1.20 to the final draft score of the Atlanta Braves.
+CF Jamie Hall - projected at #92 overall - was drafted at #91. This adds 1.60 to the final draft score of the Minnesota Twins.
+CL Sean Morrison - projected at #42 overall - was drafted at #93. This adds 5.48 to the final draft score of the Seattle Mariners.
+3B Doug Jackson - projected at #63 overall - was drafted at #95. This adds 5.25 to the final draft score of the Pittsburgh Pirates.
+RP Kurt Beahan - projected at #44 overall - was drafted at #97. This adds 5.49 to the final draft score of the Chicago Cubs.
+CL Robby Monson - projected at #11 overall - was drafted at #98. This adds 5.74 to the final draft score of the Toronto Blue Jays.
+CL Joe Nicholas - projected at #81 overall - was drafted at #100. This adds 5.00 to the final draft score of the Arizona Diamondbacks.
+SS Oscar Vazquez - projected at #96 overall - was drafted at #101. This adds 4.40 to the final draft score of the New York Yankees.
+C Dan Grimes - projected at #128 overall - was drafted at #105. This adds 1.27 to the final draft score of the Cincinnati Reds.
+C Adrian Ard - projected at #101 overall - was drafted at #111. This adds 2.70 to the final draft score of the Texas Rangers.
+SS Ron Warner - projected at #112 overall - was drafted at #113. This adds 1.85 to the final draft score of the San Diego Padres.
+RF Mike Rollins - projected at #26 overall - was drafted at #114. This adds 5.74 to the final draft score of the St. Louis Cardinals.
+SP Eric Braaten - projected at #85 overall - was drafted at #117. This adds 5.25 to the final draft score of the Los Angeles Dodgers.
+CL Nate Tillman - projected at #39 overall - was drafted at #118. This adds 5.69 to the final draft score of the Los Angeles Angels.
+SS Ryan Rasco - projected at #144 overall - was drafted at #119. This adds 1.20 to the final draft score of the New York Mets.
+SP Steve Carle - projected at #135 overall - was drafted at #120. This adds 1.44 to the final draft score of the Atlanta Braves.
+C Josh Beggs - projected at #87 overall - was drafted at #124. This adds 5.32 to the final draft score of the Milwaukee Brewers.
+SP Orlando Ortiz - projected at #153 overall - was drafted at #125. This adds 1.02 to the final draft score of the Pittsburgh Pirates.
+CF Mike Crescenzo - projected at #131 overall - was drafted at #126. This adds 1.56 to the final draft score of the Houston Astros.
+3B Jonathan Lott - projected at #47 overall - was drafted at #128. This adds 5.70 to the final draft score of the Toronto Blue Jays.
+CF Dave Freilich - projected at #121 overall - was drafted at #130. This adds 2.65 to the final draft score of the Arizona Diamondbacks.
+SS Greg Warren - projected at #129 overall - was drafted at #131. This adds 2.05 to the final draft score of the New York Yankees.
+CF Johnny Sandberg - projected at #161 overall - was drafted at #132. This adds 0.92 to the final draft score of the Colorado Rockies.
+CL R.J. Oyler - projected at #48 overall - was drafted at #133. This adds 5.73 to the final draft score of the Detroit Tigers.
+CF Alex Ziemke - projected at #108 overall - was drafted at #137. This adds 3.20 to the final draft score of the Miami Marlins.
+CF Rhett McLean - projected at #125 overall - was drafted at #139. This adds 2.85 to the final draft score of the San Francisco Giants.
+CL Mike Soto - projected at #122 overall - was drafted at #140. This adds 2.97 to the final draft score of the New Orleans Voodoo.
+SS Eric Rogers - projected at #80 overall - was drafted at #142. This adds 5.57 to the final draft score of the Baltimore Orioles.
+SP Charlie Ennis - projected at #160 overall - was drafted at #144. This adds 1.43 to the final draft score of the St. Louis Cardinals.
+C Kennan Gauthier - projected at #70 overall - was drafted at #150. This adds 5.70 to the final draft score of the Atlanta Braves.
+CL Eric Marro - projected at #56 overall - was drafted at #154. This adds 5.80 to the final draft score of the Milwaukee Brewers.
+CF Alan Thompson - projected at #43 overall - was drafted at #155. This adds 5.86 to the final draft score of the Pittsburgh Pirates.
+CF Mike Halsey - projected at #166 overall - was drafted at #157. This adds 1.52 to the final draft score of the Chicago Cubs.
+CF Sonny Dockter - projected at #105 overall - was drafted at #160. This adds 3.51 to the final draft score of the Arizona Diamondbacks.
+CF Mike Park - projected at #110 overall - was drafted at #161. This adds 3.48 to the final draft score of the New York Yankees.
+SP Steve Hicks - projected at #134 overall - was drafted at #165. This adds 3.23 to the final draft score of the Cincinnati Reds.
+3B Justin Stokes - projected at #187 overall - was drafted at #170. This adds 1.41 to the final draft score of the New Orleans Voodoo.
+RF Tony Camacho - projected at #171 overall - was drafted at #171. This adds 1.50 to the final draft score of the Texas Rangers.
+CF Brad Meadows - projected at #118 overall - was drafted at #173. This adds 3.51 to the final draft score of the San Diego Padres.
+2B Eddie Ross - projected at #136 overall - was drafted at #174. This adds 3.33 to the final draft score of the St. Louis Cardinals.
+CL Jeremy Meyers - projected at #158 overall - was drafted at #175. This adds 2.95 to the final draft score of the Boston Red Sox.
+RP Brad Hoskin - projected at #174 overall - was drafted at #176. This adds 2.05 to the final draft score of the Oakland Athletics.
+CF Eddie Cunningham - projected at #82 overall - was drafted at #180. This adds 5.80 to the final draft score of the Atlanta Braves.
+SS Alan Spradlin - projected at #119 overall - was drafted at #182. This adds 3.58 to the final draft score of the Chicago White Sox.
+C Sam Matthews - projected at #184 overall - was drafted at #183. This adds 1.60 to the final draft score of the Seattle Mariners.
+CF John Vroom - projected at #50 overall - was drafted at #185. This adds 5.96 to the final draft score of the Pittsburgh Pirates.
+2B Jose Suazo - projected at #192 overall - was drafted at #187. This adds 1.56 to the final draft score of the Chicago Cubs.
+RP Elijah Simmions - projected at #169 overall - was drafted at #188. This adds 3.00 to the final draft score of the Toronto Blue Jays.
+RP Jordan Penn - projected at #90 overall - was drafted at #190. This adds 5.81 to the final draft score of the Arizona Diamondbacks.
+CF Sam Willingham - projected at #170 overall - was drafted at #192. This adds 3.07 to the final draft score of the Colorado Rockies.
+CF Chris Vanderford - projected at #69 overall - was drafted at #196. This adds 5.93 to the final draft score of the Cleveland Guardians.
+CL Kevin Alldredge - projected at #91 overall - was drafted at #198. This adds 5.84 to the final draft score of the Montreal Expos.
+C Gabe Segovia - projected at #190 overall - was drafted at #201. This adds 2.74 to the final draft score of the Texas Rangers.
+CF Mike Talley - projected at #104 overall - was drafted at #203. This adds 3.80 to the final draft score of the San Diego Padres.
+C Chris Svensson - projected at #208 overall - was drafted at #204. This adds 1.57 to the final draft score of the St. Louis Cardinals.
+3B Mike Orr - projected at #76 overall - was drafted at #205. This adds 5.93 to the final draft score of the Boston Red Sox.
+3B Steve Jackson - projected at #95 overall - was drafted at #206. This adds 5.86 to the final draft score of the Oakland Athletics.
+RF Ron Rowcliffe - projected at #220 overall - was drafted at #208. This adds 1.49 to the final draft score of the Los Angeles Angels.
+RF Joe Levinson - projected at #191 overall - was drafted at #210. This adds 3.00 to the final draft score of the Atlanta Braves.
+RF Ed White - projected at #138 overall - was drafted at #212. This adds 3.66 to the final draft score of the Chicago White Sox.
+SS Jon Daugherty - projected at #213 overall - was drafted at #213. This adds 1.50 to the final draft score of the Seattle Mariners.
+CL Brad Hall - projected at #67 overall - was drafted at #214. This adds 6.00 to the final draft score of the Milwaukee Brewers.
+C Ted Grieve - projected at #175 overall - was drafted at #215. This adds 3.36 to the final draft score of the Pittsburgh Pirates.
+CL Kevin Page - projected at #179 overall - was drafted at #217. This adds 3.33 to the final draft score of the Chicago Cubs.
+CF Brad Helbling - projected at #130 overall - was drafted at #220. This adds 3.76 to the final draft score of the Arizona Diamondbacks.
+CL Mike Maynard - projected at #45 overall - was drafted at #221. This adds 6.09 to the final draft score of the New York Yankees.
+RP Jon McNeil - projected at #148 overall - was drafted at #223. This adds 3.67 to the final draft score of the Detroit Tigers.
+LF Alexis Saucedo - projected at #230 overall - was drafted at #225. This adds 1.56 to the final draft score of the Cincinnati Reds.
+CF Sam Bassett - projected at #117 overall - was drafted at #227. This adds 3.85 to the final draft score of the Miami Marlins.
+RP Chris Berkowitz - projected at #141 overall - was drafted at #228. This adds 3.74 to the final draft score of the Montreal Expos.
+2B Steve Nicholson - projected at #113 overall - was drafted at #231. This adds 3.89 to the final draft score of the Texas Rangers.
+CF Jon Penalver - projected at #193 overall - was drafted at #233. This adds 3.36 to the final draft score of the San Diego Padres.
+SS Phil Saxton - projected at #137 overall - was drafted at #234. This adds 3.79 to the final draft score of the St. Louis Cardinals.
+C Nate Dill - projected at #145 overall - was drafted at #236. This adds 3.76 to the final draft score of the Oakland Athletics.
+CL Josh Tolbert - projected at #155 overall - was drafted at #237. This adds 3.71 to the final draft score of the Los Angeles Dodgers.
+CF Sean Hackler - projected at #185 overall - was drafted at #238. This adds 3.49 to the final draft score of the Los Angeles Angels.
+RF Bret Selway - projected at #103 overall - was drafted at #239. This adds 3.96 to the final draft score of the New York Mets.
+SS Chris Soto - projected at #226 overall - was drafted at #242. This adds 2.92 to the final draft score of the Chicago White Sox.
+CL Joe Broadway - projected at #106 overall - was drafted at #244. This adds 3.97 to the final draft score of the Milwaukee Brewers.
+CL Josh Adams - projected at #111 overall - was drafted at #247. This adds 3.96 to the final draft score of the Chicago Cubs.
+3B Phil Servidio - projected at #216 overall - was drafted at #253. This adds 3.32 to the final draft score of the Detroit Tigers.
+C Jimmy Robinson - projected at #142 overall - was drafted at #257. This adds 3.88 to the final draft score of the Miami Marlins.
+RP Jerry Thompson - projected at #215 overall - was drafted at #259. This adds 3.40 to the final draft score of the San Francisco Giants.
+C Joe Thompson - projected at #256 overall - was drafted at #260. This adds 2.30 to the final draft score of the New Orleans Voodoo.
+RP Chris Wagner - projected at #83 overall - was drafted at #262. This adds 6.10 to the final draft score of the Baltimore Orioles.
+C Dave Jordan - projected at #189 overall - was drafted at #264. This adds 3.67 to the final draft score of the St. Louis Cardinals.
+RP Jonathan Dunn - projected at #243 overall - was drafted at #265. This adds 3.07 to the final draft score of the Boston Red Sox.
+CF Josh Schooley - projected at #126 overall - was drafted at #266. This adds 3.97 to the final draft score of the Oakland Athletics.
+SS Alex Ellison - projected at #207 overall - was drafted at #267. This adds 3.56 to the final draft score of the Los Angeles Dodgers.
+1B Mike Grand - projected at #236 overall - was drafted at #270. This adds 3.28 to the final draft score of the Atlanta Braves.
+3B Dan Schreiber - projected at #290 overall - was drafted at #274. This adds 1.43 to the final draft score of the Milwaukee Brewers.
+RF Josh Brown - projected at #154 overall - was drafted at #276. This adds 3.91 to the final draft score of the Houston Astros.
+CF Pat Aitken - projected at #173 overall - was drafted at #277. This adds 3.83 to the final draft score of the Chicago Cubs.
+1B Steve Baluch - projected at #245 overall - was drafted at #278. This adds 3.26 to the final draft score of the Toronto Blue Jays.
+CL Chris Mereness - projected at #244 overall - was drafted at #280. This adds 3.31 to the final draft score of the Arizona Diamondbacks.
+C Jimmy Johnson - projected at #281 overall - was drafted at #281. This adds 1.50 to the final draft score of the New York Yankees.
+RP Tony Campbell - projected at #247 overall - was drafted at #286. This adds 3.34 to the final draft score of the Cleveland Guardians.
+SP Mike McConachie - projected at #240 overall - was drafted at #290. This adds 3.47 to the final draft score of the New Orleans Voodoo.
+C Jeff Wheat - projected at #159 overall - was drafted at #292. This adds 3.95 to the final draft score of the Baltimore Orioles.
+SP Jesus Ortiz - projected at #273 overall - was drafted at #294. This adds 3.05 to the final draft score of the St. Louis Cardinals.
+C Zach Cresswell - projected at #206 overall - was drafted at #295. This adds 3.75 to the final draft score of the Boston Red Sox.
+CF Joe Passey - projected at #102 overall - was drafted at #296. This adds 4.14 to the final draft score of the Oakland Athletics.
+C Pat Simpson - projected at #278 overall - was drafted at #297. This adds 3.00 to the final draft score of the Los Angeles Dodgers.
+SS Jimmy Ridenour - projected at #168 overall - was drafted at #308. This adds 3.97 to the final draft score of the Toronto Blue Jays.
+C Matt Hoekstra - projected at #311 overall - was drafted at #309. This adds 1.59 to the final draft score of the Philadelphia Phillies.
+3B Dave Johnson - projected at #235 overall - was drafted at #310. This adds 3.67 to the final draft score of the Arizona Diamondbacks.
+SP Jake Kalman - projected at #254 overall - was drafted at #311. This adds 3.53 to the final draft score of the New York Yankees.
+RP A.J. Bazin - projected at #280 overall - was drafted at #313. This adds 3.26 to the final draft score of the Detroit Tigers.
+CF Daniel Choate - projected at #251 overall - was drafted at #315. This adds 3.59 to the final draft score of the Cincinnati Reds.
+SP Rob Rieger - projected at #217 overall - was drafted at #316. This adds 3.80 to the final draft score of the Cleveland Guardians.
+C Dan Marshall - projected at #209 overall - was drafted at #317. This adds 3.85 to the final draft score of the Miami Marlins.
+3B Phil Belasco - projected at #238 overall - was drafted at #318. This adds 3.70 to the final draft score of the Montreal Expos.
+SS Josh Plumb - projected at #324 overall - was drafted at #319. This adds 1.56 to the final draft score of the San Francisco Giants.
+1B Joe Haas - projected at #232 overall - was drafted at #321. This adds 3.75 to the final draft score of the Texas Rangers.
+CF Jim McCloskey - projected at #157 overall - was drafted at #322. This adds 4.06 to the final draft score of the Baltimore Orioles.
+C Ben Ouellet - projected at #224 overall - was drafted at #323. This adds 3.80 to the final draft score of the San Diego Padres.
+RP Josh Evans - projected at #270 overall - was drafted at #326. This adds 3.52 to the final draft score of the Oakland Athletics.
+CF Dave Welch - projected at #139 overall - was drafted at #327. This adds 4.12 to the final draft score of the Los Angeles Dodgers.
+SS Geoff Williams - projected at #200 overall - was drafted at #328. This adds 3.93 to the final draft score of the Los Angeles Angels.
+RF Eric Sweeney - projected at #259 overall - was drafted at #329. This adds 3.63 to the final draft score of the New York Mets.
+SP Hector Benitez - projected at #298 overall - was drafted at #330. This adds 3.25 to the final draft score of the Atlanta Braves.
+SP Juan Patron - projected at #293 overall - was drafted at #331. This adds 3.33 to the final draft score of the Minnesota Twins.
+SP Nate Quist - projected at #326 overall - was drafted at #333. This adds 2.54 to the final draft score of the Seattle Mariners.
+2B Chris Tucker - projected at #282 overall - was drafted at #336. This adds 3.50 to the final draft score of the Houston Astros.
+CL Dave McNutt - projected at #349 overall - was drafted at #337. This adds 1.49 to the final draft score of the Chicago Cubs.
+SS Juan Gutierrez - projected at #317 overall - was drafted at #338. This adds 3.05 to the final draft score of the Toronto Blue Jays.
+1B Jimmy Winters - projected at #345 overall - was drafted at #340. This adds 1.56 to the final draft score of the Arizona Diamondbacks.
+C Dusty Lantigua - projected at #177 overall - was drafted at #341. This adds 4.05 to the final draft score of the New York Yankees.
+CL Nate Hughes - projected at #99 overall - was drafted at #342. This adds 6.25 to the final draft score of the Colorado Rockies.
+SS Bobby Ocegueda - projected at #233 overall - was drafted at #343. This adds 3.85 to the final draft score of the Detroit Tigers.
+SP Mike Conroy - projected at #320 overall - was drafted at #345. This adds 3.13 to the final draft score of the Cincinnati Reds.
+CF Marc Sharpnack - projected at #194 overall - was drafted at #346. This adds 4.02 to the final draft score of the Cleveland Guardians.
+LF Erik Vassar - projected at #313 overall - was drafted at #348. This adds 3.29 to the final draft score of the Montreal Expos.
+2B Jon Allen - projected at #268 overall - was drafted at #349. This adds 3.70 to the final draft score of the San Francisco Giants.
+C Brad Stover - projected at #284 overall - was drafted at #350. This adds 3.60 to the final draft score of the New Orleans Voodoo.
+SS Joe Overstreet - projected at #223 overall - was drafted at #351. This adds 3.93 to the final draft score of the Texas Rangers.
+C Kevin Moore - projected at #291 overall - was drafted at #353. This adds 3.57 to the final draft score of the San Diego Padres.
+C Henry Carrasco - projected at #304 overall - was drafted at #355. This adds 3.48 to the final draft score of the Boston Red Sox.
+RP Eric Medina - projected at #165 overall - was drafted at #356. This adds 4.13 to the final draft score of the Oakland Athletics.
+C B.J. Cripe - projected at #261 overall - was drafted at #363. This adds 3.82 to the final draft score of the Seattle Mariners.
+CL Chris Marschner - projected at #167 overall - was drafted at #365. This adds 4.15 to the final draft score of the Pittsburgh Pirates.
+3B Into Mannisenmaki - projected at #152 overall - was drafted at #368. This adds 4.19 to the final draft score of the Toronto Blue Jays.
+C Willie Corona - projected at #312 overall - was drafted at #369. This adds 3.53 to the final draft score of the Philadelphia Phillies.
+2B Joe Schutz - projected at #297 overall - was drafted at #370. This adds 3.65 to the final draft score of the Arizona Diamondbacks.
+CF Ruben Valenzuela - projected at #205 overall - was drafted at #371. This adds 4.06 to the final draft score of the New York Yankees.
+C Edwin Escobedo - projected at #328 overall - was drafted at #372. This adds 3.40 to the final draft score of the Colorado Rockies.
+RP Erik Lara - projected at #195 overall - was drafted at #373. This adds 4.09 to the final draft score of the Detroit Tigers.
+C Chris Gainey - projected at #257 overall - was drafted at #375. This adds 3.89 to the final draft score of the Cincinnati Reds.
+2B Dylan Bailey - projected at #124 overall - was drafted at #376. This adds 4.27 to the final draft score of the Cleveland Guardians.
+3B Joe Adams - projected at #359 overall - was drafted at #377. This adds 2.97 to the final draft score of the Miami Marlins.
+SS Ha-joon Park - projected at #242 overall - was drafted at #381. This adds 3.97 to the final draft score of the Texas Rangers.
+CF Bobby Voelkel - projected at #371 overall - was drafted at #382. This adds 2.74 to the final draft score of the Baltimore Orioles.
+2B Brad Radu - projected at #127 overall - was drafted at #387. This adds 4.28 to the final draft score of the Los Angeles Dodgers.
+RP Jody Mickelson - projected at #347 overall - was drafted at #388. This adds 3.37 to the final draft score of the Los Angeles Angels.
+SP Kevin Rozenblat - projected at #222 overall - was drafted at #389. This adds 4.06 to the final draft score of the New York Mets.
+3B Dan Kellar - projected at #178 overall - was drafted at #392. This adds 4.19 to the final draft score of the Chicago White Sox.
+SS Mike Shafer - projected at #322 overall - was drafted at #395. This adds 3.65 to the final draft score of the Pittsburgh Pirates.
+LF Danny de Leon - projected at #392 overall - was drafted at #396. This adds 2.30 to the final draft score of the Houston Astros.
+RF Josh Marquardt - projected at #310 overall - was drafted at #397. This adds 3.74 to the final draft score of the Chicago Cubs.
+2B Charlie Cotto - projected at #210 overall - was drafted at #398. This adds 4.12 to the final draft score of the Toronto Blue Jays.
+CF Tony Jones - projected at #181 overall - was drafted at #400. This adds 4.20 to the final draft score of the Arizona Diamondbacks.
+SS Steve Walker - projected at #431 overall - was drafted at #402. This adds 0.92 to the final draft score of the Colorado Rockies.
+LF Jonathan Moore - projected at #260 overall - was drafted at #403. This adds 3.98 to the final draft score of the Detroit Tigers.
+SP Jeff LaSalle - projected at #356 overall - was drafted at #405. This adds 3.46 to the final draft score of the Cincinnati Reds.
+C Phil Brotherton - projected at #391 overall - was drafted at #406. This adds 2.89 to the final draft score of the Cleveland Guardians.
+CF Caleb Turner - projected at #237 overall - was drafted at #412. This adds 4.09 to the final draft score of the Baltimore Orioles.
+RF Zachary Kimble - projected at #163 overall - was drafted at #418. This adds 4.27 to the final draft score of the Los Angeles Angels.
+RP Gene Cook - projected at #287 overall - was drafted at #419. This adds 3.95 to the final draft score of the New York Mets.
+1B Juan Valdez - projected at #338 overall - was drafted at #420. This adds 3.71 to the final draft score of the Atlanta Braves.
+C Jamie Flynn - projected at #182 overall - was drafted at #422. This adds 4.24 to the final draft score of the Chicago White Sox.
+SP Sandy Gonzalez - projected at #454 overall - was drafted at #427. This adds 1.10 to the final draft score of the Chicago Cubs.
+3B Kevin Fenner - projected at #305 overall - was drafted at #428. This adds 3.91 to the final draft score of the Toronto Blue Jays.
+RP Phil Brummett - projected at #386 overall - was drafted at #433. This adds 3.44 to the final draft score of the Detroit Tigers.
+1B Nate O'Keefe - projected at #255 overall - was drafted at #435. This adds 4.10 to the final draft score of the Cincinnati Reds.
+RP Billy Young - projected at #335 overall - was drafted at #437. This adds 3.82 to the final draft score of the Miami Marlins.
+RP Eric Johnson - projected at #321 overall - was drafted at #439. This adds 3.89 to the final draft score of the San Francisco Giants.
+RF Joe Taylor - projected at #214 overall - was drafted at #441. This adds 4.21 to the final draft score of the Texas Rangers.
+C Malik Hale - projected at #285 overall - was drafted at #442. This adds 4.03 to the final draft score of the Baltimore Orioles.
+SP Arturo Guerrero - projected at #437 overall - was drafted at #443. This adds 2.47 to the final draft score of the San Diego Padres.
+RP Glen Masur - projected at #201 overall - was drafted at #447. This adds 4.25 to the final draft score of the Los Angeles Dodgers.
+LF Bobby Dixon - projected at #443 overall - was drafted at #450. This adds 2.54 to the final draft score of the Atlanta Braves.
+C Cuarto Corral - projected at #475 overall - was drafted at #451. This adds 1.24 to the final draft score of the Minnesota Twins.
+C Nate Fink - projected at #436 overall - was drafted at #452. This adds 2.92 to the final draft score of the Chicago White Sox.
+SP Robby Marks - projected at #447 overall - was drafted at #453. This adds 2.47 to the final draft score of the Seattle Mariners.
+SP Phil Robbins - projected at #460 overall - was drafted at #456. This adds 1.57 to the final draft score of the Houston Astros.
+CF Jeremy Eves - projected at #249 overall - was drafted at #457. This adds 4.17 to the final draft score of the Chicago Cubs.
+C Chris Daugherty - projected at #422 overall - was drafted at #459. This adds 3.32 to the final draft score of the Philadelphia Phillies.
+SP Mike Blanton - projected at #487 overall - was drafted at #460. This adds 1.10 to the final draft score of the Arizona Diamondbacks.
+3B J.D. Dunning - projected at #373 overall - was drafted at #463. This adds 3.76 to the final draft score of the Detroit Tigers.
+SP Josue Higareda - projected at #451 overall - was drafted at #465. This adds 2.85 to the final draft score of the Cincinnati Reds.
+RP Chris Klopp - projected at #411 overall - was drafted at #466. This adds 3.51 to the final draft score of the Cleveland Guardians.
+3B Jody Murrey - projected at #407 overall - was drafted at #468. This adds 3.56 to the final draft score of the Montreal Expos.
+3B David Espinoza - projected at #364 overall - was drafted at #470. This adds 3.84 to the final draft score of the New Orleans Voodoo.
+CF Jerry Toliver - projected at #266 overall - was drafted at #471. This adds 4.16 to the final draft score of the Texas Rangers.
+C Tom Dares - projected at #239 overall - was drafted at #472. This adds 4.23 to the final draft score of the Baltimore Orioles.
+RP Eric Marquis - projected at #343 overall - was drafted at #483. This adds 3.97 to the final draft score of the Seattle Mariners.
+SP Steve Ricketts - projected at #279 overall - was drafted at #485. This adds 4.17 to the final draft score of the Pittsburgh Pirates.
+1B Eric Meek - projected at #452 overall - was drafted at #487. This adds 3.29 to the final draft score of the Chicago Cubs.
+SP Gabe Hoggard - projected at #296 overall - was drafted at #488. This adds 4.13 to the final draft score of the Toronto Blue Jays.
+LF Mike Crist - projected at #507 overall - was drafted at #489. This adds 1.39 to the final draft score of the Philadelphia Phillies.
+C Chris Demmer - projected at #384 overall - was drafted at #491. This adds 3.84 to the final draft score of the New York Yankees.
+CF Jeremy Wallace - projected at #370 overall - was drafted at #493. This adds 3.91 to the final draft score of the Detroit Tigers.
+1B Urbano Freschi - projected at #340 overall - was drafted at #497. This adds 4.03 to the final draft score of the Miami Marlins.
+C Mike Shuler - projected at #398 overall - was drafted at #498. This adds 3.81 to the final draft score of the Montreal Expos.
+C Joe Jordan - projected at #329 overall - was drafted at #501. This adds 4.08 to the final draft score of the Texas Rangers.
+SS Tony Navarro - projected at #429 overall - was drafted at #503. This adds 3.66 to the final draft score of the San Diego Padres.
+SP Juan Ortiz - projected at #435 overall - was drafted at #508. This adds 3.65 to the final draft score of the Los Angeles Angels.
+CF Ben Walker - projected at #199 overall - was drafted at #509. This adds 4.37 to the final draft score of the New York Mets.
+LF Jim Granter - projected at #488 overall - was drafted at #510. This adds 3.07 to the final draft score of the Atlanta Braves.
+C Donovan Guiraud - projected at #331 overall - was drafted at #512. This adds 4.10 to the final draft score of the Chicago White Sox.
+3B Phil Kurucz - projected at #323 overall - was drafted at #518. This adds 4.14 to the final draft score of the Toronto Blue Jays.
+C Randy O'Harrow - projected at #327 overall - was drafted at #519. This adds 4.13 to the final draft score of the Philadelphia Phillies.
+CF Chris Martin - projected at #526 overall - was drafted at #520. This adds 1.55 to the final draft score of the Arizona Diamondbacks.
+1B Jon Nash - projected at #264 overall - was drafted at #521. This adds 4.28 to the final draft score of the New York Yankees.
+CL Chris Comerford - projected at #234 overall - was drafted at #523. This adds 4.33 to the final draft score of the Detroit Tigers.
+2B Dan Benton - projected at #478 overall - was drafted at #525. This adds 3.44 to the final draft score of the Cincinnati Reds.
+C Josh Glass - projected at #334 overall - was drafted at #526. This adds 4.13 to the final draft score of the Cleveland Guardians.
+LF Jose Cordero - projected at #294 overall - was drafted at #527. This adds 4.23 to the final draft score of the Miami Marlins.
+RF Chris Kelly - projected at #362 overall - was drafted at #528. This adds 4.06 to the final draft score of the Montreal Expos.
+1B Keshawn Spurgeon - projected at #381 overall - was drafted at #531. This adds 4.01 to the final draft score of the Texas Rangers.
+SP Sam Wallin - projected at #376 overall - was drafted at #532. This adds 4.03 to the final draft score of the Baltimore Orioles.
+3B Jonathan Wheeler - projected at #425 overall - was drafted at #533. This adds 3.85 to the final draft score of the San Diego Padres.
+2B Victor Flores - projected at #555 overall - was drafted at #535. This adds 1.35 to the final draft score of the Boston Red Sox.
+CF Chris Rutledge - projected at #353 overall - was drafted at #541. This adds 4.12 to the final draft score of the Minnesota Twins.
+C Bob McCarty - projected at #375 overall - was drafted at #542. This adds 4.06 to the final draft score of the Chicago White Sox.
+3B Jay Rogers - projected at #439 overall - was drafted at #543. This adds 3.83 to the final draft score of the Seattle Mariners.
+LF Ben Killinger - projected at #271 overall - was drafted at #545. This adds 4.31 to the final draft score of the Pittsburgh Pirates.
+SP Dan Wilson - projected at #404 overall - was drafted at #546. This adds 3.98 to the final draft score of the Houston Astros.
+C Bob Krant - projected at #341 overall - was drafted at #547. This adds 4.17 to the final draft score of the Chicago Cubs.
+SS Mike Cottrell - projected at #302 overall - was drafted at #549. This adds 4.26 to the final draft score of the Philadelphia Phillies.
+SS Bobby Bors - projected at #380 overall - was drafted at #550. This adds 4.07 to the final draft score of the Arizona Diamondbacks.
+SP Tony Barrera - projected at #486 overall - was drafted at #551. This adds 3.59 to the final draft score of the New York Yankees.
+2B Jon Parish - projected at #536 overall - was drafted at #553. This adds 2.95 to the final draft score of the Detroit Tigers.
+LF Ian Wilkinson - projected at #501 overall - was drafted at #556. This adds 3.51 to the final draft score of the Cleveland Guardians.
+C Rob Gertenrich - projected at #468 overall - was drafted at #557. This adds 3.75 to the final draft score of the Miami Marlins.
+LF Mike Minks - projected at #558 overall - was drafted at #558. This adds 1.50 to the final draft score of the Montreal Expos.
+CF Moises Alvarado - projected at #306 overall - was drafted at #559. This adds 4.27 to the final draft score of the San Francisco Giants.
+CF Kevin Handy - projected at #346 overall - was drafted at #560. This adds 4.19 to the final draft score of the New Orleans Voodoo.
+SP Brendan Richardson - projected at #499 overall - was drafted at #562. This adds 3.58 to the final draft score of the Baltimore Orioles.
+SP Phil Orkin - projected at #540 overall - was drafted at #563. This adds 3.09 to the final draft score of the San Diego Padres.
+C Steve Hamm - projected at #395 overall - was drafted at #564. This adds 4.07 to the final draft score of the St. Louis Cardinals.
+SP Kevin Richardson - projected at #546 overall - was drafted at #566. This adds 3.02 to the final draft score of the Oakland Athletics.
+RP Mike Sorkin - projected at #355 overall - was drafted at #567. This adds 4.18 to the final draft score of the Los Angeles Dodgers.
+SP Bobby Rosko - projected at #565 overall - was drafted at #568. This adds 2.19 to the final draft score of the Los Angeles Angels.
+C Josh Hutchison - projected at #354 overall - was drafted at #571. This adds 4.19 to the final draft score of the Minnesota Twins.
+SP Robby Shaw - projected at #523 overall - was drafted at #572. This adds 3.46 to the final draft score of the Chicago White Sox.
+2B Jeff Rawls - projected at #274 overall - was drafted at #573. This adds 4.35 to the final draft score of the Seattle Mariners.
+RP Milt Munday - projected at #491 overall - was drafted at #574. This adds 3.72 to the final draft score of the Milwaukee Brewers.
+SP Bob Fuqua - projected at #421 overall - was drafted at #575. This adds 4.02 to the final draft score of the Pittsburgh Pirates.
+CF Tim Jewell - projected at #300 overall - was drafted at #578. This adds 4.32 to the final draft score of the Toronto Blue Jays.
+C Billy Stephen - projected at #315 overall - was drafted at #580. This adds 4.29 to the final draft score of the Arizona Diamondbacks.
+SP Sean Anderson - projected at #432 overall - was drafted at #582. This adds 4.01 to the final draft score of the Colorado Rockies.
+3B Jon Yearous - projected at #532 overall - was drafted at #585. This adds 3.49 to the final draft score of the Cincinnati Reds.
+RF Randy Lynch - projected at #461 overall - was drafted at #586. This adds 3.92 to the final draft score of the Cleveland Guardians.
+RP Alex Monroy - projected at #471 overall - was drafted at #587. This adds 3.88 to the final draft score of the Miami Marlins.
+C Greg Morgan - projected at #393 overall - was drafted at #588. This adds 4.14 to the final draft score of the Montreal Expos.
+1B Dan Lovett - projected at #489 overall - was drafted at #590. This adds 3.81 to the final draft score of the New Orleans Voodoo.
+C Erik Jorgensen - projected at #319 overall - was drafted at #591. This adds 4.30 to the final draft score of the Texas Rangers.
+SP Nate Swanson - projected at #485 overall - was drafted at #592. This adds 3.84 to the final draft score of the Baltimore Orioles.
+SS Dave Rogers - projected at #576 overall - was drafted at #593. This adds 2.95 to the final draft score of the San Diego Padres.
+SS Darrin Gresham - projected at #502 overall - was drafted at #594. This adds 3.77 to the final draft score of the St. Louis Cardinals.
+LF Eric Rutledge - projected at #426 overall - was drafted at #597. This adds 4.07 to the final draft score of the Los Angeles Dodgers.
+SP Emanuel Aguilar - projected at #599 overall - was drafted at #599. This adds 1.50 to the final draft score of the New York Mets.
+RP Phil Casey - projected at #521 overall - was drafted at #600. This adds 3.69 to the final draft score of the Atlanta Braves.
+C Joe Faria - projected at #541 overall - was drafted at #601. This adds 3.56 to the final draft score of the Minnesota Twins.
+C Ricky Richardson - projected at #367 overall - was drafted at #602. This adds 4.23 to the final draft score of the Chicago White Sox.
+RP Mike Quinn - projected at #272 overall - was drafted at #603. This adds 4.40 to the final draft score of the Seattle Mariners.
+SP Christian Velez - projected at #562 overall - was drafted at #604. This adds 3.38 to the final draft score of the Milwaukee Brewers.
+RP Joey Heintz - projected at #610 overall - was drafted at #605. This adds 1.56 to the final draft score of the Pittsburgh Pirates.
+RF Chris Upton - projected at #531 overall - was drafted at #607. This adds 3.67 to the final draft score of the Chicago Cubs.
+SP Ben Demko - projected at #547 overall - was drafted at #608. This adds 3.56 to the final draft score of the Toronto Blue Jays.
+C Jon Bering - projected at #500 overall - was drafted at #610. This adds 3.85 to the final draft score of the Arizona Diamondbacks.
+SS Rod McCown - projected at #445 overall - was drafted at #611. This adds 4.06 to the final draft score of the New York Yankees.
+SP Angel Cronin - projected at #477 overall - was drafted at #612. This adds 3.96 to the final draft score of the Colorado Rockies.
+RP Gorane Benitez - projected at #623 overall - was drafted at #615. This adds 1.53 to the final draft score of the Cincinnati Reds.
+C Dylan George - projected at #509 overall - was drafted at #616. This adds 3.84 to the final draft score of the Cleveland Guardians.
+RP Chris Wood - projected at #419 overall - was drafted at #617. This adds 4.15 to the final draft score of the Miami Marlins.
+C Mario Pena - projected at #511 overall - was drafted at #618. This adds 3.84 to the final draft score of the Montreal Expos.
+LF Mike Parsons - projected at #583 overall - was drafted at #620. This adds 3.32 to the final draft score of the New Orleans Voodoo.
+1B Joe Aguilar - projected at #582 overall - was drafted at #621. This adds 3.34 to the final draft score of the Texas Rangers.
+1B Chris Colaw - projected at #522 overall - was drafted at #623. This adds 3.81 to the final draft score of the San Diego Padres.
+RF Jeff Gardner - projected at #476 overall - was drafted at #624. This adds 4.00 to the final draft score of the St. Louis Cardinals.
+RP Mike Campbell - projected at #387 overall - was drafted at #626. This adds 4.24 to the final draft score of the Oakland Athletics.
+RP Josh Barnes - projected at #587 overall - was drafted at #627. This adds 3.36 to the final draft score of the Los Angeles Dodgers.
+RF Nate Pullman - projected at #533 overall - was drafted at #629. This adds 3.79 to the final draft score of the New York Mets.
+SP Dave Kiraly - projected at #648 overall - was drafted at #630. This adds 1.39 to the final draft score of the Atlanta Braves.
+CF Chad Mitchell - projected at #614 overall - was drafted at #631. This adds 2.95 to the final draft score of the Minnesota Twins.
+CF Bob Cordova - projected at #382 overall - was drafted at #633. This adds 4.26 to the final draft score of the Seattle Mariners.
+RP Pat Walker - projected at #414 overall - was drafted at #634. This adds 4.20 to the final draft score of the Milwaukee Brewers.
+2B Ed Trainor - projected at #588 overall - was drafted at #637. This adds 3.46 to the final draft score of the Chicago Cubs.
+RP Jeff Terrill - projected at #357 overall - was drafted at #638. This adds 4.32 to the final draft score of the Toronto Blue Jays.
+RF Ken Comfort - projected at #668 overall - was drafted at #639. This adds 0.92 to the final draft score of the Philadelphia Phillies.
+SS Mike Foutz - projected at #361 overall - was drafted at #640. This adds 4.32 to the final draft score of the Arizona Diamondbacks.
+3B Josh Albee - projected at #656 overall - was drafted at #642. This adds 1.46 to the final draft score of the Colorado Rockies.
+1B Andy Molck - projected at #413 overall - was drafted at #643. This adds 4.22 to the final draft score of the Detroit Tigers.
+C T.J. Kalmbach - projected at #592 overall - was drafted at #646. This adds 3.50 to the final draft score of the Cleveland Guardians.
+SP Tommy Delaney - projected at #571 overall - was drafted at #648. This adds 3.68 to the final draft score of the Montreal Expos.
+RP Jeff Kastner - projected at #390 overall - was drafted at #649. This adds 4.28 to the final draft score of the San Francisco Giants.
+SP Dave Manning - projected at #490 overall - was drafted at #652. This adds 4.05 to the final draft score of the Baltimore Orioles.
+RP Mike Hoke - projected at #605 overall - was drafted at #653. This adds 3.45 to the final draft score of the San Diego Padres.
+CF Jon Tiritilli - projected at #604 overall - was drafted at #654. This adds 3.47 to the final draft score of the St. Louis Cardinals.
+SP Mike Sigala - projected at #637 overall - was drafted at #655. This adds 2.97 to the final draft score of the Boston Red Sox.
+1B Eric Mabry - projected at #365 overall - was drafted at #656. This adds 4.34 to the final draft score of the Oakland Athletics.
+3B Caleb Schneiderman - projected at #438 overall - was drafted at #657. This adds 4.20 to the final draft score of the Los Angeles Dodgers.
+1B Ricky Woodruff - projected at #570 overall - was drafted at #659. This adds 3.75 to the final draft score of the New York Mets.
+2B Kevin Morgan - projected at #653 overall - was drafted at #661. This adds 2.60 to the final draft score of the Minnesota Twins.
+CF Hector Mata - projected at #586 overall - was drafted at #662. This adds 3.67 to the final draft score of the Chicago White Sox.
+RF Chris Blair - projected at #617 overall - was drafted at #663. This adds 3.43 to the final draft score of the Seattle Mariners.
+SP Jeff Connor - projected at #618 overall - was drafted at #664. This adds 3.43 to the final draft score of the Milwaukee Brewers.
+C Josh Hogan - projected at #553 overall - was drafted at #665. This adds 3.86 to the final draft score of the Pittsburgh Pirates.
+SS Danny French - projected at #551 overall - was drafted at #666. This adds 3.88 to the final draft score of the Houston Astros.
+SP Dan Evelsizer - projected at #690 overall - was drafted at #667. This adds 1.27 to the final draft score of the Chicago Cubs.
+C Jimmy Willis - projected at #378 overall - was drafted at #668. This adds 4.34 to the final draft score of the Toronto Blue Jays.
+CF Josh Anderson - projected at #629 overall - was drafted at #669. This adds 3.36 to the final draft score of the Philadelphia Phillies.
+2B Willie Apodaca - projected at #564 overall - was drafted at #670. This adds 3.84 to the final draft score of the Arizona Diamondbacks.
+SP Alex Fraijo - projected at #635 overall - was drafted at #672. This adds 3.32 to the final draft score of the Colorado Rockies.
+1B Jonathon Sherman - projected at #554 overall - was drafted at #673. This adds 3.89 to the final draft score of the Detroit Tigers.
+2B Jim Downing - projected at #504 overall - was drafted at #675. This adds 4.07 to the final draft score of the Cincinnati Reds.
+3B Dan Mackie - projected at #544 overall - was drafted at #676. This adds 3.95 to the final draft score of the Cleveland Guardians.
+SP Bobby Condino - projected at #616 overall - was drafted at #677. This adds 3.56 to the final draft score of the Miami Marlins.
+C Chris Halford - projected at #463 overall - was drafted at #678. This adds 4.19 to the final draft score of the Montreal Expos.
+RP Nate Bruce - projected at #573 overall - was drafted at #681. This adds 3.85 to the final draft score of the Texas Rangers.
+SP Andy McGinnis - projected at #633 overall - was drafted at #682. This adds 3.46 to the final draft score of the Baltimore Orioles.
+RP Dan Bardwell - projected at #602 overall - was drafted at #683. This adds 3.70 to the final draft score of the San Diego Padres.
+C Melvin Lazaro - projected at #430 overall - was drafted at #685. This adds 4.27 to the final draft score of the Boston Red Sox.
+C Steve Haapanen - projected at #519 overall - was drafted at #686. This adds 4.06 to the final draft score of the Oakland Athletics.
+2B Ron Kowaleski - projected at #434 overall - was drafted at #687. This adds 4.27 to the final draft score of the Los Angeles Dodgers.
+1B Steve Thomson - projected at #611 overall - was drafted at #689. This adds 3.68 to the final draft score of the New York Mets.
+RF Mike Taylor - projected at #670 overall - was drafted at #690. This adds 3.02 to the final draft score of the Atlanta Braves.
+C Greg Houston - projected at #497 overall - was drafted at #691. This adds 4.14 to the final draft score of the Minnesota Twins.
+SS Josiah Cox - projected at #442 overall - was drafted at #692. This adds 4.26 to the final draft score of the Chicago White Sox.
+C Juan Garza - projected at #702 overall - was drafted at #694. This adds 1.53 to the final draft score of the Milwaukee Brewers.
+SP Mike Gulliford - projected at #535 overall - was drafted at #696. This adds 4.04 to the final draft score of the Houston Astros.
+RP Jayden Washington - projected at #484 overall - was drafted at #698. This adds 4.19 to the final draft score of the Toronto Blue Jays.
+SP Ted Shook - projected at #707 overall - was drafted at #699. This adds 1.53 to the final draft score of the Philadelphia Phillies.
+RP Ben Phillips - projected at #688 overall - was drafted at #700. This adds 2.78 to the final draft score of the Arizona Diamondbacks.
+RP Daniel Briones - projected at #694 overall - was drafted at #701. This adds 2.54 to the final draft score of the New York Yankees.
+SS Josh Gordy - projected at #350 overall - was drafted at #702. This adds 4.43 to the final draft score of the Colorado Rockies.
+RP Greg Parsons - projected at #657 overall - was drafted at #707. This adds 3.47 to the final draft score of the Miami Marlins.
+RP Jeff Hill - projected at #651 overall - was drafted at #708. This adds 3.53 to the final draft score of the Montreal Expos.
+SP Joe Ferrell - projected at #704 overall - was drafted at #710. This adds 2.47 to the final draft score of the New Orleans Voodoo.
+SP Josh Silverstein - projected at #697 overall - was drafted at #712. This adds 2.89 to the final draft score of the Baltimore Orioles.
+CF Josh Miller - projected at #631 overall - was drafted at #713. This adds 3.71 to the final draft score of the San Diego Padres.
+RP Bob White - projected at #706 overall - was drafted at #715. This adds 2.65 to the final draft score of the Boston Red Sox.
+LF Eric Singleton - projected at #503 overall - was drafted at #717. This adds 4.19 to the final draft score of the Los Angeles Dodgers.
+SP Joe Stoffel - projected at #672 overall - was drafted at #718. This adds 3.43 to the final draft score of the Los Angeles Angels.
+RP Joe Stowers - projected at #638 overall - was drafted at #724. This adds 3.73 to the final draft score of the Milwaukee Brewers.
+3B Tim Harned - projected at #696 overall - was drafted at #726. This adds 3.22 to the final draft score of the Houston Astros.
+RP Mario Banuelos - projected at #691 overall - was drafted at #727. This adds 3.31 to the final draft score of the Chicago Cubs.
+C Eric Sullivan - projected at #700 overall - was drafted at #730. This adds 3.22 to the final draft score of the Arizona Diamondbacks.
+RP Steve Hillard - projected at #417 overall - was drafted at #731. This adds 4.38 to the final draft score of the New York Yankees.
+2B Steve Mendez - projected at #722 overall - was drafted at #733. This adds 2.74 to the final draft score of the Detroit Tigers.
+RF Jake Rinehart - projected at #730 overall - was drafted at #735. This adds 2.40 to the final draft score of the Cincinnati Reds.
+SP Alex Pease - projected at #654 overall - was drafted at #736. This adds 3.71 to the final draft score of the Cleveland Guardians.
+SP Jeff Hind - projected at #634 overall - was drafted at #737. This adds 3.82 to the final draft score of the Miami Marlins.
+SS Bobby Sitton - projected at #677 overall - was drafted at #738. This adds 3.56 to the final draft score of the Montreal Expos.
+SS Juan Fuerte - projected at #569 overall - was drafted at #739. This adds 4.07 to the final draft score of the San Francisco Giants.
+C Branden LaPour - projected at #669 overall - was drafted at #740. This adds 3.64 to the final draft score of the New Orleans Voodoo.
+RP Gabe Dreblow - projected at #607 overall - was drafted at #741. This adds 3.95 to the final draft score of the Texas Rangers.
+RP Billy Espinosa - projected at #770 overall - was drafted at #743. This adds 1.10 to the final draft score of the San Diego Padres.
+SP Tim Wehn - projected at #767 overall - was drafted at #745. This adds 1.30 to the final draft score of the Boston Red Sox.
+RP Steve Davis - projected at #703 overall - was drafted at #746. This adds 3.39 to the final draft score of the Oakland Athletics.
+RP Frank Sibert - projected at #600 overall - was drafted at #747. This adds 4.00 to the final draft score of the Los Angeles Dodgers.
+RP Jeff Gilliam - projected at #725 overall - was drafted at #749. This adds 3.11 to the final draft score of the New York Mets.
+RP Bobby Howard - projected at #589 overall - was drafted at #750. This adds 4.04 to the final draft score of the Atlanta Braves.
+3B Ricky Gutierrez - projected at #368 overall - was drafted at #752. This adds 4.48 to the final draft score of the Chicago White Sox.
+C Danny Head - projected at #591 overall - was drafted at #753. This adds 4.05 to the final draft score of the Seattle Mariners.
+SP Ed Lopez - projected at #698 overall - was drafted at #755. This adds 3.53 to the final draft score of the Pittsburgh Pirates.
+RP Tyler Elam - projected at #711 overall - was drafted at #758. This adds 3.44 to the final draft score of the Toronto Blue Jays.
+SS Tim Bright - projected at #556 overall - was drafted at #759. This adds 4.16 to the final draft score of the Philadelphia Phillies.
